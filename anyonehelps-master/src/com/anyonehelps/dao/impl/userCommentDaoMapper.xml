@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.UserCommentDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.UserComment">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="sender_id" property="senderId" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="parent_id" property="parentId" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		
+		<result column="sender_nick_name" property="senderNickName" javaType="String" />
+		<result column="sender_pic_url" property="senderPicUrl" javaType="String" />
+		
+		<result column="user_nick_name" property="userNickName" javaType="String" />
+		<result column="user_pic_url" property="userPicUrl" javaType="String" />
+		
+		<collection column="id" property="replyMessages" select="searchByParentId"></collection>
+	</resultMap>
+
+	<insert id="insert" parameterType="com.anyonehelps.model.UserComment" 
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		user_comment(user_id,sender_id,content,create_date,modify_date,parent_id,state)
+		values(#{userId},#{senderId},#{content},#{createDate},#{modifyDate},#{parentId},#{state})
+	</insert>
+
+	<select id="searchByKey" resultMap="basic_result_map">
+		SELECT uc.*, u.`nick_name` AS user_nick_name,u.pic_url AS user_pic_url, su.`nick_name` AS sender_nick_name, su.pic_url AS sender_pic_url FROM 
+		(select *from user_comment) uc INNER JOIN users u on u.id=user_id INNER JOIN users su on su.id=sender_id WHERE uc.user_id=#{userId} and uc.parent_id='-1' order by uc.id desc  
+		limit
+		#{index},#{size} 
+	</select>
+	
+	<select id="countByKey" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) from user_comment WHERE user_id=#{userId} and parent_id='-1'  
+	</select>
+
+	<select id="searchByParentId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		SELECT uc.*, u.`nick_name` AS user_nick_name,u.pic_url AS user_pic_url, su.`nick_name` AS sender_nick_name, su.pic_url AS sender_pic_url FROM 
+		(select *from user_comment) uc INNER JOIN users u on u.id=user_id INNER JOIN users su on su.id=sender_id WHERE uc.parent_id=#{parentId}
+	</select>
+	
+	<select id="getUserByParentId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select * from user_comment where user_comment.parent_id = #{id} or id = #{id} group by sender_id
+	</select>
+	
+</mapper>

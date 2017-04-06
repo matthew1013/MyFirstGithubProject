@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.UserDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.User">
+		<id column="id" property="id" javaType="String" />
+		<result column="nick_name" property="nickName" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="email_state" property="emailState" javaType="String" />
+		
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="telphone_state" property="telphoneState" javaType="String" />
+		<result column="password" property="password" javaType="String" />
+		<result column="other_contact" property="otherContact" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="province" property="province" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="zip_code" property="zipCode" javaType="String" />
+		<result column="sign_date" property="signDate" javaType="String" />
+		<result column="sign_ip" property="signIp" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="pic_url" property="picUrl" javaType="String" />
+		<result column="recommender" property="recommender" javaType="String" />
+		<result column="school" property="school" javaType="String" />
+		<result column="major" property="major" javaType="String" />
+		<result column="ability_certificate_url" property="abilityCertificateUrl" javaType="String" />
+		<result column="evaluate" property="evaluate" javaType="String" />
+		<result column="evaluate_count" property="evaluateCount" javaType="String" />
+		<result column="evaluate_publish" property="evaluatePublish" javaType="String" />
+		<result column="evaluate_publish_count" property="evaluatePublishCount" javaType="String" />
+		
+		<result column="honest" property="honest" javaType="String" />
+		<result column="quality" property="quality" javaType="String" />
+		<result column="punctual" property="punctual" javaType="String" />
+		<result column="honest_publish" property="honestPublish" javaType="String" />
+
+		<result column="grade" property="grade" javaType="String" />
+		<result column="brief" property="brief" javaType="String" />
+		<result column="usd_balance" property="usdBalance" javaType="String" />
+		<result column="freeze_usd" property="freezeUsd" javaType="String" />
+		<result column="forward_usd" property="forwardUsd" javaType="String" />
+		<result column="occupation" property="occupation" javaType="String" />
+		<result column="wechat" property="wechat" javaType="String" />
+		<result column="degree" property="degree" javaType="String" />
+		
+		<result column="fb_id" property="fbId" javaType="String" />
+		<result column="fb_email" property="fbEmail" javaType="String" />
+		<result column="fb_name" property="fbName" javaType="String" />
+		<result column="fb_token" property="fbToken" javaType="String" />
+
+		<result column="wx_id" property="wxId" javaType="String" />
+		<result column="wx_token" property="wxToken" javaType="String" />
+		<result column="block_state" property="blockState" javaType="String" />
+		<result column="sex" property="sex" javaType="String" />
+		
+		<association property="emailSubscribe" column="id" select="com.anyonehelps.dao.EmailSubscribeDao.countByUserId" ></association>
+		<association property="withdrawalUsd" column="id" select="com.anyonehelps.dao.WithdrawalsDao.sumByUserId" ></association>
+		<collection property="education" column="id" select="com.anyonehelps.dao.EducationDao.getByUserId"></collection>
+		<collection property="we" column="id" select="com.anyonehelps.dao.WorkExperienceDao.getByUserId"></collection>
+		<collection property="works" column="id" select="com.anyonehelps.dao.WorksDao.getByUserId"></collection>
+		
+	</resultMap>
+	
+	<sql id="open_column">users.id,users.nick_name,users.email,users.email_state,users.area_code,users.telphone,
+		users.telphone_state,users.other_contact,users.country,users.province,users.city,users.pic_url,users.cover_url,
+		users.school,users.major,users.evaluate,users.evaluate_count,users.evaluate_publish,
+		users.evaluate_publish_count,users.grade,users.brief,users.occupation,users.wechat,users.degree,
+		users.honest, users.quality, users.punctual, users.honest_publish, users.sign_date, users.block_state, users.sex
+	</sql>
+		
+	<resultMap id="basic_open_result_map" type="com.anyonehelps.model.User">
+		<id column="id" property="id" javaType="String" />
+		<result column="nick_name" property="nickName" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="email_state" property="emailState" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="telphone_state" property="telphoneState" javaType="String" />
+		<result column="other_contact" property="otherContact" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="province" property="province" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="zip_code" property="zipCode" javaType="String" />
+		<result column="pic_url" property="picUrl" javaType="String" />
+		<result column="cover_url" property="coverUrl" javaType="String" /> <!--haokun added 2017/02/24 增加获取封面图片-->
+		<result column="school" property="school" javaType="String" />
+		<result column="major" property="major" javaType="String" />
+		<result column="evaluate" property="evaluate" javaType="String" />
+		<result column="evaluate_count" property="evaluateCount" javaType="String" />
+		<result column="evaluate_publish" property="evaluatePublish" javaType="String" />
+		<result column="evaluate_publish_count" property="evaluatePublishCount" javaType="String" />
+		<result column="honest" property="honest" javaType="String" />
+		<result column="quality" property="quality" javaType="String" />
+		<result column="punctual" property="punctual" javaType="String" />
+		<result column="honest_publish" property="honestPublish" javaType="String" />
+		
+		<result column="grade" property="grade" javaType="String" />
+		<result column="brief" property="brief" javaType="String" />
+		<result column="occupation" property="occupation" javaType="String" />
+		<result column="wechat" property="wechat" javaType="String" />
+		<result column="degree" property="degree" javaType="String" />
+		<result column="block_state" property="blockState" javaType="String" />
+		<result column="sex" property="sex" javaType="String" />
+		
+		<collection property="su" column="id" select="com.anyonehelps.dao.SpecialtyUserDao.getOpenByUserId"></collection>
+		<collection property="works" column="id" select="com.anyonehelps.dao.WorksDao.getByUserId"></collection>
+		<collection property="countPubDemand" column="id" select="com.anyonehelps.dao.DemandDao.countByUserId"></collection>
+		<collection property="countFinishRD" column="id" select="com.anyonehelps.dao.DemandDao.countRDByState8"></collection>
+		<collection property="education" column="id" select="com.anyonehelps.dao.EducationDao.getByUserId"></collection>
+		<collection property="we" column="id" select="com.anyonehelps.dao.WorkExperienceDao.getByUserId"></collection>
+		<collection property="pro" column="id" select="com.anyonehelps.dao.ProUserDao.countByAuthorizeFlag1"></collection>
+		
+	</resultMap>
+	
+	<resultMap id="open_only_user_map" type="com.anyonehelps.model.User">
+		<id column="id" property="id" javaType="String" />
+		<result column="nick_name" property="nickName" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="email_state" property="emailState" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="telphone_state" property="telphoneState" javaType="String" />
+		<result column="other_contact" property="otherContact" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="province" property="province" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="zip_code" property="zipCode" javaType="String" />
+		<result column="pic_url" property="picUrl" javaType="String" />
+		<result column="school" property="school" javaType="String" />
+		<result column="major" property="major" javaType="String" />
+		<result column="evaluate" property="evaluate" javaType="String" />
+		<result column="evaluate_count" property="evaluateCount" javaType="String" />
+		<result column="evaluate_publish" property="evaluatePublish" javaType="String" />
+		<result column="evaluate_publish_count" property="evaluatePublishCount" javaType="String" />
+		<result column="honest" property="honest" javaType="String" />
+		<result column="quality" property="quality" javaType="String" />
+		<result column="punctual" property="punctual" javaType="String" />
+		<result column="honest_publish" property="honestPublish" javaType="String" />
+		
+		<result column="grade" property="grade" javaType="String" />
+		<result column="brief" property="brief" javaType="String" />
+		<result column="occupation" property="occupation" javaType="String" />
+		<result column="wechat" property="wechat" javaType="String" />
+		<result column="degree" property="degree" javaType="String" />
+		<result column="block_state" property="blockState" javaType="String" />
+		<result column="sex" property="sex" javaType="String" />
+		
+		<result column="sign_date" property="signDate" javaType="String" />
+		
+		<collection property="pro" column="id" select="com.anyonehelps.dao.ProUserDao.countByAuthorizeFlag1"></collection>
+		
+	</resultMap>
+	
+	<!-- pro 大牛 -->
+	<resultMap id="basic_pro_map" type="com.anyonehelps.model.User">
+		<id column="id" property="id" javaType="String" />
+		<result column="nick_name" property="nickName" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="email_state" property="emailState" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="telphone_state" property="telphoneState" javaType="String" />
+		<result column="other_contact" property="otherContact" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="province" property="province" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="zip_code" property="zipCode" javaType="String" />
+		<result column="pic_url" property="picUrl" javaType="String" />
+		<result column="school" property="school" javaType="String" />
+		<result column="major" property="major" javaType="String" />
+		<result column="evaluate" property="evaluate" javaType="String" />
+		<result column="evaluate_count" property="evaluateCount" javaType="String" />
+		<result column="evaluate_publish" property="evaluatePublish" javaType="String" />
+		<result column="evaluate_publish_count" property="evaluatePublishCount" javaType="String" />
+		<result column="honest" property="honest" javaType="String" />
+		<result column="quality" property="quality" javaType="String" />
+		<result column="punctual" property="punctual" javaType="String" />
+		<result column="honest_publish" property="honestPublish" javaType="String" />
+		<result column="grade" property="grade" javaType="String" />
+		<result column="brief" property="brief" javaType="String" />
+		<result column="occupation" property="occupation" javaType="String" />
+		<result column="wechat" property="wechat" javaType="String" />
+		<result column="degree" property="degree" javaType="String" />
+		<result column="block_state" property="blockState" javaType="String" />
+		<result column="sex" property="sex" javaType="String" />
+		 
+		<collection property="evaluates" column="id" select="com.anyonehelps.dao.EvaluateDao.getByUserId"></collection>
+		<collection property="pu" column="id" select="com.anyonehelps.dao.ProUserDao.getOpenByUserId"></collection>
+	
+	</resultMap>
+	
+	<select id="countProUserByKey" resultType="java.lang.Integer">
+		select count(distinct users.id) from users,pro,pro_user where users.id = pro_user.user_id and pro.id = pro_user.pro_id and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+		<if test="proTypeId!=null and proTypeId!=''">
+			and pro_user.pro_type_id = #{proTypeId}
+		</if>
+		<if test="proId!=null and proId!=''">
+			and pro_user.pro_id = #{proId}
+		</if>
+		<if test="key!=null and key!=''">
+			and	(users.nick_name like #{key} or users.occupation like #{key} or users.brief like #{key} or pro.name like #{key} )
+		</if>
+	</select>
+	
+	<select id="searchProUserByKey" resultMap="basic_pro_map">
+		select distinct users.id,users.* from users,pro,pro_user where users.id = pro_user.user_id and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+		and pro.id = pro_user.pro_id and authorize_flag = 1
+		<if test="proTypeId!=null and proTypeId!=''">
+			and pro_user.pro_type_id = #{proTypeId}
+		</if>
+		<if test="proId!=null and proId!=''">
+			and pro_user.pro_id = #{proId}
+		</if>
+		<if test="key!=null and key!=''">
+			and	(users.nick_name like #{key} or users.occupation like #{key} or users.brief like #{key} or pro.name like #{key} )
+		</if>
+		limit
+		#{index},#{size}
+	</select>
+	
+	<select id="searchUserByRecommender" resultMap="basic_open_result_map">
+		select 
+		<include refid="open_column" /> 
+		from users where recommender = #{recommender}
+		limit
+		#{index},#{size}
+	</select>
+	
+	<select id="countByRecommender" resultType="java.lang.Integer">
+		select count(*) from users where recommender = #{recommender}
+	</select>
+	
+	<select id="getCountUserBySumAmount" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM(SELECT u.* FROM users u,receive_demand a,demand b WHERE  a.demand_id = b.id 
+		<if test="key!=null and key!=''">
+			AND	(u.nick_name like #{key} or u.occupation like #{key} or u.brief like #{key} )
+		</if>
+		and (u.block_state IS NULL or u.block_state = 0 or u.block_state = "") 
+		AND u.id = a.user_id AND b.state = 8 AND a.state=1 GROUP BY a.user_id HAVING SUM(b.amount)>50 ORDER BY sum(b.amount) DESC ) AS temp 
+	</select>
+	
+	<select id="getUserBySumAmount" resultMap="basic_open_result_map">
+		SELECT u.* FROM users u,receive_demand a,demand b WHERE  a.demand_id = b.id 
+		<if test="key!=null and key!=''">
+			AND	(u.nick_name like #{key} or u.occupation like #{key} or u.brief like #{key} )
+		</if>
+		and (u.block_state IS NULL or u.block_state = 0 or u.block_state = "") 
+		AND u.id = a.user_id AND b.state = 8 AND a.state=1 GROUP BY a.user_id HAVING SUM(b.amount)>50 ORDER BY sum(b.amount) DESC limit #{index},#{size}
+	</select>
+	
+	<select id="countUserByFamousEnable" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM users where famous_enable = 1
+		<if test="key!=null and key!=''">
+			AND	(users.nick_name like #{key} or users.occupation like #{key} or users.brief like #{key} )
+		</if>
+	</select>
+	
+	<select id="getUserByFamousEnable" resultMap="basic_open_result_map">
+		SELECT * FROM users where famous_enable = 1
+		<if test="key!=null and key!=''">
+			AND	(users.nick_name like #{key} or users.occupation like #{key} or users.brief like #{key} )
+		</if>
+		 ORDER BY users.famous_priority DESC limit #{index},#{size}
+	</select>
+	
+	<select id="getUserOpenInfoById" parameterType="java.lang.String"
+		resultMap="basic_open_result_map">
+		select 
+		<include refid="open_column" /> 
+		from users where users.id=#{id}
+	</select>
+	<select id="getOnlyUserOpenInfoById" parameterType="java.lang.String"
+		resultMap="open_only_user_map">
+		select 
+		<include refid="open_column" /> 
+		from users where users.id=#{id}
+	</select>
+	
+	<select id="getUserOpenInfoByAccount" parameterType="java.lang.String"
+		resultMap="basic_open_result_map">
+		select 
+		<include refid="open_column" /> 
+		from users where users.nick_name = #{account} or users.email = #{account}
+	</select>
+
+	<select id="getUserById" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select users.*, a.usd as usd_balance,a.forward_usd as forward_usd,a.freeze_usd as freeze_usd
+		from users left join `account` as a on users.id=a.user_id
+		where users.id=#{id}
+	</select>
+	
+	<select id="getUserByAccount" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select users.*
+		from users
+		where users.nick_name = #{account} or users.email = #{account}
+		limit 1
+	</select>
+	
+	<select id="getUserByPhone" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select * from users where telphone = #{phone} and area_code = #{areaCode} limit 1
+	</select>
+	
+	<select id="getUserByWxId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select users.*
+		from users
+		where users.wx_id = #{wxId}
+		limit 1
+	</select>
+	
+	<select id="getUserByFbId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select users.*
+		from users
+		where users.fb_id = #{fbId}
+		limit 1
+	</select>
+	
+	<insert id="insertUser" parameterType="com.anyonehelps.model.User"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		users(nick_name,email,email_state,area_code,telphone,telphone_state,password,other_contact,country,province,
+		city,sign_date,sign_ip,type,recommender,school,pic_url,
+		major,ability_certificate_url,brief,
+		fb_id,fb_name,fb_email,fb_token,
+		wx_id,wx_token)
+		values(#{nickName},#{email},#{emailState},#{areaCode},#{telphone},#{telphoneState},#{password},#{otherContact},#{country},#{province},
+		#{city},#{signDate},#{signIp},#{type},#{recommender},#{school},#{picUrl},
+		#{major},#{abilityCertificateUrl},#{brief},
+		#{fbId},#{fbName},#{fbEmail},#{fbToken},
+		#{wxId},#{wxToken})
+	</insert>
+
+	<update id="updateUserById" parameterType="com.anyonehelps.model.User">
+		update users
+		set
+		other_contact=#{otherContact},
+		country=#{country},
+		province=#{province},
+		city=#{city},
+		zip_code=#{zipCode},
+		school=#{school},
+		occupation=#{occupation},
+		wechat=#{wechat},
+		major=#{major},
+		brief = #{brief},
+		degree = #{degree},
+		sex = #{sex},
+		ability_certificate_url=#{abilityCertificateUrl}
+		<if test="type!=null and type!=''">
+			,type=#{type}
+		</if>
+		where id=#{id}
+	</update>
+	
+	<delete id="deleteUserByIds">
+		delete from users
+		where id in
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="id" separator=",">
+				#{id}
+			</foreach>
+		</trim>
+	</delete>
+	
+	<update id="updatePassword">
+		<choose>
+			<when test="id == null || id==''">
+				update users
+				set password = #{password}
+				where telphone=#{phone}
+				<if test="oldpwd!=null and oldpwd!=''">
+					and password=#{oldpwd}
+				</if>
+			</when>
+			<otherwise>
+				update users
+				set password = #{password}
+				where id=#{id}
+			</otherwise>
+		</choose>
+	</update>
+	
+	<update id="updatePasswordByPhone">
+		update users set password = #{password}
+			where telphone=#{phone} and area_code=#{areaCode}
+	</update>
+	
+	<update id="updatePasswordByEmail">
+		<choose>
+			<when test="id == null || id==''">
+				update users
+				set password = #{password}
+				where email=#{email}
+				<if test="oldpwd!=null and oldpwd!=''">
+					and password=#{oldpwd}
+				</if>
+			</when>
+			<otherwise>
+				update users
+				set password = #{password}
+				where id=#{id}
+			</otherwise>
+		</choose>
+	</update>
+	<update id="updateUserPhoneById">
+		update users
+		set
+		area_code=#{areaCode},
+		telphone=#{telphone},
+		telphone_state=#{telphoneState}
+		where id=#{userId}
+	</update>
+	<update id="updateUserEmailById">
+		update users
+		set
+		email=#{email},
+		email_state=#{emailState}
+		where id=#{userId}
+	</update>
+	
+	<update id="updateEvaluateById">
+		update users
+		set
+		evaluate=evaluate+#{evaluate},
+		evaluate_count=evaluate_count+1,
+		honest=honest+#{honest},
+		quality=quality+#{quality},
+		punctual=punctual+#{punctual}
+		where id=#{userId}
+	</update>
+	<update id="updatePublishEvaluateById">
+		update users
+		set
+		evaluate_publish=evaluate_publish+#{evaluatePublish},
+		evaluate_publish_count=evaluate_publish_count+1,
+		honest_publish=honest_publish+#{honestPublish}
+		where id=#{userId}
+	</update>
+	<!-- qq -->
+	<update id="updatePicUrlById">
+		update users
+		set
+		pic_url=#{picUrl}
+		where id=#{userId}
+	</update>
+	
+	<update id="modifyGradeById">
+		update users
+		set
+		grade=grade+#{grade}
+		where id=#{userId}
+	</update>
+	
+	
+	<select id="getUserIsOpen" resultType="java.lang.Integer">
+		select count(*) from demand,receive_demand where ( demand.user_id = #{userId} and demand.id=receive_demand.demand_id and receive_demand.user_id = #{friendUserId}) or ( demand.user_id = #{friendUserId} and demand.id=receive_demand.demand_id and receive_demand.user_id = #{userId} and receive_demand.state=1)
+	</select>
+	
+	
+	<select id="searchUserByKey" resultMap="basic_open_result_map">
+		<choose>
+			<!-- 发任务金额高 -->
+			<when  test="sortType=='1'.toString()">
+				select distinct users.id,users.*,(select sum(amount) from demand where demand.user_id = users.id and demand.state <![CDATA[<>]]> 4 ) AS amount from users
+				<choose>
+					<when test="specialtyType!=null and specialtyType!=''">
+						,specialty_user
+					</when>
+					<otherwise>
+						<if test="specialtyId!=null and specialtyId!=''">
+							,specialty_user
+						</if>
+					</otherwise>
+				</choose>
+				
+				<where>
+					<if test="key!=null and key!=''">
+						(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+					</if>
+					<if test="nationality!=null and nationality!=''">
+						and users.`country` = #{nationality}
+					</if>
+					<if test="specialtyType!=null and specialtyType!=''">
+						and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+					</if>
+					<if test="specialtyId!=null and specialtyId!=''">
+						and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+					</if>
+					and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+				</where>
+				order by amount desc
+			</when>
+			<!-- 接任务金额高 -->
+			<when  test="sortType=='2'.toString()">
+				select distinct users.id, users.*, (select sum(receive_demand.amount) from demand, receive_demand where receive_demand.user_id = users.id and receive_demand.demand_id = demand.id and receive_demand.state=1  and demand.state=8) AS amount from users
+				<choose>
+					<when test="specialtyType!=null and specialtyType!=''">
+						,specialty_user
+					</when>
+					<otherwise>
+						<if test="specialtyId!=null and specialtyId!=''">
+							,specialty_user
+						</if>
+					</otherwise>
+				</choose>
+				<where>
+					<if test="key!=null and key!=''">
+						(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+					</if>
+					<if test="nationality!=null and nationality!=''">
+						and users.`country` = #{nationality}
+					</if>
+					<if test="specialtyType!=null and specialtyType!=''">
+						and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+					</if>
+					<if test="specialtyId!=null and specialtyId!=''">
+						and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+					</if>
+					and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+				</where>
+				order by amount desc
+			</when> 
+			<!-- 评分高 -->
+			<when  test="sortType=='3'.toString()">
+				select distinct users.id,users.*,(users.quality*0.5+users.punctual*0.25+users.honest*0.25+users.honest_publish)/(users.evaluate_count+users.evaluate_publish_count) as evaluate_number from users
+				<choose>
+					<when test="specialtyType!=null and specialtyType!=''">
+						,specialty_user
+					</when>
+					<otherwise>
+						<if test="specialtyId!=null and specialtyId!=''">
+							,specialty_user
+						</if>
+					</otherwise>
+				</choose>
+				<where>
+					<if test="key!=null and key!=''">
+						(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+					</if>
+					<if test="nationality!=null and nationality!=''">
+						and users.`country` = #{nationality}
+					</if>
+					<if test="specialtyType!=null and specialtyType!=''">
+						and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+					</if>
+					<if test="specialtyId!=null and specialtyId!=''">
+						and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+					</if>
+					and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+				</where>
+				order by evaluate_number desc
+			</when>
+			<!-- 人气高 -->
+			<when  test="sortType=='4'.toString()">
+				select distinct users.id, users.*, (select count(*) from friend where friend.friend_user_id = users.id) AS follow_count from users
+				<choose>
+					<when test="specialtyType!=null and specialtyType!=''">
+						,specialty_user
+					</when>
+					<otherwise>
+						<if test="specialtyId!=null and specialtyId!=''">
+							,specialty_user
+						</if>
+					</otherwise>
+				</choose>
+				<where>
+					<if test="key!=null and key!=''">
+						(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+					</if>
+					<if test="nationality!=null and nationality!=''">
+						and users.`country` = #{nationality}
+					</if>
+					<if test="specialtyType!=null and specialtyType!=''">
+						and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+					</if>
+					<if test="specialtyId!=null and specialtyId!=''">
+						and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+					</if>
+					and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+				</where>
+				order by follow_count desc
+			</when>
+			<!-- 等级高 -->
+			<when  test="sortType=='5'.toString()">
+				select distinct users.id,users.*,(users.quality*0.5+users.punctual*0.25+users.honest*0.25+users.honest_publish)/(users.evaluate_count+users.evaluate_publish_count) as evaluate_number from users
+				<choose>
+					<when test="specialtyType!=null and specialtyType!=''">
+						,specialty_user
+					</when>
+					<otherwise>
+						<if test="specialtyId!=null and specialtyId!=''">
+							,specialty_user
+						</if>
+					</otherwise>
+				</choose>
+				<where>
+					<if test="key!=null and key!=''">
+						(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+					</if>
+					<if test="nationality!=null and nationality!=''">
+						and users.`country` = #{nationality}
+					</if>
+					<if test="specialtyType!=null and specialtyType!=''">
+						and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+					</if>
+					<if test="specialtyId!=null and specialtyId!=''">
+						and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+					</if>
+					and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+				</where>
+				order by grade desc
+			</when>
+			<!-- 推荐 -暂定等级高 -->
+			<otherwise>
+				select distinct users.id,users.*,(users.quality*0.5+users.punctual*0.25+users.honest*0.25+users.honest_publish)/(users.evaluate_count+users.evaluate_publish_count) as evaluate_number from users
+				<choose>
+					<when test="specialtyType!=null and specialtyType!=''">
+						,specialty_user
+					</when>
+					<otherwise>
+						<if test="specialtyId!=null and specialtyId!=''">
+							,specialty_user
+						</if>
+					</otherwise>
+				</choose>
+				<where>
+					<if test="key!=null and key!=''">
+						(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+					</if>
+					<if test="nationality!=null and nationality!=''">
+						and users.`country` = #{nationality}
+					</if>
+					<if test="specialtyType!=null and specialtyType!=''">
+						and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+					</if>
+					<if test="specialtyId!=null and specialtyId!=''">
+						and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+					</if>
+					and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+				</where>
+				order by grade desc
+			</otherwise>
+		</choose>
+
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countUserByKey" resultType="java.lang.Integer">
+		select count(distinct users.id) from users
+		<choose>
+			<when test="specialtyType!=null and specialtyType!=''">
+				,specialty_user
+			</when>
+			<otherwise>
+				<if test="specialtyId!=null and specialtyId!=''">
+					,specialty_user
+				</if>
+			</otherwise>
+		</choose>
+		
+		<where>
+			<if test="key!=null and key!=''">
+				(users.`nick_name` like #{key} or users.`province` like #{key} or users.`city` like #{key} or users.`school` like #{key} or users.`major` like #{key} or users.`brief` like #{key} or users.`occupation` like #{key})
+			</if>
+			<if test="nationality!=null and nationality!=''">
+				and users.`country` = #{nationality}
+			</if>
+			<if test="specialtyType!=null and specialtyType!=''">
+				and users.id = specialty_user.user_id and specialty_type_id = #{specialtyType}
+			</if>
+			<if test="specialtyId!=null and specialtyId!=''">
+				and users.id = specialty_user.user_id and specialty_id = #{specialtyId}
+			</if>
+			and (users.block_state IS NULL or users.block_state = 0 or users.block_state = "") 
+		</where>
+		
+	</select>
+	
+	<update id="modifyRecommender">
+		update users
+		set
+		recommender=#{recommender}
+		where id=#{userId}
+	</update>
+	
+	<update id="modifyPhoneById">
+		update users
+		set
+		area_code = #{areaCode},
+		telphone = #{telphone},
+		telphone_state = 1
+		where id=#{userId}
+	</update>
+	
+	<update id="modifyEmailById">
+		update users
+		set
+		email = #{email},
+		email_state = 0
+		where id=#{userId}
+	</update>
+	
+	<!--haokun added 2017/02/24 插入封面图片-->
+	<update id="updateCoverUrlById">
+		update users
+		set
+		cover_url=#{coverUrl}
+		where id=#{userId}
+	</update>
+	
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.InvoiceNoDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.InvoiceNo">
+		<result column="id" property="id" javaType="String" />
+		<result column="invoice_no" property="invoiceNo" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+	</resultMap>
+
+	<update id="modifyStateById">
+		update `invoice_no`
+		set `state`= 1,
+		`modify_date`=#{modifyDate}
+		where id = #{id}
+	</update> 
+
+	<select id="getByType" resultMap="basic_result_map">
+		<!-- and type = #{type} -->
+		select * from invoice_no where state  = 0 and type = #{type} order by rand() limit 1
+	</select>
+</mapper>

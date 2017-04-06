@@ -1,0 +1,178 @@
+body {
+    background: #2f394e;
+}
+.bg{
+	text-align:center;
+}
+.bg>.bg-bg{
+	min-height: 500px;
+    margin-right: auto;
+  	margin-left: auto;
+  	margin-top:70px;
+  	background:#0066ee;
+  	width: 100%;
+  	
+}
+.bg>.about-us{
+	height: 200px;
+    margin-right: auto;
+  	margin-left: auto;
+  	margin-top:-400px;
+  	
+}
+
+.position{
+	background:#2f394e;
+	padding-top:85px;
+}
+.position .position-item{
+	padding:50px;
+}
+
+.position .demand{
+	margin-top:20px;
+	margin-bottom:25px;
+	
+}
+.position .left-demand{
+	font-size: 18px;
+    color: #0088ff;
+    letter-spacing: 0px;
+}
+
+
+.position .left-desc{
+	margin-top:25px;
+	font-size:14px;
+	color:#ffffff;
+	letter-spacing:0px;
+	line-height:24px;
+	text-align:left;
+}
+
+.position .left-title {
+	font-size:30px;
+	position:relative;
+	z-index:100;
+	color:white;
+	left:150px;
+	top:150px;
+}
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	    
+	.position img.left {
+	    width: 100%;
+	}
+	.position .left-title {
+	    font-size: 20px;
+	    position: relative;
+	    z-index: 100;
+	    color: white;
+	    left: 95px;
+	    top: -55px;
+	}
+	.bg>.bg-bg {
+	    min-height: 100px;
+	}
+	    
+}
+@media (max-width: 375px) {
+	.position img.left {
+	    width: 100%;
+	}
+	.position .left-title {
+	    font-size: 20px;
+	    position: relative;
+	    z-index: 100;
+	    color: white;
+	    left: 70px;
+	    top: -50px;
+	}
+}
+
+@media (max-width: 320px) {
+	.position img.left {
+	    width: 100%;
+	}
+	.position .left-title {
+	    font-size: 20px;
+	    position: relative;
+	    z-index: 100;
+	    color: white;
+	    left: 50px;
+	    top: -43px;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.position .left-title {
+	    left: -370px;
+	    top: 35px;
+	}
+	.position .left-demand{
+		font-size: 24px;
+	    color: #0088ff;
+	    letter-spacing: 0px;
+	}
+	
+	.position .left-desc{
+		margin-top: 25px;
+	    font-size: 20px;
+	    color: #ffffff;
+	    letter-spacing: 0px;
+	    line-height: 35px;
+	    text-align: left;
+	}
+	
+}
+
+@media (min-width: 992px) {
+	.position .left-title {
+	    color: white;
+	    left: -370px;
+	    top: 35px;
+	}
+	.position .left-demand{
+		font-size: 24px;
+	    color: #0088ff;
+	    letter-spacing: 0px;
+	}
+	
+	.position .left-desc{
+		margin-top: 25px;
+	    font-size: 20px;
+	    color: #ffffff;
+	    letter-spacing: 0px;
+	    line-height: 35px;
+	    text-align: left;
+	}
+}
+
+@media (min-width: 1200px) {
+	.position .left-title {
+		left:150px;
+		top:-90px;
+	}
+	.position .left-demand{
+		font-size: 18px;
+	    color: #0088ff;
+	    letter-spacing: 0px;
+	}
+	
+	.position .left-desc{
+		margin-top: 25px;
+	    font-size: 14px;
+	    color: #ffffff;
+	    letter-spacing: 0px;
+	    line-height: 24px;
+	    text-align: left;
+	}
+}
+/*自适应end*/
+
+
+

@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.DemandDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Demand">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="achieve" property="achieve" javaType="String" />
+		<result column="secret_achieve" property="secretAchieve" javaType="String" /> 	<!--haokun modified 2017/03/06 增加私密成果要求 secret_achieve -->
+		
+		<result column="tag" property="tag" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="nationality" property="nationality" javaType="String" />
+		<result column="type_second" property="typeSecond" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="bid_count" property="bidCount" javaType="String" />
+		
+		<result column="urgent" property="urgent" javaType="String" />
+		<result column="open" property="open" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="expire_date" property="expireDate" javaType="String" />
+		
+		<result column="enclosure1" property="enclosure1" javaType="String" />
+		<result column="enclosure2" property="enclosure2" javaType="String" />
+		<result column="enclosure3" property="enclosure3" javaType="String" />
+		<result column="enclosure4" property="enclosure4" javaType="String" />
+		<result column="enclosure5" property="enclosure5" javaType="String" />
+		<result column="enclosure1_name" property="enclosure1Name" javaType="String" />
+		<result column="enclosure2_name" property="enclosure2Name" javaType="String" />
+		<result column="enclosure3_name" property="enclosure3Name" javaType="String" />
+		<result column="enclosure4_name" property="enclosure4Name" javaType="String" />
+		<result column="enclosure5_name" property="enclosure5Name" javaType="String" />
+		
+		<result column="enclosure1_pdf" property="enclosure1Pdf" javaType="String" />
+		<result column="enclosure2_pdf" property="enclosure2Pdf" javaType="String" />
+		<result column="enclosure3_pdf" property="enclosure3Pdf" javaType="String" />
+		<result column="enclosure4_pdf" property="enclosure4Pdf" javaType="String" />
+		<result column="enclosure5_pdf" property="enclosure5Pdf" javaType="String" />
+		
+		<result column="enclosure1_pdf_state" property="enclosure1PdfState" javaType="String" />
+		<result column="enclosure2_pdf_state" property="enclosure2PdfState" javaType="String" />
+		<result column="enclosure3_pdf_state" property="enclosure3PdfState" javaType="String" />
+		<result column="enclosure4_pdf_state" property="enclosure4PdfState" javaType="String" />
+		<result column="enclosure5_pdf_state" property="enclosure5PdfState" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+		<result column="ip" property="ip" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="region" property="region" javaType="String" />
+		
+		<result column="location_open" property="locationOpen" javaType="String" />
+		<result column="location_name" property="locationName" javaType="String" />
+		<result column="location_country" property="locationCountry" javaType="String" />
+		<result column="location_province" property="locationProvince" javaType="String" />
+		<result column="location_district" property="locationDistrict" javaType="String" />
+		<result column="latitude" property="latitude" javaType="String" />
+		<result column="longitude" property="longitude" javaType="String" />
+		<result column="pay_state" property="payState" javaType="String" />
+		
+		<collection property="receiveDemands" column="id" select="com.anyonehelps.dao.ReceiveDemandDao.getReceiveDemandByDemandId"></collection>
+		<collection property="user" column="user_id" select="com.anyonehelps.dao.UserDao.getUserOpenInfoById"> </collection> 
+		<collection property="da" column="id" select="com.anyonehelps.dao.DemandAttachDao.getByDemandId"> </collection> 
+		<collection property="ds" column="id" select="com.anyonehelps.dao.DemandSpecialtyDao.getByDemandId"> </collection> 
+	</resultMap>
+	
+	<resultMap id="basic_result_map1" type="com.anyonehelps.model.Demand">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="achieve" property="achieve" javaType="String" />
+		<result column="secret_achieve" property="secretAchieve" javaType="String" /> 	<!--haokun modified 2017/03/06 增加私密成果要求 secret_achieve -->
+		<result column="tag" property="tag" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="nationality" property="nationality" javaType="String" />
+		<result column="type_second" property="typeSecond" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="bid_count" property="bidCount" javaType="String" />
+		
+		<result column="urgent" property="urgent" javaType="String" />
+		<result column="open" property="open" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="expire_date" property="expireDate" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		
+		<result column="enclosure1" property="enclosure1" javaType="String" />
+		<result column="enclosure2" property="enclosure2" javaType="String" />
+		<result column="enclosure3" property="enclosure3" javaType="String" />
+		<result column="enclosure4" property="enclosure4" javaType="String" />
+		<result column="enclosure5" property="enclosure5" javaType="String" />
+		<result column="enclosure1_name" property="enclosure1Name" javaType="String" />
+		<result column="enclosure2_name" property="enclosure2Name" javaType="String" />
+		<result column="enclosure3_name" property="enclosure3Name" javaType="String" />
+		<result column="enclosure4_name" property="enclosure4Name" javaType="String" />
+		<result column="enclosure5_name" property="enclosure5Name" javaType="String" />
+		
+		<result column="enclosure1_pdf" property="enclosure1Pdf" javaType="String" />
+		<result column="enclosure2_pdf" property="enclosure2Pdf" javaType="String" />
+		<result column="enclosure3_pdf" property="enclosure3Pdf" javaType="String" />
+		<result column="enclosure4_pdf" property="enclosure4Pdf" javaType="String" />
+		<result column="enclosure5_pdf" property="enclosure5Pdf" javaType="String" />
+		
+		<result column="enclosure1_pdf_state" property="enclosure1PdfState" javaType="String" />
+		<result column="enclosure2_pdf_state" property="enclosure2PdfState" javaType="String" />
+		<result column="enclosure3_pdf_state" property="enclosure3PdfState" javaType="String" />
+		<result column="enclosure4_pdf_state" property="enclosure4PdfState" javaType="String" />
+		<result column="enclosure5_pdf_state" property="enclosure5PdfState" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+		<result column="ip" property="ip" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="region" property="region" javaType="String" />
+		
+		<result column="location_open" property="locationOpen" javaType="String" />
+		<result column="location_name" property="locationName" javaType="String" />
+		<result column="location_country" property="locationCountry" javaType="String" />
+		<result column="location_province" property="locationProvince" javaType="String" />
+		<result column="location_district" property="locationDistrict" javaType="String" />
+		<result column="latitude" property="latitude" javaType="String" />
+		<result column="longitude" property="longitude" javaType="String" />
+		<result column="pay_state" property="payState" javaType="String" />
+		
+		<collection property="receiveDemands" column="id" select="com.anyonehelps.dao.ReceiveDemandDao.getReceiveDemandByDemandId"></collection>
+		<collection property="demandMessages" column="id" select="com.anyonehelps.dao.DemandMessageDao.retrieveMessages"></collection>
+		<collection property="user" column="user_id" select="com.anyonehelps.dao.UserDao.getUserOpenInfoById"> </collection> 
+		<collection property="da" column="id" select="com.anyonehelps.dao.DemandAttachDao.getByDemandId"> </collection> 
+		<collection property="ds" column="id" select="com.anyonehelps.dao.DemandSpecialtyDao.getByDemandId"> </collection> 
+	</resultMap>
+	
+	<resultMap id="basic_result_map2" type="com.anyonehelps.model.Demand">
+		<result column="ip" property="ip" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="region" property="region" javaType="String" />
+		<result column="location_open" property="locationOpen" javaType="String" />
+		<result column="location_name" property="locationName" javaType="String" />
+		<result column="location_country" property="locationCountry" javaType="String" />
+		<result column="location_province" property="locationProvince" javaType="String" />
+		<result column="location_district" property="locationDistrict" javaType="String" />
+		<result column="latitude" property="latitude" javaType="String" />
+		<result column="longitude" property="longitude" javaType="String" />
+		
+		<collection property="da" column="id" select="com.anyonehelps.dao.DemandAttachDao.getByDemandId"> </collection> 
+	</resultMap>
+	
+	<resultMap id="basic_result_map3" type="com.anyonehelps.model.Demand">
+		<id column="id" property="id" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="bid_count" property="bidCount" javaType="String" />
+		<collection property="receiveDemands" column="id" select="com.anyonehelps.dao.ReceiveDemandDao.getReceiveDemandByDemandId"></collection>
+	</resultMap>
+	
+	<resultMap id="basic_result_map4" type="com.anyonehelps.model.NationalityCount">
+		<result column="nationality" property="nationality" javaType="String" />
+		<result column="count" property="count" javaType="String" />
+	</resultMap>
+	
+	
+	<resultMap id="basic_admin_map" type="com.anyonehelps.model.Demand">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="achieve" property="achieve" javaType="String" />
+		
+		<result column="tag" property="tag" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="nationality" property="nationality" javaType="String" />
+		<result column="type_second" property="typeSecond" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="bid_count" property="bidCount" javaType="String" />
+		
+		<result column="urgent" property="urgent" javaType="String" />
+		<result column="open" property="open" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="expire_date" property="expireDate" javaType="String" />
+		<result column="remark_admin" property="remarkAdmin" javaType="String" />
+		
+		<result column="enclosure1" property="enclosure1" javaType="String" />
+		<result column="enclosure2" property="enclosure2" javaType="String" />
+		<result column="enclosure3" property="enclosure3" javaType="String" />
+		<result column="enclosure4" property="enclosure4" javaType="String" />
+		<result column="enclosure5" property="enclosure5" javaType="String" />
+		<result column="enclosure1_name" property="enclosure1Name" javaType="String" />
+		<result column="enclosure2_name" property="enclosure2Name" javaType="String" />
+		<result column="enclosure3_name" property="enclosure3Name" javaType="String" />
+		<result column="enclosure4_name" property="enclosure4Name" javaType="String" />
+		<result column="enclosure5_name" property="enclosure5Name" javaType="String" />
+		
+		
+		<result column="enclosure1_pdf" property="enclosure1Pdf" javaType="String" />
+		<result column="enclosure2_pdf" property="enclosure2Pdf" javaType="String" />
+		<result column="enclosure3_pdf" property="enclosure3Pdf" javaType="String" />
+		<result column="enclosure4_pdf" property="enclosure4Pdf" javaType="String" />
+		<result column="enclosure5_pdf" property="enclosure5Pdf" javaType="String" />
+		
+		<result column="enclosure1_pdf_state" property="enclosure1PdfState" javaType="String" />
+		<result column="enclosure2_pdf_state" property="enclosure2PdfState" javaType="String" />
+		<result column="enclosure3_pdf_state" property="enclosure3PdfState" javaType="String" />
+		<result column="enclosure4_pdf_state" property="enclosure4PdfState" javaType="String" />
+		<result column="enclosure5_pdf_state" property="enclosure5PdfState" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+		<result column="ip" property="ip" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="region" property="region" javaType="String" />
+		
+		<result column="location_open" property="locationOpen" javaType="String" />
+		<result column="location_name" property="locationName" javaType="String" />
+		<result column="location_country" property="locationCountry" javaType="String" />
+		<result column="location_province" property="locationProvince" javaType="String" />
+		<result column="location_district" property="locationDistrict" javaType="String" />
+		<result column="latitude" property="latitude" javaType="String" />
+		<result column="longitude" property="longitude" javaType="String" />
+		<result column="pay_state" property="payState" javaType="String" />
+		 
+		<collection property="receiveDemands" column="id" select="com.anyonehelps.dao.ReceiveDemandDao.getReceiveDemandByDemandId"></collection>
+		<collection property="user" column="user_id" select="com.anyonehelps.dao.UserDao.getUserOpenInfoById"> </collection> 
+		<collection property="da" column="id" select="com.anyonehelps.dao.DemandAttachDao.getByDemandId"> </collection> 
+		<collection property="ds" column="id" select="com.anyonehelps.dao.DemandSpecialtyDao.getByDemandId"> </collection> 
+	</resultMap>
+	
+	<!-- office converter to pdf -->
+	<resultMap id="basic_result_map5" type="com.anyonehelps.model.Demand">
+		<id column="id" property="id" javaType="String" />
+		<result column="enclosure1" property="enclosure1" javaType="String" />
+		<result column="enclosure2" property="enclosure2" javaType="String" />
+		<result column="enclosure3" property="enclosure3" javaType="String" />
+		<result column="enclosure4" property="enclosure4" javaType="String" />
+		<result column="enclosure5" property="enclosure5" javaType="String" />
+		<result column="enclosure1_name" property="enclosure1Name" javaType="String" />
+		<result column="enclosure2_name" property="enclosure2Name" javaType="String" />
+		<result column="enclosure3_name" property="enclosure3Name" javaType="String" />
+		<result column="enclosure4_name" property="enclosure4Name" javaType="String" />
+		<result column="enclosure5_name" property="enclosure5Name" javaType="String" />
+		
+		<result column="enclosure1_pdf" property="enclosure1Pdf" javaType="String" />
+		<result column="enclosure2_pdf" property="enclosure2Pdf" javaType="String" />
+		<result column="enclosure3_pdf" property="enclosure3Pdf" javaType="String" />
+		<result column="enclosure4_pdf" property="enclosure4Pdf" javaType="String" />
+		<result column="enclosure5_pdf" property="enclosure5Pdf" javaType="String" />
+		
+		<result column="enclosure1_pdf_state" property="enclosure1PdfState" javaType="String" />
+		<result column="enclosure2_pdf_state" property="enclosure2PdfState" javaType="String" />
+		<result column="enclosure3_pdf_state" property="enclosure3PdfState" javaType="String" />
+		<result column="enclosure4_pdf_state" property="enclosure4PdfState" javaType="String" />
+		<result column="enclosure5_pdf_state" property="enclosure5PdfState" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+	</resultMap>
+	
+	<select id="searchByRDReceiverId" resultMap="basic_result_map">
+		SELECT distinct rd.demand_id,d.* FROM demand d,receive_demand rd 
+		WHERE rd.user_id = #{userId} AND d.id=rd.demand_id 
+		<if test="states!=null and states.size()>0">
+			<foreach collection="states" item="state"
+				open="and d.state in (" close=")" separator=",">
+				#{state}
+			</foreach>
+		</if> 
+		order by d.id desc
+		limit
+		#{index},#{size}
+	</select>
+	<select id="countByRDReceiverId" resultType="java.lang.Integer">
+		SELECT count(distinct rd.demand_id) FROM demand d,receive_demand rd WHERE rd.user_id = #{userId} AND d.id=rd.demand_id
+		<if test="states!=null and states.size()>0">
+			<foreach collection="states" item="state"
+				open="and d.state in (" close=")" separator=",">
+				#{state}
+			</foreach>
+		</if> 
+	</select>
+	
+	<!-- <select id="getSumAmount" resultType="java.lang.String">
+		select IFNULL(sum(amount),0) from demand where state in
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="state" separator=",">
+				#{state}
+			</foreach>
+		</trim>
+		and expire_date>now()
+	</select>	
+	 -->
+	<select id="getSumAmount" resultType="java.lang.String">
+		select IFNULL(sum(amount),0) from demand where state in
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="state" separator=",">
+				#{state}
+			</foreach>
+		</trim>
+	</select>	
+	<!--<select id="countDemandByState" resultType="java.lang.Integer" >
+		select count(*) from demand where state in 
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="state" separator=",">
+				#{state}
+			</foreach>
+		</trim>
+		and expire_date>now()
+	</select> -->	
+	<select id="countDemandByState" resultType="java.lang.Integer" >
+		select count(*) from demand where state in 
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="state" separator=",">
+				#{state}
+			</foreach>
+		</trim>
+	</select> 
+	<select id="countByUserIdAndState" resultType="java.lang.Integer" >
+		select count(*) from demand where state in 
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="state" separator=",">
+				#{state}
+			</foreach>
+		</trim>
+		and user_id = #{userId}
+	</select>	
+	
+	<select id="getDemandById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from demand where id=#{id}
+	</select>	
+	
+	<select id="searchByKey" resultMap="basic_result_map1">
+		select * from demand where user_id = #{userId}
+		<if test="key!=null and key!=''">
+			and  (`title` like #{key} or `tag` like #{key})
+		</if>
+		<if test="states!=null and states.size()>0">
+			<foreach collection="states" item="state"
+				open="and state in (" close=")" separator=",">
+				#{state}
+			</foreach>
+		</if> 
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from demand where user_id  = #{userId}
+		<if test="key!=null and key!=''">
+			and  (`title` like #{key} or `tag` like #{key})
+		</if>
+		<if test="states!=null and states.size()>0">
+			<foreach collection="states" item="state"
+				open="and state in (" close=")" separator=",">
+				#{state}
+			</foreach>
+		</if>
+	</select>
+	
+	<select id="searchAllByKey" resultMap="basic_result_map"> <!--haokun modified 2017/03/02 删除and expire_date>now()-->
+		select * from demand where open = 1 and (state = 0 or state = 1 or state = 2 or state = 3 or state = 5 or state = 6 or state = 7) and block_state <![CDATA[<>]]> '1'
+		<if test="key!=null and key!=''">
+			and (`title` like #{key} or `tag` like #{key} or `country` like #{key} or `city` like #{key} or `region` like #{key} or `location_name` like #{key})
+		</if>
+		<if test="nationality!=null and nationality!=''">
+			and nationality = #{nationality}
+		</if>
+		<if test="typeSecond!=null and typeSecond!=''">
+			and type_second = #{typeSecond}
+		</if>
+		<if test="type!=null and type!=''">
+			and type = #{type}
+		</if>
+		<if test="(minAmount==null or minAmount=='') and maxAmount!=null and maxAmount!=''">
+			and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		<if test="(maxAmount==null or maxAmount=='') and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount}
+		</if>
+		<if test="maxAmount!=null and maxAmount!='' and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount} and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		
+		<if test="tags!=null">
+			<trim prefix="and " suffix="">
+				<foreach collection="tags" index="index" item="tag" open="("
+    				separator="or" close=")"> 
+    				demand.tag like  #{tag}
+  				</foreach>
+  			</trim>
+		</if> 
+		
+		<choose>
+			<!-- 最新任务 -->
+			<when  test="sortType=='1'.toString()">
+				order by id desc
+			</when>
+			<!-- 最热任务 -->
+			<when  test="sortType=='2'.toString()">
+				order by id desc
+			</when>
+			<!-- 报酬高 -->
+			<when  test="sortType=='3'.toString()">
+				order by amount desc
+			</when>
+			<!-- 快结束 -->
+			<when  test="sortType=='4'.toString()">
+				order by expire_date asc
+			</when>
+			<!-- 推荐 -->
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countAllByKey" resultType="java.lang.Integer"> <!--haokun modified 2017/03/02 and expire_date>now()-->
+		select count(*) from demand where open = 1 and (state = 0 or state = 1 or state = 2 or state = 3 or state = 5 or state = 6 or state = 7) and block_state <![CDATA[<>]]> '1'
+		<if test="key!=null and key!=''">
+			and (`title` like #{key} or `tag` like #{key} or `country` like #{key} or `city` like #{key} or `region` like #{key} or `location_name` like #{key})
+		</if>
+		<if test="nationality!=null and nationality!=''">
+			and nationality = #{nationality}
+		</if>
+		<if test="typeSecond!=null and typeSecond!=''"> 
+			and type_second = #{typeSecond}
+		</if>
+		<if test="type!=null and type!=''">
+			and type = #{type}
+		</if>
+		<if test="(minAmount==null or minAmount=='') and maxAmount!=null and maxAmount!=''">
+			and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		<if test="(maxAmount==null or maxAmount=='') and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount}
+		</if>
+		<if test="maxAmount!=null and maxAmount!='' and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount} and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		 
+		<if test="tags!=null">
+			<trim prefix="and " suffix="">
+				<foreach collection="tags" index="index" item="tag" open="("
+    				separator="or" close=")">
+    				demand.tag like  #{tag}
+  				</foreach>
+  			</trim>
+		</if>
+		 
+	</select>
+
+	<insert id="insertDemand" parameterType="com.anyonehelps.model.Demand"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		demand(user_id,title,content,achieve,secret_achieve,tag,nationality,type,type_second,state,bid_count,urgent,open,
+		amount,expire_date,create_date,modify_date,enclosure1,enclosure2,enclosure3,enclosure4,enclosure5,
+		enclosure1_name,enclosure2_name,enclosure3_name,enclosure4_name,enclosure5_name,
+		ip,country,city,region,location_open,location_name,location_country,location_province,location_district,latitude,longitude,pay_state)
+		values(#{userId},#{title},#{content},#{achieve},#{secretAchieve},#{tag},#{nationality},#{type},#{typeSecond},#{state},#{bidCount},#{urgent},#{open},
+		#{amount},#{expireDate},#{createDate},#{modifyDate},#{enclosure1},#{enclosure2},#{enclosure3},#{enclosure4},#{enclosure5},
+		#{enclosure1Name},#{enclosure2Name},#{enclosure3Name},#{enclosure4Name},#{enclosure5Name},
+		#{ip},#{country},#{city},#{region},#{locationOpen},#{locationName},#{locationCountry},#{locationProvince},#{locationDistrict},#{latitude},#{longitude},#{payState})
+	</insert>
+	
+	<update id="modifyDemandState">
+		update `demand`
+		set `state`=#{state},
+		`modify_date`=#{modifyDate}
+		<if  test="state=='8'.toString()">
+			,`finish_date`=#{modifyDate}
+		</if>
+		where id = #{id} and `user_id`=#{userId}
+	</update> 
+	
+	<update id="modifyDemand">
+		update `demand` set 
+		`title`=#{title},
+		`content`=#{content},
+		`achieve`=#{achieve},
+		`tag`=#{tag},
+		`nationality`=#{nationality},
+		`type`=#{type},
+		`type_second`=#{typeSecond},
+		`bid_count`=#{bidCount},
+		`urgent`=#{urgent},
+		`open`=#{open},
+		`amount`=#{amount},
+		`expire_date`=#{expireDate},
+		`modify_date`=#{modifyDate},
+		`enclosure1`=#{enclosure1},
+		`enclosure2`=#{enclosure2},
+		`enclosure3`=#{enclosure3},
+		`enclosure4`=#{enclosure4},
+		`enclosure5`=#{enclosure5},
+		`enclosure1_name`=#{enclosure1Name},
+		`enclosure2_name`=#{enclosure2Name},
+		`enclosure3_name`=#{enclosure3Name},
+		`enclosure4_name`=#{enclosure4Name},
+		`enclosure5_name`=#{enclosure5Name},
+		`ip`=#{ip},
+		`country`=#{country},
+		`city`=#{city},
+		`region`=#{region},
+		`location_open`=#{locationOpen},
+		`location_name`=#{locationName},
+		`location_country`=#{locationCountry},
+		`location_province`=#{locationProvince},
+		`location_district`=#{locationDistrict},
+		`latitude`=#{latitude},
+		`longitude`=#{longitude}
+		where id = #{id} and `user_id`=#{userId}
+	</update>
+	
+	<select id="searchDemandAllRegion" resultMap="basic_result_map2">
+		select distinct(city),country,region,location_name from demand where open = 1 and state = 0 and expire_date>now()
+		<if test="key!=null and key!=''">
+			and (`country` like #{key} or `city` like #{key} or `region` like #{key} or `location_name` like #{key}) 
+		</if>
+		order by id desc
+		limit 0,10
+	</select>
+	<!--  -->
+	
+	
+	<!-- 发布任务总数 -->
+	<select id="countByUserId" resultType="java.lang.Integer">
+		select count(*) from demand where user_id = #{userId} and open=1
+	</select>
+	<!-- 发布任务列表 -->
+	<select id="searchByUserId" resultMap="basic_result_map3">
+		select * from demand where user_id = #{userId} and open=1
+		order by id desc
+		limit #{index},#{size}
+	</select>
+	<!-- 解决任务总数 -->
+	<select id="countRDByState8" resultType="java.lang.Integer">
+		SELECT count(distinct rd.demand_id) FROM demand d,receive_demand rd 
+		WHERE rd.user_id = #{userId} AND d.id=rd.demand_id and open=1 and  d.state = 8
+	</select>
+	<!-- 解决任务列表 -->
+	<select id="searchRDByState8" resultMap="basic_result_map3">
+		SELECT distinct rd.demand_id,d.* FROM demand d,receive_demand rd 
+		WHERE rd.user_id = #{userId} AND d.id=rd.demand_id and open=1 and  d.state = 8
+		order by d.id desc
+		limit 
+		#{index},#{size}
+	</select>
+	 
+	<!-- 已完成发布任务
+	<select id="searchByState8" resultMap="basic_result_map3">
+		select * from demand where user_id = #{userId} and state=8 and open=1
+		order by id desc
+		limit 10 
+	</select>
+	 -->
+	
+	<select id="searchNCByState" resultMap="basic_result_map4">
+		SELECT nationality,count(*) as count FROM demand where state in  
+		<trim prefix="(" suffix=")">
+			<foreach collection="list" item="state" separator=",">
+				#{state}
+			</foreach>
+		</trim>
+		and expire_date>now() group by nationality
+	</select>	
+	
+	<update id="modifyRemark">
+		update `demand`
+		set `remark`=#{remark},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `user_id`=#{userId}
+	</update>
+	
+	
+	
+	
+	
+	<update id="modifyRemarkAdmin">
+		update `demand`
+		set `remark_admin`=#{remarkAdmin},
+		`remark_admin_date`=#{date}
+		where id = #{id}
+	</update>
+	<select id="adminSearchByKey" resultMap="basic_admin_map">
+		select * from demand where 1=1
+		<if test="states!=null and states.size()>0">
+			<foreach collection="states" item="state"
+				open="and state in (" close=")" separator=",">
+				#{state}
+			</foreach>
+		</if> 
+		<if test="key!=null and key!=''">
+			and (`title` like #{key} or `tag` like #{key} or `country` like #{key} or `city` like #{key} or `region` like #{key} or `location_name` like #{key})
+		</if>
+		<if test="nationality!=null and nationality!=''">
+			and nationality = #{nationality}
+		</if>
+		<if test="typeSecond!=null and typeSecond!=''">
+			and type_second = #{typeSecond}
+		</if>
+		<if test="type!=null and type!=''">
+			and type = #{type}
+		</if>
+		<if test="(minAmount==null or minAmount=='') and maxAmount!=null and maxAmount!=''">
+			and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		<if test="(maxAmount==null or maxAmount=='') and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount}
+		</if>
+		<if test="maxAmount!=null and maxAmount!='' and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount} and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		
+		<if test="tags!=null">
+			<trim prefix="and " suffix="">
+				<foreach collection="tags" index="index" item="tag" open="("
+    				separator="or" close=")"> 
+    				demand.tag like  #{tag}
+  				</foreach>
+  			</trim>
+		</if> 
+		
+		<choose>
+			<!-- 最新任务 -->
+			<when  test="sortType=='1'.toString()">
+				order by id desc
+			</when>
+			<!-- 最热任务 -->
+			<when  test="sortType=='2'.toString()">
+				order by id desc
+			</when>
+			<!-- 报酬高 -->
+			<when  test="sortType=='3'.toString()">
+				order by amount desc
+			</when>
+			<!-- 快结束 -->
+			<when  test="sortType=='4'.toString()">
+				order by expire_date asc
+			</when>
+			<!-- 推荐 -->
+			<otherwise>
+				order by id desc 
+			</otherwise>
+		</choose>
+		
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="adminCountByKey" resultType="java.lang.Integer">
+		select count(*) from demand where 1 = 1 
+		<if test="states!=null and states.size()>0">
+			<foreach collection="states" item="state"
+				open="and state in (" close=")" separator=",">
+				#{state}
+			</foreach>
+		</if> 
+		<if test="key!=null and key!=''">
+			and (`title` like #{key} or `tag` like #{key} or `country` like #{key} or `city` like #{key} or `region` like #{key} or `location_name` like #{key})
+		</if>
+		<if test="nationality!=null and nationality!=''">
+			and nationality = #{nationality}
+		</if>
+		<if test="typeSecond!=null and typeSecond!=''"> 
+			and type_second = #{typeSecond}
+		</if>
+		<if test="type!=null and type!=''">
+			and type = #{type}
+		</if>
+		<if test="(minAmount==null or minAmount=='') and maxAmount!=null and maxAmount!=''">
+			and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		<if test="(maxAmount==null or maxAmount=='') and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount}
+		</if>
+		<if test="maxAmount!=null and maxAmount!='' and minAmount!=null and minAmount!='' ">
+			and amount <![CDATA[>=]]> #{minAmount} and amount <![CDATA[<=]]> #{maxAmount}
+		</if>
+		 
+		<if test="tags!=null">
+			<trim prefix="and " suffix="">
+				<foreach collection="tags" index="index" item="tag" open="("
+    				separator="or" close=")">
+    				demand.tag like  #{tag}
+  				</foreach>
+  			</trim>
+		</if>
+		 
+	</select>
+	
+	<update id="modifyPayState">
+		update `demand`
+		set `state`=#{state},
+		`pay_state`=#{payState},
+		`modify_date`=#{date}
+		where id = #{id}
+	</update> 
+	
+	
+	<select id="getByECS" resultMap="basic_result_map5">
+		select * from demand where enclosure_converter_state = 0 order by id asc
+	</select>
+	
+	<!-- 修改任务附件转换状态 -->
+	<update id="modifyECS">
+		update `demand`
+		set `enclosure_converter_state`= 1,
+		`enclosure1_pdf`=#{ep1},
+		`enclosure2_pdf`=#{ep2},
+		`enclosure3_pdf`=#{ep3},
+		`enclosure4_pdf`=#{ep4},
+		`enclosure5_pdf`=#{ep5},
+		`enclosure1_pdf_state`=#{eps1},
+		`enclosure2_pdf_state`=#{eps2},
+		`enclosure3_pdf_state`=#{eps3},
+		`enclosure4_pdf_state`=#{eps4},
+		`enclosure5_pdf_state`=#{eps5}
+		where id = #{id}
+	</update> 
+	
+	<select id="exeAutoDemand" statementType="CALLABLE">
+        <![CDATA[
+            {call sp_auto_demand()}
+        ]]>
+    </select>
+	<select id="exeAutoUser" statementType="CALLABLE">
+        <![CDATA[
+            {call sp_auto_user()}
+        ]]>
+    </select>
+	
+</mapper>

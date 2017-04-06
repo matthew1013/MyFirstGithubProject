@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.IPRecordDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.IPRecord">
+		<id column="id" property="id" javaType="String" />
+		<result column="ip" property="ip" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.IPRecord"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		ip_record(ip,type,area_code,telphone,create_date)
+		values(#{ip},#{type},#{areaCode},#{telphone},#{createDate})
+	</insert>
+	
+	<select id="countByIP" resultType="java.lang.Integer">
+		select count(*) from ip_record where type=#{type} and ip  = #{ip} and TIMESTAMPDIFF(MINUTE, create_date, now()) <![CDATA[<=]]> 5
+	</select>
+	
+	<select id="countByPhone" resultType="java.lang.Integer">
+		select count(*) from ip_record where type=#{type} and area_code  = #{areaCode} and telphone  = #{phone} and TIMESTAMPDIFF(MINUTE, create_date, now()) <![CDATA[<=]]> 1
+	</select>
+</mapper>

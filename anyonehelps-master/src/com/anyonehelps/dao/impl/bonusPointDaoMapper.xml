@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.BonusPointDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.BonusPoint">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="consumer_id" property="consumerId" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="sublevel" property="sublevel" javaType="String" />
+		<result column="point" property="point" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		
+		<collection property="consumer" column="consumer_id" select="com.anyonehelps.dao.UserDao.getUserOpenInfoById"> </collection>
+	</resultMap>
+	
+	<insert id="insertBonusPoint" parameterType="com.anyonehelps.model.BonusPoint" >
+		insert into
+		bonus_point(user_id,consumer_id,demand_id,sublevel,point,remark,create_date)
+		values
+		(#{userId},#{consumerId},#{demandId},#{sublevel},#{point},#{remark},#{createDate})
+	</insert>
+
+	<select id="searchByKey" resultMap="basic_result_map">
+		select * from bonus_point
+		where (demand_id like #{key} or remark like #{key}) and user_id = #{userId}
+		<if test="sdate!=null and sdate!=''">
+			and create_date <![CDATA[>=]]> #{sdate}
+		</if>
+		<if test="edate!=null and edate!=''">
+			and create_date <![CDATA[<=]]> #{edate}
+		</if>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from bonus_point
+		where (demand_id like #{key} or remark like #{key}) and user_id = #{userId}
+		<if test="sdate!=null and sdate!=''">
+			and create_date <![CDATA[>=]]> #{sdate}
+		</if>
+		<if test="edate!=null and edate!=''">
+			and create_date <![CDATA[<=]]> #{edate}
+		</if>
+	</select>
+
+</mapper>

@@ -1,0 +1,1483 @@
+*{margin:0px;padding:0px;}
+html>body{
+	background: #f8f8f8;
+	font-weight: normal;
+	font-size: 14px;
+	font-family:   /* System Font  // https://www.webkit.org/blog/3709/using-the-system-font-in-web-content/ */
+		-apple-system, /* OSX ^10.11 & iOS ^9  San Francisco & 苹方 */
+		/* English First */
+		"Helvetica Neue", /* OSX */
+		"Arial", /* Win */
+		"Helvetica",
+		/*" Segoe UI", // Win ^8 */
+		/* Chinese Fallback */
+		"PingFang SC", /* OSX ^10.11 & iOS ^9 苹方（华康信凭黑）*/ 
+		"Hiragino Sans GB", /* OSX ^10.6 冬青黑体 */
+		"STHeiti", /* OSX <10.6 & iOS <9 华文黑体 */
+		"Microsoft YaHei", /* Win 微软雅黑 */
+		"Microsoft JhengHei", /* Win 微软正黑 */
+		"Source Han Sans SC", /* SourceHan - begin 思源黑体 */
+		"Noto Sans CJK SC", 
+		"Source Han Sans CN", 
+		"Noto Sans SC", 
+		"Source Han Sans TC", 
+		"Noto Sans CJK TC", /* SourceHan - end */
+		"WenQuanYi Micro Hei", /* Linux 文泉驿微米黑 */
+		SimSun, /* Win old 中易宋体 */
+		sans-serif; /* System Fallback*/
+}
+input, label, select, option, textarea, button,pre{
+	font-family:   /* System Font  // https://www.webkit.org/blog/3709/using-the-system-font-in-web-content/ */
+		-apple-system, /* OSX ^10.11 & iOS ^9  San Francisco & 苹方 */
+		/* English First */
+		"Helvetica Neue", /* OSX */
+		"Arial", /* Win */
+		"Helvetica",
+		/*" Segoe UI", // Win ^8 */
+		/* Chinese Fallback */
+		"PingFang SC", /* OSX ^10.11 & iOS ^9 苹方（华康信凭黑）*/ 
+		"Hiragino Sans GB", /* OSX ^10.6 冬青黑体 */
+		"STHeiti", /* OSX <10.6 & iOS <9 华文黑体 */
+		"Microsoft YaHei", /* Win 微软雅黑 */
+		"Microsoft JhengHei", /* Win 微软正黑 */
+		"Source Han Sans SC", /* SourceHan - begin 思源黑体 */
+		"Noto Sans CJK SC", 
+		"Source Han Sans CN", 
+		"Noto Sans SC", 
+		"Source Han Sans TC", 
+		"Noto Sans CJK TC", /* SourceHan - end */
+		"WenQuanYi Micro Hei", /* Linux 文泉驿微米黑 */
+		SimSun, /* Win old 中易宋体 */
+		sans-serif; /* System Fallback*/
+}
+
+/*wechat(weixin) start*/
+.wechat{
+	width: 480px;    /*haokun modified 2017/03/23*/
+	min-height: 460px;
+	background: #fff;
+	border-radius: 5px;
+	position: fixed;
+	z-index: 99999;
+	top: calc(50% - 260px);
+	left: calc(50% - 225px);
+	margin:0 auto;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+}
+.wechat>.close{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.wechat>.close>a:hover{
+	opacity: 0.8
+}
+.wechat>.qr-code{
+	width: 300px;
+	margin:0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+/*wechat(weixin) end*/
+
+
+/*haokun added 2017/03/24 游览器自动填充*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-webkit-text-fill-color: #fff;
+	
+}
+input:-moz-autofill {
+    -moz-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-moz-text-fill-color: #fff;
+}
+input:-ms-autofill {
+    -ms-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-ms-text-fill-color: #fff;
+}
+input:-o-autofill {
+    -o-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-o-text-fill-color: #fff;
+}
+/*haokun added 2017/03/24 游览器自动填充*/
+
+
+/*login start  haokun modified 2017/03/20 */
+.login-box{
+	width: 420px !important;    /*haokun modified 2017/03/23 420px*/
+	min-height: 340px !important;  /*haokun modified 2017/03/23 340px*/
+	background: #fff;
+	border-radius: 5px;
+	position: fixed;
+	z-index: 99999;
+	top: calc(50% - 260px);
+	left: calc(50% - 225px);
+	margin:0 auto;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+	
+	padding:0px !important;   /*haokun added 2017/03/23*/
+    /*padding:30px 10px 10px 10px;   /*haokun delete 2017/03/23*/
+	/*linear-gradient(to right, black 20%, white 50%), */
+	/*background-image:url("/assets/pages/img/background/87.jpg") !important;*/  /*haokun deleted 2017/03/23 取消登入窗口背景*/
+	background-size:100% 100% !important;
+	/*background-color:rgba(40,57,101,.999) !important;  /*haokun 2017/03/23 删除*/
+}
+
+/*haokun added start 2017/03/23 增加一个背景图层*/
+.login-box .login-box-bg{
+	margin-top:0px;
+	padding:20px 10px 10px 10px !important;     /*haokun modified 2017/03/23*/
+	background:rgba(15, 20, 36,.9) !important;   /*haokun modified 2017/03/23 深蓝色*/
+	width:100% !important;
+	min-height: 400px;    
+	border-radius: 5px;	
+}
+/*haokun added end 2017/03/23 增加一个背景图层*/
+
+.login-box .login-box-bg>.close{    /*haokun added 2017/03/23 增加login-box-bg的class*/
+	position: absolute;
+	top: 10px;
+	right: 10px;
+    background-color:#fff;
+}
+
+.login-box .login-box-bg>.close>a>img{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	width:12px !important;
+	height:12px !important;
+}
+
+.login-box .login-box-bg>.close>a:hover{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	opacity: 0.8;
+}
+
+
+/*对于整个login-form*/
+.login-box .login-box-bg .login-form{    /*haokun added 2017/03/23 增加login-box-bg的class*/
+	width:320px;   /*haokun modified 2017/03/23 320px*/
+	margin:auto;
+}
+
+.login-box .login-box-bg .login-form .title{    /*haokun added 2017/03/23 增加login-box-bg的class*/
+	margin-top:10% !important;  /*haokun added 2017/03/23 */
+	margin-left:20% !important;
+	margin-right:auto;
+	margin-bottom:10px;
+	width:50%;
+	background-color:red !important;
+}
+
+
+.login-box .login-box-bg .login-form .title>img{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	width:100%;
+	
+} 
+
+/*
+.login-box>.logo{
+	margin:0px auto;
+	margin-top: 30px;
+	width: 210px;
+	height: 44px;
+}
+
+.login-box>.tip{
+	margin:0 auto;
+	margin-top: 10px;
+	width: 274px;
+	height: 20px;
+}
+
+*/
+
+
+.login-box .login-box-bg>.other-login{     /*haokun added 2017/03/23 增加login-box-bg的class*/
+	width: 320px;   /*haokun modified 2017/03/23*/
+	height: 48px;
+	margin:0 auto;
+	margin-top: 20px;
+}
+
+.login-box .login-box-bg>.other-login h4{    /*haokun added 2017/03/23 增加login-box-bg的class*/
+    float:left;
+	color: rgba(191, 191, 191, 0.4);   /*一种灰色*/
+}
+
+.login-box .login-box-bg>.other-login a{     /*haokun added 2017/03/23 增加login-box-bg的class*/
+    float:right;	
+	margin-left:10px;
+}
+
+.login-box .login-box-bg>.other-login img{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*float: left;
+    margin-left: 50px;*/
+    width: 32px;
+    height: 32px;
+}
+
+/*
+.login-box .login-box-tip2{
+	margin:0 auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 274px;
+	height: 20px;
+}
+*/
+/*haokun start 2017/03/20 add label*/
+.login-box .login-box-bg .control-label{    /*haokun added 2017/03/23 增加login-box-bg的class*/
+	float:left;
+	color: rgba(217, 217, 217, 0.5);   /*一种灰色*/
+	font-size:18px;
+}
+/*haokun end 2017/03/20 add label*/
+
+.login-box .login-box-bg .form-control{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*
+	width: 230px;
+	height: 36px;
+	color: #999;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	background: #f3f3f3;
+	*/
+	width:320px;   /*haokun modified 2017/03/23 320px*/
+	height:40px !important;
+	color: #fff !important;   /*一种灰色*/
+	display:block;	
+	border:none;
+	padding:15px 20px;
+	border-radius:25px !important;
+	background:rgba(255,255,255,.2);
+	
+}
+
+.login-box .login-box-bg .login-form .phone .phone-title{ /*haokun added 2017/03/23 增加login-box-bg的class*/
+	color: rgba(217, 217, 217, 0.5) !important;    /*一种灰色*/
+	color: rgba(217, 217, 217, 0.5) !important;    /*一种灰色*/
+	margin: 0 0 5px 0;
+	font-size:18px !important;
+	text-align:left;
+}
+
+/*针对areacode*/
+.login-box .login-box-bg .area-code{  /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*
+	width: 230px;
+	height: 36px;
+	color: #999;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	background: #f3f3f3;
+	*/
+	width:100px !important;
+	height:40px !important;
+	color: #fff !important;   /*一种灰色*/
+	display:block;	
+	border:none;
+	padding:15px 20px;
+	border-radius:25px !important;
+	background:rgba(255,255,255,.2);	
+}
+
+/*针对phone number*/
+.login-box .login-box-bg input[name="telphone"]{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*
+	width: 230px;
+	height: 36px;
+	color: #999;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	background: #f3f3f3;
+	*/
+	width:220px !important;
+	height:40px !important;
+	color: #fff !important;   /*一种灰色*/
+	display:block;	
+	border:none;
+	padding:15px 20px;
+	border-radius:25px !important;
+	background:rgba(255,255,255,.2);	
+}
+
+
+.login-box .login-box-bg .save-password input[type="checkbox"]{  /*haokun added 2017/03/23 增加login-box-bg的class*/
+	background-color:green !important;
+	margin-right:500px;
+}
+
+.login-box .login-box-bg .save-password span{
+	margin-left:5px;
+}
+
+
+.login-box .login-box-bg .save-password{  /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*margin-right: auto;  haokun deleted 2017/03/20*/
+    /*margin-left: auto;  haokun deleted 2017/03/20*/
+	margin-left:calc(50% - 160px);   /*haokun modified 2017/03/23 160px*/
+    width: 320px;   /*haokun modified 2017/03/23 320px*/
+	color: rgba(217, 217, 217, 0.5);    /*一种灰色*/
+}
+.login-box .login-box-bg .box-btn{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	margin-right: auto; 
+	margin-left: auto;
+	width: 320px;   /*haokun modified 2017/03/23 320px*/
+	height: 36px;
+}
+button#box-btn{
+	width: 320px;   /*haokun modified 2017/03/23 320px*/
+	/*   haokun delete 2017/03/20
+	height: 36px;
+	background: #2099ff;
+	border:none;
+	color: #fff;
+	*/
+	font-weight: 600;
+	padding: 10px 15px !important;
+	border:none;
+	border-radius:25px !important;
+	background:rgba(17, 97, 238,.9);
+    margin:0 auto;
+	margin-bottom:10%;
+	color: #fff;    /*一种灰色*/  /*haokun modified 2017/03/23*/
+}
+button#box-btn:hover{
+	/* haokun delete 2017/03/20
+	width: 380px;    
+	height: 36px;
+	background: #0b82e9;
+	border:none;
+	*/
+	color: #fff;
+}
+.login-box .login-box-bg .box-bottom{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	width: 320px;    /*haokun modified 2017/03/23 320px*/
+	height: 30px; 
+	line-height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+    margin-bottom: 10px;
+}
+.login-box .login-box-bg .forget-password a{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	float: left;
+	/*  haokun deleted 2017/03/20
+	color: #ff9b0d;
+	opacity: 0.8;
+	*/
+	color: rgba(191, 191, 191, 0.4);    /*一种灰色*/
+}
+.login-box .login-box-bg .forget-password a:hover{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*opacity: 1; haokun deleted 2017/03/20*/
+	color:#fff;
+}
+
+.login-box .login-box-bg .show-login-phone{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+    float: left;
+    margin-left: 40px;  /*haokun modified 2017/03/23*/
+}
+.login-box .login-box-bg .show-login-phone a{  /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*color: #f86436;*/
+	color: rgba(191, 191, 191, 0.4); 
+	/*opacity: 0.8;*/
+}
+.login-box .login-box-bg .show-login-phone a:hover{/*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*opacity: 1;*/
+	color:#fff;
+}
+    
+.login-box .login-box-bg .sign-in-bottom{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	float: right;
+	/*color: #999;*/
+	color: rgba(191, 191, 191, 0.4); 
+}
+.login-box .login-box-bg .sign-in-bottom a{     /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*color: #fff;
+	/*opacity: 0.8;*/
+	color: rgba(191, 191, 191, 0.4); 
+}
+.login-box .login-box-bg .sign-in-bottom a:hover{    /*haokun added 2017/03/23 增加login-box-bg的class*/
+	/*opacity: 1;*/
+	color:#fff;
+}
+
+.horizontal-line{
+	border-bottom: 1px solid #fff;
+}
+
+/*login end  --------------------------------haokun modfied end 2017/03/20*/
+
+/*手机自适应 start*/
+@media (min-width: 768px) {
+	/*wechat(weixin) start*/
+	.wechat{
+		width: calc(100% - 100px);
+		min-height: 700px;
+		top: calc(50% - 350px);
+		left: 50px;
+		border-radius: 10px;
+	}
+	.wechat>.close{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+	.wechat>.close>a>img{
+		width: 20px;
+    	height: 20px;
+	}
+	.wechat>.close>a:hover{
+		opacity: 0.8
+	}
+	.wechat>.qr-code{
+		width: 300px;
+		margin:0 auto;
+		padding-top: calc(50% - 300px);
+ 	}
+	/*wechat(weixin) end*/
+	
+	.login-box {
+		width: calc(100% - 100px);
+		min-height: 700px;
+		top: calc(50% - 350px);
+		left: 50px;
+		border-radius: 10px;
+	}
+	
+	.login-box>.close{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+	.login-box>.close>a>img{
+		width: 20px;
+    	height: 20px;
+	}
+	.login-box>.close>a:hover{
+		opacity: 0.8
+	}
+	.login-box>.logo{
+		margin:0px auto;
+		margin-top: 50px;
+    	width: 90%;
+    	text-align: center;
+	}
+	.login-box .tip{
+		margin:0 auto;
+		margin-top: 30px;
+		width: 90%;
+		text-align: center;
+		height: 20px;
+	}
+}
+/*手机自适应 end  haokun modified 2017/03/20*/
+
+
+/*平板自适应start*/
+@media (min-width: 992px) {
+	.login-box{
+		width: 520px;
+		min-height: 460px;
+		background: #fff;
+		border-radius: 5px;
+		position: fixed;
+		z-index: 99999;
+		top: calc(50% - 260px);
+		left: calc(50% - 225px);
+		margin:0 auto;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+	}
+}
+/*平板自适应end*/
+
+/*电脑自适应start*/
+@media (min-width: 1200px) {
+	/*wechat(weixin) start*/
+	.wechat{
+		width: 520px;
+		min-height: 460px;
+		background: #fff;
+		border-radius: 5px;
+		position: fixed;
+		z-index: 99999;
+		top: calc(50% - 260px);
+		left: calc(50% - 225px);
+		margin:0 auto;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+	}
+	.wechat>.close{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+	.wechat>.close>a:hover{
+		opacity: 0.8
+	}
+	.wechat>.close>a>img{
+		width: 12px;
+    	height: 12px;
+	}
+	.wechat>.qr-code{
+		width: 300px;
+		margin:0 auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	/*wechat(weixin) end*/
+	.login-box{
+		width: 520px;
+		min-height: 460px;
+		background: #fff;
+		border-radius: 5px;
+		position: fixed;
+		z-index: 99999;
+		top: calc(50% - 260px);
+		left: calc(50% - 225px);
+		margin:0 auto;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+	}
+	.login-box>.close>a>img{
+		width: 12px;
+    	height: 12px;
+	}
+	.login-box>.logo{
+		margin:0px auto;
+		margin-top: 30px;
+		width: 210px;
+		height: 44px;
+	}
+	
+	.login-box .tip{
+		margin:0 auto;
+		margin-top: 10px;
+		width: 274px;
+		height: 20px;
+	}
+}
+/*电脑自适应end*/
+
+
+
+
+/*遮罩层 mbblack start*/
+.mbblack{
+	background: #000;
+	width: 100%;
+	height: 100%;
+	opacity:0.65;    /*haokun modified 2017/03/23 从0.5改为0.75*/
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	z-index: 99991;
+}
+/*遮罩层 mbblack end*/
+
+
+/* header start*/
+
+.header-top{
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	background: rgba(255,255,255,0.92);
+	position: fixed;
+	z-index: 9999;
+    top: 0;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+}
+.header-top-login{
+	color:black;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	background: rgba(255,255,255,0.92);
+	position: fixed;
+	z-index: 9999;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+    top: 0;
+}
+
+
+.header-top-login .top-nav,.header-top-login .top-nav{
+	color:black;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 70px;
+}
+
+.header-top-login .top-nav .logo-2, .header-top .top-nav .logo-2{
+	color:black;
+	width: 210px;
+	height: 44px;
+	float: left;
+	margin-top: 13px;
+	margin-left: 3%;
+	margin-right: 20px;
+}
+
+.header-top-login .top-nav .logo-2 img,.header-top .top-nav .logo-2 img{
+	color:black;
+	width: 210px;
+	height: 44px;
+	float: left;
+}
+
+.header-top-login .sign-in,.header-top-login .log-in{
+	float: right;
+}
+
+.header-top-login .sign-in>a>span,.header-top-login .log-in>a>span{
+	padding: 5px 30px 5px 30px;   /*haokun modified 2017/02/09 将注册和登入的框拉长*/
+	color:black;
+	font-size:14px;
+	color:#0088ff;
+	letter-spacing:1px;
+	text-align:left;
+}
+
+/*haokun added 2017/02/09 右上角注册和右边界的距离*/
+
+.header-top-login .sign-in>a>span{
+	margin-right:30px;
+}
+.header-top-login .sign-in a>span:hover,.header-top-login .log-in a>span:hover{
+	border: 1px solid #0088ff;
+}
+
+/*分页 start*/
+.search-pagination {
+    text-align: center;
+}
+/*分页 end*/
+
+
+.header-top .top-nav .top-search{
+	float: left;
+	margin-top: 19px;
+}
+.header-top .top-nav .top-search .top-input-icon{
+	font-size: 12px;
+}
+
+.header-top .top-nav .top-search .top-input-icon>i {
+    color: #ccc;
+    display: block;
+    position: absolute;
+    margin: 29px 30px 30px 10px;
+    z-index: 3;
+    width: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.header-top .top-nav .top-search .top-select-icon{
+	width:100px;
+	font-size: 12px;
+}
+
+.header-top .top-nav .top-search .top-select-icon>i {
+    color: #ccc;
+    display: block;
+    position: absolute;
+    margin: 10px 0px 0px 10px;
+    z-index: 3;
+    width: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+.header-top .top-nav .top-search .top-select-icon .top-location{
+	padding-left: 30px;
+	border-radius: 0;
+	border-left: 0px solid #ccc;
+	height: 32px;
+}
+
+.header-top .top-nav .top-search .search-top{
+	padding-left:30px;
+	border-radius: 0;
+	width: 300px;
+	height: 32px;
+}
+
+.header-top .top-nav .task-pub-btn{
+	float: right;
+    margin-right: 15px;
+}
+.header-top .top-nav .task-pub-btn >button{
+	width: 86px;
+	height: 32px;
+	border: 1px solid #0088ff;
+	line-height: 32px;
+	color: #0088ff;
+	background: #ffffff;
+}
+.header-top .top-nav .task-pub-btn >button:hover{
+	border: 0px solid #0066ee;
+	background: #0066ee;
+	color: #ffffff;
+}
+
+
+/*message(user and message) start*/
+.header-top .top-nav .info{
+	width: 100px;
+	height: 70px;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	float: right;
+	text-align: center;
+	margin: auto;
+}
+
+.header-top .top-nav .info:hover{
+	background: #ecf0f2;
+}
+.header-top .top-nav .info i{
+    vertical-align: middle;
+    color: #999999;
+    font-size: 24px;
+    line-height: 70px;
+}
+.header-top .top-nav .info .info-span{
+	background-color: #fb7e7e;
+    background-image: none;
+    margin-left: -5px;
+    margin-top: -20px;
+   	height: 18px;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #fb7e7e;
+    text-align: center;
+    line-height: 17px;
+    color: white;
+    font-size: 10px;
+}
+
+.header-top .top-nav .info ul .message-user-list,.header-top .top-nav .info ul .message-system-list,.header-top .top-nav .info ul .message-list{
+	height: 275px;
+    overflow: auto;
+}
+.header-top .top-nav .message-private .dropdown-menu,
+.header-top .top-nav .message-user .dropdown-menu,
+.header-top .top-nav .message-system .dropdown-menu{
+	min-width: 430px; 
+	max-width: 600px;
+	margin-top: -1px;
+	border-radius: 0px;    
+	box-shadow: none;
+}
+
+.header-top .top-nav .info li.message-external>.more{
+    display: inline-block;
+    padding: 0;
+    background: none;
+    clear: inherit;
+    font-size: 13px;
+    font-weight: 300;
+    position: absolute;
+    right: 10px;
+    border: 0;
+    margin-top: -1px;
+}
+.header-top .top-nav .info .message-external {
+	display: block;
+    overflow: hidden;
+    padding: 15px 15px;
+    letter-spacing: 0.5px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+.header-top .top-nav .info .message-external .message-system-h3,.message-user-h3,.message-h3 {
+    margin: 0;
+    padding: 0;
+    float: left;
+    font-size: 13px;
+    display: inline-block;
+}
+.header-top .top-nav .info .message-user-list .message-link ,.header-top .top-nav .info .message-system-list .message-link,
+.header-top .top-nav .info .message-list .message-link{
+    display: block;
+    clear: both;
+    font-weight: 300;
+    line-height: 20px;
+    white-space: normal;
+    font-size: 13px;
+    padding: 5px 15px 5px;
+    text-shadow: none;
+}
+.header-top .top-nav .info .message-user-list .message-link .time, .header-top .top-nav .info .message-system-list .message-link .time,
+.header-top .top-nav .info .message-list .message-link .time {
+    float: right;
+    max-width: 75px;
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    text-align: right;
+    padding: 1px 5px;
+}
+
+.header-top .top-nav .info .message-user-list .message-link .photo img, .header-top .top-nav .info .message-system-list .message-link .photo img,
+.header-top .top-nav .info .message-list .message-link .photo img{
+    height: 40px;
+    width: 40px;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -ms-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 6px 6px 0;
+    
+	border: 2px solid #ffffff;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.30);
+}
+
+.header-top .top-nav .info .message-user-list .message-link .subject, .header-top .top-nav .info .message-system-list .message-link .subject,
+.header-top .top-nav .info .message-list .message-link .subject{
+    display: block;
+    margin-left: 46px;
+}
+.header-top .top-nav .info .message-user-list .message-link .subject .from, .header-top .top-nav .info .message-system-list .message-link .subject .from
+, .header-top .top-nav .info .message-list .message-link .subject .from{
+    font-size: 13px;
+    font-weight: 600;
+}
+.header-top .top-nav .info .message-user-list .message-link .message, .header-top .top-nav .info .message-system-list .message-link .message, 
+.header-top .top-nav .info .message-list .message-link .message{
+    display: block !important;
+    font-size: 12px;
+    line-height: 1.3;
+    margin-left: 46px;
+}
+
+/*message(user and message) end*/
+
+/*user profile start*/
+.header-top .top-nav .person{
+	width: 130px;
+	height: 70px;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	float: right;
+	text-align: center;
+
+}
+.header-top .top-nav .person .dropdown-menu {
+    min-width:130px;
+}
+.header-top .top-nav .person .dropdown-menu >li{
+	text-align: center;
+}
+.header-top .top-nav .person .dropdown-menu >li >a{
+	font-size:14px;
+	letter-spacing:2px;
+}
+.header-top .top-nav .person .dropdown-menu >li >a:hover{
+	color: #0088ff;
+}
+.header-top .top-nav .person .responsive-toggler {
+    display:none;
+}
+
+.header-top .top-nav .person .username{
+    margin-top: -18px;
+    width: 130px;
+    line-height: 18px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-top .top-nav .person img{
+	border-radius: 20px;
+	border: 2px solid #ffffff;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.30);
+	vertical-align:middle;
+	height: 44px;
+	width: 44px;
+	margin-top:-10px;
+}
+@-moz-document url-prefix() {    
+	.header-top .top-nav .person img {
+		margin-top:-10px;   
+	}
+}
+.header-top .top-nav .person:hover{
+	background: #ecf0f2;
+} 
+.header-top .top-nav .person .grade{
+	position: absolute;
+    margin-left: -13px;
+    margin-top: 13px;
+    background-color: #fb7e7e;
+    background-image: none;
+    height: 18px;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #fb7e7e;
+    text-align: center;
+    line-height: 17px;
+    color: white;
+    font-size: 10px;
+}
+
+.header-top .top-nav .task-pub-btn-xs{
+	display:none;
+	height: 70px;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	float: right;
+	text-align: center;
+	margin: auto;
+}
+.header-top .top-nav .task-pub-btn-xs i{
+	vertical-align: middle;
+    color: #999999;
+    font-size: 30px;
+    line-height: 70px;
+}
+/*.header-top .top-nav .task-pub-btn-xs .desc {
+    margin-top: -18px;
+    line-height: 14px;
+}*/
+
+/*自适应start*/
+@media (max-width: 414px) {
+	.header-top .top-nav .task-pub-btn-xs{
+		display:inline-block;
+		width: calc((100% - 130px)/4);
+	}
+	.header-top .top-nav .info.person  {
+	    width: 130px;
+	}
+	.header-top .top-nav .info {
+	    width: calc((100% - 130px)/4);
+	}
+	.header-top .top-nav .info.message-system {
+	    width: calc((100% - 131px)/4);
+	}
+	
+	.header-top .top-nav .message-private .dropdown-menu,
+	.header-top .top-nav .message-user .dropdown-menu,
+	.header-top .top-nav .message-system .dropdown-menu{
+		min-width: 100%; 
+		max-width: 100%;
+	}
+	
+	
+	.login-box {
+	    width: 96%;
+	    left: 2%;
+	}
+	.wechat {
+	    width: 96%;
+	    left: 2%;
+	}
+	
+	
+	
+}
+@media (max-width: 375px) {
+}
+@media (max-width: 320px) {
+	.header-top .top-nav .logo-2 {
+	    margin-left: 0;
+	    margin-right: 0px;
+	}
+	.header-top .top-nav .info.person  {
+	    width: 100px;
+	}
+	
+	.header-top .top-nav .task-pub-btn-xs{
+		display:inline-block;
+		width: calc((100% - 100px)/4);
+	}
+	.header-top .top-nav .info.message-system {
+	    width: calc((100% - 101px)/4);
+	}
+	.header-top .top-nav .info {
+	    width: calc((100% - 100px)/4);
+	}
+	.header-top .top-nav .person .username {
+	    width: 100px;
+	}
+	
+}
+
+@media  (max-width: 1225px) {
+ 	.header-top .top-nav .top-search .top-select-icon {
+ 	    width: 80px;
+ 	}
+ 	.header-top .top-nav .top-search .top-select-icon>i {
+ 	    display: none;
+ 	}
+ 	.header-top .top-nav .top-search .top-select-icon .top-location {
+ 	    padding: 3px 5px;
+ 	}
+ }
+
+/*haokun added start 2017/03/23 新增对ipad的自适应*/
+@media screen and (max-width: 1080px) {
+	.login-box{
+		width:50% !important;  /*haokun mdofied 2017/03/23*/
+		min-height:340px !important;   /*haokun mdofied 2017/03/23*/
+		margin:auto;
+		margin-top:20%;
+		top: 20%;
+	    left: 25%;
+	}
+
+}
+/*haokun added end 2017/03/23 新增对ipad的自适应*/
+
+@media screen and (max-width: 767px) {
+	.header-top-login .sign-in>a>span,.header-top-login .log-in>a>span{
+		padding: 5px 10px 5px 10px;   
+		color:black;
+		font-size:14px;
+		color:#0088ff;
+		letter-spacing:1px;
+		text-align:left;
+	}
+	.header-top-login .sign-in>a>span{
+		margin-right:10px;
+	}
+	
+	/*haokun start added 2017/03/20*/
+	/*整个悬浮框设置*/
+	.login-box{
+		width:80% !important;  /*haokun mdofied 2017/03/23*/
+		min-height:340px !important;   /*haokun mdofied 2017/03/23*/
+		margin:auto;
+		margin-top:20%;
+		top: calc(50% - 40%);
+	    left: 10%;
+	}
+	
+	.login-box .login-box-bg .login-form{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:100%;
+	}
+	
+	.login-box .login-box-bg .other-login{ /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:100%;
+	}
+	
+	.login-box .login-box-bg .form-control{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:100%;
+	}
+	
+	.login-box .login-box-bg .phone{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:210px;
+		margin:auto;
+	}
+	/*针对area-code和telephone*/
+	.login-box .login-box-bg .phone-title{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+		margin:0 0 3px 5%;
+	}
+	
+	/*针对areacode*/
+    .login-box .login-box-bg .area-code{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	    width:25% !important;	
+		margin:auto !important;
+    }
+
+    /*针对phone number*/
+    .login-box .login-box-bg input[name="telphone"]{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	    width:60% !important;	
+		margin:0 0 0 35% !important;
+    }
+	
+	/*针对保持登入*/
+	.login-box .login-box-bg .save-password{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	   width: 210px !important;
+	   margin:auto !important;
+	   margin-bottom:3px !important;
+	}
+	
+	/*针对登录按键*/
+    .login-box .login-box-bg .box-btn{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	   width: 210px !important;   /*haokun modified 2017/03/20 from 274 to 380*/
+	   height: 36px;
+	   margin: auto !important;
+    }
+	button#box-btn{
+	   width: 100%;   /*haokun modified 2017/03/20 from 274 to 380*/
+	   margin: 0 5% 0 %5 !important;
+    }
+	
+	/*针对下面三个小选项*/
+	.login-box .login-box-bg .box-bottom{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+	   width: 100%;
+	   height: 30px;
+	   line-height: 30px;
+	   margin-left: auto;
+	   margin-right: auto;
+	   margin-top: 5px;
+       margin-bottom: 10px;
+	   font-size:12px;
+    }
+	
+	.login-box .login-box-bg .box-bottom>div:nth-child(1){    /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:28% !important;
+		float:left !important;
+		margin:0 0 0 5% !important;
+	}
+	
+	.login-box .login-box-bg .box-bottom>div:nth-child(2){   /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:42% !important;
+		float:left !important;
+		margin:0 !important;
+	}
+	
+	.login-box .login-box-bg .box-bottom>div:nth-child(3){    /*haokun added 2017/03/23 增加login-box-bg的class*/
+		width:20% !important; 
+		float:left !important;
+		margin:0 0 0 5% !important;
+	}
+	
+	.login-box .login-box-bg .box-bottom>div>a{   /*haokun added 2017/03/23 增加login-box-bg的class*/
+        margin:auto !important;
+		text-align:center;
+	}
+	
+	
+	
+	/*haokun end added 2017/03/20*/
+	
+	
+	
+}
+
+/*把320移动到这 2017/03/24*/
+@media (max-width: 320px) {
+	.login-box{
+		margin:auto;
+		margin-top:5% !important;
+		top: 5% !important;
+	}
+	.header-top .top-nav .logo-2 {
+	    margin-left: 0;
+	    margin-right: 0px;
+	}
+	.header-top .top-nav .info.person  {
+	    width: 100px;
+	}
+	
+	.header-top .top-nav .task-pub-btn-xs{
+		display:inline-block;
+		width: calc((100% - 100px)/4);
+	}
+	.header-top .top-nav .info.message-system {
+	    width: calc((100% - 101px)/4);
+	}
+	.header-top .top-nav .info {
+	    width: calc((100% - 100px)/4);
+	}
+	.header-top .top-nav .person .username {
+	    width: 100px;
+	}
+	
+}
+
+
+
+
+/*自适应end*/
+/*user profile end*/
+
+ul li{
+	list-style: none;
+}
+/* header end*/
+.show-evaluate >a >img{
+	margin-right:1px;
+	margin-top:-4px;
+}
+
+/*综合评级弹出框 start*/
+.ui-dialog.user-evaluate-dlg{
+	padding: 5px;
+	border-radius: 0px;
+    overflow: visible; 
+}
+.ui-dialog.user-evaluate-dlg.left-0{
+    left: -353px;
+}
+.ui-dialog.user-evaluate-dlg.left-353{
+    left: -353px;
+}
+.ui-dialog.user-evaluate-dlg .ui-dialog-content{
+	padding:20px;
+}
+.ui-dialog.user-evaluate-dlg .margin-top-10{
+	margin-top : 10px;
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .evaluate-count{
+	color: #999999;
+    font-size: 14px;  
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .evaluate-count:hover{
+	color: #676767;
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .left{
+	float:left;
+	width:64px;
+	text-align: right;
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .middle{
+	float:left;
+	margin-left: 10px;
+    line-height: 19px;
+    width: 80px;
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .right{
+	float:left;
+	font-size: 12;
+    line-height: 20px;
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .middle>a>img{
+	margin-right:1px;
+	margin-top:2px;
+}
+/*.ui-dialog.user-evaluate-dlg .user-evaluate .middle>a>i{
+	color: #aaaaaa;
+}
+.ui-dialog.user-evaluate-dlg .user-evaluate .middle>a>i.active{
+	color:#f08739;
+}*/
+/*综合评级弹出框 end*/
+
+/*等级弹出框 start*/
+.show-grade{
+	cursor : pointer;
+}
+
+.ui-dialog.grade-dlg{
+	padding: 5px;
+	border-radius: 0px;
+    overflow: visible; 
+}
+.ui-dialog.grade-dlg.left-0{
+    left: -353px;
+}
+.ui-dialog.grade-dlg.left-353{
+    left: -353px;
+}
+.ui-dialog.grade-dlg.top-40{
+    top: 40px;
+}
+.ui-dialog.grade-dlg .ui-dialog-content{
+	padding:0px;
+}
+.ui-dialog.grade-dlg .margin-top-10{
+	margin-top : 10px;
+}
+.ui-dialog.grade-dlg .left{
+	float:left;
+	width:250px;
+}
+.ui-dialog.grade-dlg .right{
+	float:left;
+	width:calc(100% - 250px);
+}
+/*等级弹出框 end*/
+
+
+.recommend-dlg.ui-dialog {
+    left: calc(50% - 240px);
+    top: calc(50% - 190px);
+    position: fixed;
+    padding: 0px;
+}
+
+.recommend-dlg .ui-dialog-content{
+	padding:0px;
+}
+.recommend-dlg .recommend-dlg-content{
+	background:#ffffff;
+}
+
+.recommend-dlg .recommend-dlg-content .title{
+	font-size:20px;
+	color:#999999;
+	letter-spacing:0;
+	line-height:20px;
+	text-align:center;
+}
+
+.recommend-dlg .recommend-dlg-content .content{
+	margin-top:52px;
+} 
+.recommend-dlg .recommend-dlg-content i{
+	width:24px;
+	font-size: 24px;
+	color:#4a91fd;
+	vertical-align: middle;
+} 
+.recommend-dlg .recommend-dlg-content span{
+	font-size:14px;
+	color:#666666;
+	letter-spacing:0;
+	text-align:left;
+	line-height:24px;
+} 
+
+.recommend-dlg .recommend-dlg-content .operate{
+	margin-top:65px;
+	text-align: center;
+} 
+.recommend-dlg .recommend-dlg-content .operate button{
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:32px;
+	padding: 3px 21px;
+	font-size:14px;
+	color:#ffffff;
+	letter-spacing:0;
+	text-align:left;
+	margin: 0px 10px;
+} 
+
+
+.mobile-tip.ui-dialog{
+	top: 200px;
+	position: fixed;
+	width: 80%;
+	left: 10%;
+}
+
+
+@media (max-width: 767px) {
+  /* 767px */
+  /* Default footer & boxed footer */
+  .page-footer,
+  .page-boxed .page-footer {
+    padding-left: 10px;
+    padding-right: 10px; }
+  /* Fixed footer */
+  .page-footer-fixed .page-footer .container {
+    padding-left: 0;
+    padding-right: 0; } }
+
+/* Scroll Top Top */
+.scroll-to-top {
+  display: inline-block;
+  padding: 2px;
+  text-align: center;
+  position: fixed;
+  z-index: 10001;
+  bottom: 10px;
+  display: none;
+  right: 10px; }
+  .scroll-to-top > i {
+    display: inline-block;
+    color: #687991;
+    font-size: 32px;
+    opacity: 0.7 ;
+    filter: alpha(opacity=70) ; }
+  .scroll-to-top:hover {
+    cursor: pointer; }
+    .scroll-to-top:hover > i {
+      opacity: 1 ;
+      filter: alpha(opacity=100) ; }
+
+@media (min-width: 992px) {
+  /* 992px */
+  .scroll-to-top {
+    right: 10px; } }
+
+@media (max-width: 991px) {
+  /* 991px */
+  .scroll-to-top {
+    right: 10px; }
+    .scroll-to-top > i {
+      font-size: 28px; } }
+
+
+
+/*手机自适应 start*/
+@media (max-width: 767px) {
+	.header-top-login .top-nav .logo-2, .header-top .top-nav .logo-2{
+		width: 140px;
+		height: 29px;
+		margin-top: 18px;
+		margin-right: 0px;
+	}
+	.header-top-login .top-nav .logo-2 img,.header-top .top-nav .logo-2 img{
+		width: 140px;
+		height: 29px;
+	}
+}
+
+@media (max-width: 414px) {
+	.ui-dialog.user-evaluate-dlg,
+	.ui-dialog.grade-dlg{
+		position: fixed;
+	    margin-top: 115px;
+	    left: calc(50% - 180px) !important;
+	   	overflow: auto;
+	}
+	
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 325px) {
+	.pagination > li > a, .pagination > li > span {
+	    padding: 4px 8px;
+	}
+}
+
+
+
+@media (min-width: 768px) {
+	.header-top-login .top-nav .logo-2, .header-top .top-nav .logo-2{
+		width: 140px;
+		height: 29px;
+		margin-top: 18px;
+	}
+	.header-top-login .top-nav .logo-2 img,.header-top .top-nav .logo-2 img{
+		width: 140px;
+		height: 29px;
+	}
+	
+}
+/*手机自适应 end*/
+
+
+/*平板自适应start*/
+@media (min-width: 992px) {
+	.header-top-login .top-nav .logo-2, .header-top .top-nav .logo-2{
+		width: 140px;
+		height: 29px;
+		margin-top: 25px;
+	}
+	.header-top-login .top-nav .logo-2 img,.header-top .top-nav .logo-2 img{
+		width: 140px;
+		height: 29px;
+	}
+}
+/*平板自适应end*/
+
+/*电脑自适应start*/
+@media (min-width: 1200px) {
+	.header-top-login .top-nav .logo-2, .header-top .top-nav .logo-2{
+		width: 210px;
+		height: 44px;
+		margin-top: 13px;
+	}
+	.header-top-login .top-nav .logo-2 img,.header-top .top-nav .logo-2 img{
+		width: 210px;
+		height: 44px;
+	}
+}
+/*电脑自适应end*/
+

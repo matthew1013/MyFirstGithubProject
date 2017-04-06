@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.DemandMessageDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.DemandMessage">
+		<id column="id" property="id" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="user_nick_name" property="userNickName" javaType="String" />
+		<result column="user_pic_url" property="userPicUrl" javaType="String" />
+		<result column="receiver_id" property="receiverId" javaType="String" />
+		<result column="receiver_nick_name" property="receiverNickName" javaType="String" />
+		<result column="receiver_pic_url" property="receiverPicUrl" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="parent_id" property="parentId" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+	</resultMap>
+
+	<insert id="insertMessage" parameterType="com.anyonehelps.model.DemandMessage">
+		insert into
+		demand_message(demand_id,user_id,receiver_id,content,create_date,modify_date,parent_id,state)
+		values(#{demandId},#{userId},#{receiverId},#{content},#{createDate},#{modifyDate},#{parentId},#{state})
+	</insert>
+
+	<select id="retrieveMessages" resultMap="basic_result_map">
+		select dm.*,u.`nick_name` AS user_nick_name,u.pic_url AS user_pic_url,ur.`nick_name` AS receiver_nick_name,ur.pic_url AS receiver_pic_url from
+		(select * from demand_message where demand_message.demand_id=#{demandId} and demand_message.parent_id='-1') dm 
+		INNER JOIN users u on u.id=dm.user_id INNER JOIN users ur on ur.id=dm.receiver_id
+	</select>
+	
+	<select id="getUserByParentId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select * from demand_message where demand_message.parent_id = #{id} or id = #{id} group by user_id
+	</select>
+	
+	<select id="retrieveMessagesByParentId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select dm.*,u.`nick_name` AS user_nick_name,u.pic_url AS user_pic_url,ur.`nick_name` AS receiver_nick_name,ur.pic_url AS receiver_pic_url from
+		(select * from demand_message where demand_message.parent_id=#{id}) dm 
+		INNER JOIN users u on u.id=dm.user_id INNER JOIN users ur on ur.id=dm.receiver_id
+	</select>
+
+	<select id="count" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) from demand_message where demand_message.parent_id = #{parent_id} and
+		demand_message.parent_id='-1'
+	</select>
+	
+	<select id="countByDemandId" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) from demand_message where demand_id = #{demandId}
+	</select>
+
+	<update id="updateModifyDate">
+		update demand_message
+		set modify_date=#{date},state=#{state}
+		where id=#{id}
+	</update>
+</mapper>

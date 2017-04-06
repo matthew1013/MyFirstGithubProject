@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.SpecialtyUserDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.SpecialtyUser">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="specialty_type_id" property="specialtyTypeId" javaType="String" />
+		<result column="specialty_id" property="specialtyId" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="auth_content" property="authContent" javaType="String" />
+		<result column="auth_date" property="authDate" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		
+		<result column="enclosure1" property="enclosure1" javaType="String" />
+		<result column="enclosure2" property="enclosure2" javaType="String" />
+		<result column="enclosure3" property="enclosure3" javaType="String" />
+		<result column="enclosure4" property="enclosure4" javaType="String" />
+		<result column="enclosure5" property="enclosure5" javaType="String" />
+		<result column="enclosure1_name" property="enclosure1Name" javaType="String" />
+		<result column="enclosure2_name" property="enclosure2Name" javaType="String" />
+		<result column="enclosure3_name" property="enclosure3Name" javaType="String" />
+		<result column="enclosure4_name" property="enclosure4Name" javaType="String" />
+		<result column="enclosure5_name" property="enclosure5Name" javaType="String" />
+		
+		<collection property="st" column="specialty_type_id" select="com.anyonehelps.dao.SpecialtyTypeDao.getSTById"></collection>
+		<collection property="specialty" column="specialty_id" select="com.anyonehelps.dao.SpecialtyDao.getSpecialtyById"></collection>
+	
+	</resultMap>
+	
+	<resultMap id="basic_open_result_map" type="com.anyonehelps.model.SpecialtyUser">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="specialty_type_id" property="specialtyTypeId" javaType="String" />
+		<result column="specialty_id" property="specialtyId" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		
+		<collection property="st" column="specialty_type_id" select="com.anyonehelps.dao.SpecialtyTypeDao.getSTById"></collection>
+		<collection property="specialty" column="specialty_id" select="com.anyonehelps.dao.SpecialtyDao.getSpecialtyById"></collection>
+	
+	</resultMap>
+	
+	
+	<resultMap id="basic_result_map1" type="com.anyonehelps.model.SpecialtyUser">
+		<id column="id" property="id" javaType="String" />
+		
+		<result column="enclosure1" property="enclosure1" javaType="String" />
+		<result column="enclosure2" property="enclosure2" javaType="String" />
+		<result column="enclosure3" property="enclosure3" javaType="String" />
+		<result column="enclosure4" property="enclosure4" javaType="String" />
+		<result column="enclosure5" property="enclosure5" javaType="String" />
+		<result column="enclosure1_name" property="enclosure1Name" javaType="String" />
+		<result column="enclosure2_name" property="enclosure2Name" javaType="String" />
+		<result column="enclosure3_name" property="enclosure3Name" javaType="String" />
+		<result column="enclosure4_name" property="enclosure4Name" javaType="String" />
+		<result column="enclosure5_name" property="enclosure5Name" javaType="String" />
+		
+		<result column="enclosure1_pdf" property="enclosure1Pdf" javaType="String" />
+		<result column="enclosure2_pdf" property="enclosure2Pdf" javaType="String" />
+		<result column="enclosure3_pdf" property="enclosure3Pdf" javaType="String" />
+		<result column="enclosure4_pdf" property="enclosure4Pdf" javaType="String" />
+		<result column="enclosure5_pdf" property="enclosure5Pdf" javaType="String" />
+		
+		<result column="enclosure1_pdf_state" property="enclosure1PdfState" javaType="String" />
+		<result column="enclosure2_pdf_state" property="enclosure2PdfState" javaType="String" />
+		<result column="enclosure3_pdf_state" property="enclosure3PdfState" javaType="String" />
+		<result column="enclosure4_pdf_state" property="enclosure4PdfState" javaType="String" />
+		<result column="enclosure5_pdf_state" property="enclosure5PdfState" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+	</resultMap>
+	
+	<insert id="insertSpecialtyUser" parameterType="com.anyonehelps.model.SpecialtyUser" 
+	useGeneratedKeys="true" keyProperty="id"> 
+		insert into specialty_user
+		(user_id, specialty_type_id, specialty_id, state, type, name, auth_content, auth_date,
+		enclosure1, enclosure2, enclosure3, enclosure4, enclosure5, enclosure1_name,
+		enclosure2_name, enclosure3_name, enclosure4_name, enclosure5_name) 
+		values (#{userId}, #{specialtyTypeId}, #{specialtyId}, #{state}, #{type}, #{name}, #{authContent},
+		#{authDate}, #{enclosure1}, #{enclosure2}, #{enclosure3}, #{enclosure4}, #{enclosure5},
+		#{enclosure1Name}, #{enclosure2Name}, #{enclosure3Name}, #{enclosure4Name}, #{enclosure5Name})
+	</insert>
+	
+	<select id="getByUserId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from specialty_user where user_id=#{userId} 
+		<if test="type!=null and type!=''">
+			and  type = #{type}
+		</if>
+		<if test="state!=null and state!=''">
+			and  state = #{state}
+		</if>
+		
+		order by `state` desc
+	</select>
+	
+	<select id="getOpenByUserId" parameterType="java.lang.String" resultMap="basic_open_result_map">
+		select * from specialty_user where user_id=#{userId} order by `state` desc
+	</select>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		delete from specialty_user
+		where user_id = #{userId} and id = #{id} 
+	</delete>
+	
+	<select id="getByUserIdTypeIdAndSpecialtyId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from specialty_user where user_id=#{userId} and specialty_type_id = #{specialtyTypeId} and specialty_id = #{specialtyId}
+	</select>
+	
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from specialty_user where user_id=#{userId} and id = #{id}
+	</select>
+	
+	<update id="authSpecialtyUser" parameterType="com.anyonehelps.model.SpecialtyUser">
+		update specialty_user set
+		auth_content = #{authContent}, 
+		auth_date = #{authDate}, 
+		state = #{state},
+		enclosure1 = #{enclosure1}, 
+		enclosure2 = #{enclosure2}, 
+		enclosure3 = #{enclosure3},
+		enclosure4 = #{enclosure4}, 
+		enclosure5 = #{enclosure5},
+		enclosure1_name = #{enclosure1Name}, 
+		enclosure2_name = #{enclosure2Name}, 
+		enclosure3_name = #{enclosure3Name},
+		enclosure4_name = #{enclosure4Name}, 
+		enclosure5_name = #{enclosure5Name}
+		where user_id = #{userId} and id = #{id}
+	</update>
+	
+	<select id="countByName" resultType="java.lang.Integer">
+		select count(*) from specialty_user where user_id = #{userId}
+    		<if test="specialtyId!=null and specialtyId!=''">
+        		and specialty_id = #{specialtyId}
+    		</if> 
+    		<if test="name!=null and name!=''">
+       	 		and name like #{name}
+    		</if>
+	</select>
+
+	
+	<select id="getByECS" resultMap="basic_result_map1">
+		select * from specialty_user where enclosure_converter_state = 0 order by id asc
+	</select>
+	
+	<!-- 修改任务附件转换状态 -->
+	<update id="modifyECS">
+		update `specialty_user`
+		set `enclosure_converter_state`= 1,
+		`enclosure1_pdf`=#{ep1},
+		`enclosure2_pdf`=#{ep2},
+		`enclosure3_pdf`=#{ep3},
+		`enclosure4_pdf`=#{ep4},
+		`enclosure5_pdf`=#{ep5},
+		`enclosure1_pdf_state`=#{eps1},
+		`enclosure2_pdf_state`=#{eps2},
+		`enclosure3_pdf_state`=#{eps3},
+		`enclosure4_pdf_state`=#{eps4},
+		`enclosure5_pdf_state`=#{eps5}
+		where id = #{id}
+	</update> 
+	
+</mapper>

@@ -1,0 +1,765 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+	-webkit-appearance:none;
+}
+input[type="number"]{
+	-moz-appearance:textfield;
+}
+
+.portlet-body .radius0{
+	float: right;
+    line-height: 34px;
+   	padding:0px 0px 0px 11px;
+   	
+   	border: 1px solid #cccccc;
+    border-radius: 3px;
+    height: 34px;
+    font-size: 14px;
+    color: #999999;
+}
+.portlet-body .radius{
+   	border-radius: 0px;
+}
+
+.portlet-body .pro-user{
+	padding-left: 28px;
+}
+    
+.portlet-body .pro-user .left{
+	float: left;
+	width: 70px;
+}
+.portlet-body .pro-user .right{
+	float: left;
+    width: calc(100% - 140px);
+}
+
+.portlet-body .pro-user .left .pro-user-img{
+	float: left;
+}
+.portlet-body .pro-user .left .pro-user-img img{
+	height: 55px;
+	width: 55px;
+	border-radius: 50%;
+} 
+.portlet-body .pro-user .left .pro-user-img img:hover{
+	opacity: 0.6;
+} 
+
+.portlet-body .pro-user .right .pro-user-name{
+	float: left;
+	font-weight: normal;
+	text-decoration: none;
+	line-height:20px;
+	font-size:17px;
+	letter-spacing:0px;
+	text-align:left;
+	width:100%;
+}
+.portlet-body .pro-user .right .pro-user-name a{
+	color:#333333;
+	display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.portlet-body .pro-user .right .pro-user-name a:hover{
+	text-decoration: none;
+	color: #0088ff;
+}
+.portlet-body .pro-user .right .margin-top-8{
+	margin-top:8px;
+}
+.portlet-body .pro-user .right .user-grade{
+	background:#ffaa34;
+	border-radius:12px;
+	width:41px;
+	height:16px;
+	float: left;
+	text-align: center;
+}
+.portlet-body .pro-user .right .user-grade>span{
+	font-size:12px;
+	color:#ffffff;
+	letter-spacing:0;
+	line-height:16px;
+	text-align:left;
+}
+
+.portlet-body .pro-user .right .pro-evaluate{
+	float: left;
+	font-size: 10px;
+	line-height: 16px;
+	margin-left:10px;
+}
+.portlet-body .pro-user .right .pro-evaluate>a>i{
+	color: #aaaaaa;
+}
+.portlet-body .pro-user .right .pro-evaluate>a>i.active{
+	color:#f08739;
+}
+.portlet-body .pro-user .right .evaluate-count{
+	color: #999999;
+    font-size: 12px;
+}
+.portlet-body .pro-user .right .evaluate-count:hover{
+	color: #676767;
+}
+
+.portlet-body .step{
+	margin-right: 4px;
+    height: 20px;
+    min-width: 20px;
+    padding: 4px 6px;
+    border-radius: 50%;
+    background: #0088ff;
+    text-align: center;
+    line-height: 32px;
+    color: white;
+    font-size: 14px;
+}
+.portlet-body .step-desc{
+    font-size: 14px;
+	color:#666666;
+	line-height:32px;
+	font-weight:bold;     /*haokun modified 2017/03/01 加粗*/
+}
+.portlet-body .step-desc.font-plus{
+    font-size: 17px;      /*haokun modified 2017/03/01 from 18 to 17*/
+}
+.portlet-body >form>div>.left,.portlet-body >form>.detail>div>.left{
+	float: left;
+    width:28px;
+}
+.portlet-body .title-limit-count{
+	font-size:18px;
+	color:#0088ff;
+	line-height:18px;
+	margin-left:8px;
+	margin-right:8px;
+}
+
+.portlet-body #type,.portlet-body #typeSecond{
+	border:1px solid #cccccc;
+	border-radius:3px;
+	height:34px;
+	
+	font-size:14px;
+	color:#999999;
+}
+.portlet-body .my-amount {
+    background: #f8f8f8;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    height: 34px;
+    text-align: center;
+    
+	font-size:14px;
+	color:#666666;
+	line-height:34px; 
+	margin-left: 20px;
+}
+.portlet-body .note-editable.panel-body>p{
+	margin:0;
+}
+.portlet-body .show-detail {
+	font-size:18px;
+	color:#666666;
+}
+.portlet-body .show-detail .desc{
+	margin-left:8px;
+}
+
+
+.portlet-body .color-0088ff{ 
+	color:0088ff;
+}
+.portlet-body .color-0088ff:hover{ 
+	color:0066ee;
+}
+
+.portlet > .portlet-title > .caption > .caption-helper {
+	font-size:12px;
+	color:#676767;
+	letter-spacing:0;
+	line-height:20px;
+}
+
+.placeholder { 
+	position: absolute; 
+	top: 90px;   /*haokun modified 2017/03/07 改成90*/
+	left: 10px; 
+	font-size: 20px; 
+	color: #cccccc; 
+	display: none; 
+	pointer-events: none; 
+}
+
+.portlet-body .div-left{
+	float: left;
+    width:110px;
+}
+
+.portlet-body .div-left .left .step{
+	margin-right: 5px;
+    height: 18px;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #0088ff;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.portlet-body .system-tag-span{
+	cursor:pointer;
+}
+.portlet-body .system-tag-span.active{
+	color:blue;
+}
+
+.portlet-body .amount-type{
+    float: left;
+    margin-left: 20px;
+    width: 100px;
+}
+
+.portlet-body .urgent{
+    float: left;
+    line-height: 32px;
+}
+.portlet-body .achieve::-webkit-input-placeholder{
+    color: #EF4836 !important;
+    opacity: 0.6;
+}
+
+.portlet-body .margin-left-21{
+    margin-left: 21px;
+}
+.portlet-body .margin-left-51{
+    margin-left: 51px;
+}
+.portlet-body .specialty-add{
+    background:#ffffff;
+	border:1px dashed #cccccc;
+	width:140px;
+	height:36px;
+	border-radius: 0px;
+	float:left;
+}
+
+.portlet-body .specialty-list{
+	float:left;
+}
+.portlet-body .specialty{
+    background:#ffffff;
+	border:1px solid #0088ff;
+	width:140px;
+	height:36px;
+	border-radius: 0px;
+	
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    
+    color:#0088ff;
+    
+    float:left;
+    margin-right:15px;
+    margin-bottom:10px;
+}
+.portlet-body .specialty:hover{
+    background:#0088ff;
+    color:#ffffff;
+}
+.portlet-body .specialty:hover>div>.specialty-remove{
+	display:block;
+}
+.portlet-body .specialty-remove{
+	display:none;
+    background:#ffffff;
+    color:#0088ff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding-top: 3px; 
+    float: right;
+}
+
+.portlet-body .enclosure-upload{
+	background:#ffb84d;    /*haokun modified 2017/03/07*/
+	color:#ffffff;
+	width:140px;
+	height:36px;
+	border-radius: 10px;   /*haokun modified 2017/03/07*/
+	float:left;
+}
+.portlet-body .enclosure-upload span{
+	line-height:normal;
+}
+
+.portlet-body .enclosure-list .enclosure-item{
+
+}
+
+.portlet-body .enclosure-list .enclosure-item .enclosure-edit{ 
+	font-size: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+   	margin-top: 5px;
+   	float:left;
+}
+.portlet-body .enclosure-list .enclosure-item .enclosure-edit:hover{ 
+	color: #ffffff;
+    background-color: #999999;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+
+.portlet-body .enclosure-list .enclosure-item .title{
+	line-height:32px;
+	color:0088ff;
+}
+.portlet-body .enclosure-list .enclosure-item .title:hover{
+	color:0066ee;
+}
+.portlet-body .enclosure-list .enclosure-item .enclosure-delete{
+	font-size: 10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+
+.portlet-body .reset-btn{
+	background:#e97777;
+	color:#ffffff;
+	width:140px;
+	height:36px;
+	border-radius: 0px;
+	float:right;
+}
+.portlet-body .submit-btn{
+	background:#0088ff;
+	color:#ffffff;
+	width:140px;
+	height:36px;
+	border-radius: 0px;
+	float:right;
+	margin-right:20px;
+}
+
+.portlet-body .submit-btn:hover{
+	background:#0066ee;
+}
+
+
+.portlet-body .share-location{
+    position: absolute;
+    /*margin: 5px 0px 0px 5px;*/
+    font-size: 16px;
+    text-align: center;
+    z-index: 99;
+    background-color: #ffffff;
+    /*padding: 5px 30px 5px 30px;*/
+}
+.portlet-body .share-location .location-input{
+    float:left; 
+    width:400px;
+    margin-left:30px;
+}
+
+.specialty-item .nav-tabs {
+    border-bottom: 0px solid #0088ff;
+}
+
+.specialty-item .nav-tabs>li>a {
+    margin: 0;
+    background: none;
+    color: #676767;
+    border: 0px solid #0066ee;
+}
+.specialty-item .nav-tabs>li>a:hover,.specialty-item .nav-tabs>li>a:focus {
+    margin: 0;
+    background: none;
+    color: #0088ff;
+    border: 0px solid #0066ee;
+}
+.specialty-item .nav-tabs>li.active>a,.specialty-item .nav-tabs>li:hover, .specialty-item .nav-tabs>li:hover>a {
+    background: none;
+    color: #0088ff;
+    border-bottom: 2px solid #0066ee;
+}
+
+.specialty-item .nav-tabs>li.active,.specialty-item .nav-tabs>li.active:hover {
+    background: none;
+    border-bottom: 2px solid #0088ff;
+}
+.specialty-item .wclose {
+    font-size:10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+
+.specialty-item .specialty-btn {
+    background:#ffffff;
+	border:1px dashed #cccccc;
+	height:36px;
+	border-radius: 0px;
+	
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    
+    color:#676767;
+    float:left;
+    margin-right:20px;
+    margin-bottom:20px
+}
+.tab-content .tab-pane>.active{
+	border:1px solid #0088ff;
+	color:#0088ff;
+}
+
+.dlg-radius0{
+   	border-radius: 0px;
+}
+.dlg-balance-no{
+  	left: 20%;
+  	margin-top: 15%;
+  	position: fixed;
+}
+.dlg-balance-no .ui-dialog-content{
+  	width: 650px;
+}
+.dlg-invite-user{
+  	left: 20%;
+  	margin-top: 70px;
+  	position: fixed;
+}
+.dlg-invite-user .ui-dialog-content{
+	width: 720px;
+}
+
+.dlg-invite-user .friend-item{
+	min-height:500px;
+}
+.dlg-invite-user .friend-item .friend-item-title{
+	float:left;
+}
+.dlg-invite-user .friend-item .title{
+	padding-left: 224px;
+	padding-top: 30px;
+}
+.dlg-invite-user .friend-item .title>span{
+	font-size:24px;
+	color:#0088ff;
+}
+
+.dlg-invite-user .friend-item .wclose {
+    font-size:10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+.dlg-invite-user .friend-item .title-sub {
+	text-align: center;
+    color: #676767;
+}
+.dlg-invite-user .friend-item .search-user {
+	line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+.dlg-invite-user .friend-item .search-i {
+	color: #ccc;
+    display: block;
+    position: absolute;
+    margin: 10px 30px 3px 430px;
+    width: 18px;
+    font-size: 16px;
+    text-align: center;
+}
+.dlg-invite-user .friend-item .invite-btn{
+	background:#0088ff;
+	color:#ffffff;
+	width:80px;
+	height:36px;
+	border-radius: 0px;
+	float:right;
+}
+
+.dlg-invite-user .friend-item .invite-btn:hover{
+	background:#0066ee;
+	color:#ffffff;
+}
+
+.dlg-invite-user .friend-item .username{
+	font-size:14px;
+	color:#676767;
+	line-height:22px;
+	margin-left:20px;
+}
+.dlg-invite-user .friend-item .occupation{
+	font-size:14px;
+	color:#333333;
+	line-height:22px;
+	margin-left:20px;
+	float:left;
+	width: 180px;
+    overflow: auto;
+}
+.dlg-invite-user .friend-item .evaluate{
+	width: 100px;
+    float: left;
+    overflow: auto;
+    margin-left: 20px;
+}
+.dlg-invite-user .friend-item .evaluate>a>i{
+	line-height:22px;
+	color: #aaaaaa;
+}
+.dlg-invite-user .friend-item .evaluate>a>i.active{
+	color: #f08739;
+}
+
+/*haokun 2017/03/01 start 所有输入框增加阴影*/
+
+.form-control{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 255, 0.2), 0 6px 20px 0 rgba(2, 0, 0, 0.19) !important;
+}
+
+
+
+.note-editor{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 255, 0.2), 0 6px 20px 0 rgba(2, 0, 0, 0.19) !important;
+}
+
+/*haokun 2017/03/01 end 所有输入框增加阴影*/
+
+/*haokun 2017/03/01 start 富文本框样式*/
+.note-editor.fullscreen {
+    top: 70px;
+}
+.note-editor button[title='Picture']>i{
+    background-color: yellow;
+}
+
+.note-editor .note-editable {
+    font-size: 18px;
+}
+
+/*haokun 2017/03/01 end 富文本框样式*/
+
+/*haokun 2017/03/01 start 发布任务右上角小说明*/
+.right-safe-icon{
+	border-radius:15px;            /*haokun modified 2017/03/13 增加右上角小说明的圆润度*/
+	/*border:2px black solid;*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 255, 0.2), 0 6px 20px 0 rgba(2, 0, 0, 0.19);
+	margin-top:-65px;        /*haokun modified 2017/03/13 小说明网上移动20px*/
+}
+
+.right-safe-icon .title{
+	border-radius:15px 15px 0 0;   /*haokun modified 2017/03/13 增加右上角小说明的圆润度*/
+	padding:8px;
+	background-color:#66cc66;
+	color:white;
+	font-size:18px;
+}
+
+/*haokun modified 2017/03/13 start 修改了右上角小说明内容的padding和字体*/
+.right-safe-icon .content{
+    padding-left:15px;
+	padding-right:15px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size: 14px;       
+}
+/*haokun modified 2017/03/13 end 修改了右上角小说明内容的padding*/
+
+/*haokun modified 2017/03/13 start 修改了右上角小说明每行内容的间距*/
+
+.right-safe-icon .content div{
+    margin-top:3px;
+}
+/*haokun modified 2017/03/13 end 修改了右上角小说明每行内容的间距*/
+
+/*haokun 2017/03/01 start 输入框变色*/
+.border-red{
+	border-color:red;
+}
+
+/*haokun 2017/03/01 end 输入框变色*/
+
+/*haokun 2017/03/01 start 输入框变色提示错误文字*/
+.task-title-alert{
+	font-size:12px;
+	color:red;
+}
+
+.task-achieve-alert{
+	font-size:12px;
+	color:red;
+}
+
+.task-amount-alert{
+	font-size:12px;
+	color:red;
+}
+
+.task-expire-alert{
+	font-size:12px;
+	color:red;
+}
+
+/*haokun 2017/03/01 start 输入框变色提示错误文字*/
+
+/*自适应 start*/
+
+/*haokun add 2017/03/01 start 增加了自适应*/
+
+@media (max-width: 992px) {	
+    .right-safe-icon{
+        display:none;
+    }
+	.placeholder {
+	    top: 90px;   /*haokun modified 2017/03/01 90px改成40px*/
+    }
+}
+@media (max-width: 900px) {	
+	/*haokun add 2017/03/01 增加了马上试试的自适应，但是无效*/
+    .right-safe-icon{
+        display:none;
+    }
+}
+
+@media (max-width: 767px) {	
+	.placeholder {
+	    top: 120px;   /*haokun modified 2017/03/13 90px改成120px*/
+    }
+
+}
+
+/*haokun add 2017/03/01 end 增加了自适应  */
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.portlet.light {
+	    padding: 0px 5px 21px 5px;
+	}
+	.portlet-body .my-amount{
+	   	margin-left: 5px;
+	}
+	.placeholder {
+	    top: 120px;
+	}
+	
+	.portlet-body .urgent, .portlet-body .margin-left-21 {
+	    margin-left: 0px;
+	    margin-right: 10px;
+	}
+	.portlet-body .share-location .location-input{
+	    width: calc(100% - 137px);
+	}
+	
+	.dlg-invite-user{
+		left: 0px;
+		width:100%;
+		margin-top: 95px;
+	}
+	.dlg-invite-user table.ui-dialog-grid{
+		width:100%;
+	}
+	.dlg-invite-user .ui-dialog-content{
+		padding:0px 20px;
+		width: 100%;
+	}
+	.dlg-invite-user .friend-item{
+		min-height:500px;
+	}
+	
+	.dlg-invite-user .friend-item .friend-item-title{
+		text-align: center;
+    	width: calc(100% - 30px); 
+	}
+	.dlg-invite-user .friend-item .title {
+	    padding-left: 0px;
+	    padding-top: 10px;
+	}
+	.dlg-invite-user .friend-item .title {
+	    padding-left: 0px;
+	    padding-top: 10px;
+	}
+	
+	.dlg-invite-user .friend-item .wclose {
+	    margin-top: 16px;
+	}
+	.dlg-invite-user .friend-item .search-i {
+	    margin: 10px 30px 3px calc(100% - 30px);
+	}
+	
+	.dlg-balance-no{
+	  	left: calc(50% - 150px);
+	  	margin-top: 95px;
+	  	position: fixed;
+	}
+	.dlg-balance-no .ui-dialog-content{
+	  	width: 250px;
+	}
+		
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+	.placeholder {
+	    top: 160px;
+	}
+	.portlet-body .reset-btn{
+		width:100px;
+	}
+	.portlet-body .submit-btn{
+		width:100px;
+	}
+}
+
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/ 
+

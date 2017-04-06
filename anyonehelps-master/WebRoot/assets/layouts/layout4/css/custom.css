@@ -1,0 +1,254 @@
+/* here you can put your own css to customize and override the theme */
+.card-shadow {
+    box-shadow: 0 1px 3px #aaa;
+}
+
+/*.blog-container {*/
+/*box-shadow: 0px 1px 2px #aaa;*/
+/*}*/
+
+.page-content-wrapper .page-content
+{
+	padding-top:0;
+}
+.padding-3{
+    padding: 3px !important;
+}
+.margin-5{
+    margin: 5px !important;
+}
+.blog-container .img-circle {
+    width: 30px;
+    height: 30px;
+}
+
+.price-sign {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+}
+ 
+.task-price {
+    min-width: 80px;
+    min-height: 80px;
+    padding: 10px;
+    margin-right: 10px;
+    background: #f6f6f6;
+    position: relative;
+    border-radius: 4px;
+}
+
+.task-price .price {
+    font-size: 35px;
+    line-height: 20px;
+}
+
+.blog-post-info {
+    border-top: 1px solid;
+    border-top-color: #f0f1f2;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.blog-post-content > .blog-post-foot > .blog-post-tags > li > a {
+    background-color: #f4f6f8;
+    color: #a0a9b4;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 7px 10px;
+}
+
+.blog-post-content > .blog-post-foot > .blog-post-tags > li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.blog-post-content > .blog-post-foot > .blog-post-tags {
+    text-align: left;
+    float: left;
+    padding: 0 0 5px 0;
+}
+
+.blog-content-1 .blog-post-sm > .blog-post-content > .blog-post-foot {
+    border-top: 1px solid;
+    border-top-color: #f0f1f2;
+    height: 80px;
+}
+
+.blog-post-content > .blog-post-foot {
+    padding-top: 20px;
+}
+
+.pricing-content-2 .pricing-table-container .price-column-container > .price-table-content .row {
+    padding: 5px;
+}
+
+.pricing-content-2 .pricing-table-container {
+    padding: 0;
+}
+
+.pricing-content-2 .pricing-table-container .price-column-container > .price-table-content .row:first-child {
+    border-top: none;
+    border-color: #f6f6f6;
+}
+
+.pricing-content-2 .pricing-table-container .price-column-container > .price-table-content .row {
+    border-color: #f6f6f6;
+}
+
+.task-desc {
+    margin-top: 0;
+}
+
+.dashboard-page .page-content {
+    padding-top: 0;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #e7ecf1 !important;
+}
+
+.step-amount {
+    margin-top: 0 !important;
+    margin-bottom: 3px !important;
+}
+
+.dashboard-task-list .total-price .price-sign, .step-amount .price-sign {
+    color: #ccc;
+}
+
+.dashboard-task-list .total-price {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.pricing-content-2 .pricing-table-container .price-column-container > .price-table-content {
+    color: #aaa;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.blog-content-2 .blog-single-sidebar > .blog-single-sidebar-ui .general-item-list img {
+    width: 35px;
+}
+
+.home-tab-list {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.home-tab-list .nav-tabs {
+    background: #e9ecf3;
+}
+
+.home-tab-list .tabs-left.nav-tabs > li > a {
+    display: block;
+    margin-right: -1px;
+    border: 0 0 1px 0 !important;
+    border-radius: 0 !important;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.home-tab-list .media-list>li{
+    border-bottom:1px solid #ccc;
+    padding-bottom: 10px;
+}
+.home-tab-list .media-list>li:last-child {
+    border-bottom:0;
+}
+.search-box{
+    margin: 20px 0 15px 30px;
+    padding: 0;
+    float: left;
+}
+.blog-single-sidebar-ui .general-item-list>.item>.item-head>.item-details {
+    display: inline-block;
+    float: left;
+    width:100%;
+}
+.user-pic{
+	max-width: 35px;
+	max-height: 35px;
+	cursor: pointer;
+}
+.user-pic-no-screen{
+	max-width: 35px;
+	max-height: 35px;
+	cursor: pointer;
+}
+
+/*add by ckh*/
+.btnOperation{ position:absolute; width:40px; right:40px; z-index:100001;display:none; }
+.btnOperation a{ float:left; margin-left:2px;}
+
+.icon18{ background-image:url(../../../pages/img/icon18.png); _background-image:url(../../../../pages/img/icon18_ie6.png); width:18px; height:18px; display:inline-block; overflow:hidden;}
+.icon18:link{ font-size:0;}
+.icon18:visited{ font-size:0px;}
+.icon18:hover{ font-size:0px;}
+.icon18.disabled{ cursor:default; }
+.iconLock   { background-position:0px 0px;}
+.iconOpen   { background-position:0px -18px;}
+.iconModify { background-position:0px -36px;}
+.iconRefresh{ background-position:0px -54px;}
+.iconSee	{ background-position:0px -72px;}
+.iconCopy	{ background-position:0px -90px;}
+.iconOpzY	{ background-position:0px -108px;}
+.iconOpzN { background-position:0px -126px;}
+.iconDelete	{ background-position:0px -144px;}
+.closeX		{ background-position:0px -162px;}
+.save       { background-position:0px -180px;}
+.closeX2    { background-position:0px -198px;}
+.iconOpen51 { background-position:0px -216px;}
+.iconLock:hover   { background-position:-18px 0px;}
+.iconOpen:hover	  { background-position:-18px -18px;}
+.iconModify:hover { background-position:-18px -36px;}
+.iconRefresh:hover{ background-position:-18px -54px;}
+.iconSee:hover	  { background-position:-18px -72px;}
+.iconCopy:hover   { background-position:-18px -90px;}
+.iconOpzY:hover   { background-position:-18px -108px;}
+.iconOpzN:hover   { background-position:-18px -126px;}
+.iconDelete:hover { background-position:-18px -144px;}
+.closeX:hover	  { background-position:-18px -162px;}
+.save:hover       { background-position:-18px -180px;}
+.closeX2:hover	  { background-position:-18px -198px;}
+.iconOpen51:hover { background-position:-18px -216px;}
+.iconLockGrey    { background-position:-36px 0px;}
+.iconOpenGrey    { background-position:-36px -18px;}
+.iconModifyGrey  { background-position:-36px -36px;}
+.iconRefreshGrey { background-position:-36px -54px;}
+.iconSeeGrey	 { background-position:-36px -72px;}
+.iconCopyGrey    { background-position:-36px -90px;}
+.iconOpzYGrey	 { background-position:-36px -108px;}
+.iconOpzNGrey    { background-position:-36px -126px;}
+.iconDeleteGrey  { background-position:-36px -144px;}
+.saveGrey        { background-position:-36px -180px;}
+.iconOpen51Grey  { background-position:-36px -216px;}
+.iconLockGrey:visited    { background-position:-36px 0px; cursor:context-menu;}
+.iconOpenGrey:visited    { background-position:-36px -18px; cursor:context-menu;}
+.iconModifyGrey:visited  { background-position:-36px -36px; cursor:context-menu;}
+.iconRefreshGrey:visited { background-position:-36px -54px; cursor:context-menu;}
+.iconSeeGrey:visited	 { background-position:-36px -72px; cursor:context-menu;}
+.iconCopyGrey:visited    { background-position:-36px -90px; cursor:context-menu;}
+.iconOpzYGrey:visited	 { background-position:-36px -108px; cursor:context-menu;}
+.iconOpzNGrey:visited    { background-position:-36px -126px; cursor:context-menu;}
+.iconDeleteGrey:visited  { background-position:-36px -144px cursor:context-menu;}
+.saveGrey:visited        { background-position:-36px -180px; cursor:context-menu;}
+.iconOpen51Grey:visited  { background-position:-36px -216px; cursor:context-menu;}
+.iconLockGrey:hover    { background-position:-36px 0px; cursor:context-menu;}
+.iconOpenGrey:hover    { background-position:-36px -18px; cursor:context-menu;}
+.iconModifyGrey:hover  { background-position:-36px -36px; cursor:context-menu;}
+.iconRefreshGrey:hover { background-position:-36px -54px; cursor:context-menu;}
+.iconSeeGrey:hover	   { background-position:-36px -72px; cursor:context-menu;}
+.iconCopyGrey:hover    { background-position:-36px -90px; cursor:context-menu;}
+.iconOpzYGrey:hover	   { background-position:-36px -108px; cursor:context-menu;}
+.iconOpzNGrey:hover    { background-position:-36px -126px; cursor:context-menu;}
+.iconDeleteGrey:hover  { background-position:-36px -144px; cursor:context-menu;}
+.saveGrey:hover        { background-position:-36px -180px; cursor:context-menu;}
+.iconOpen51Grey:hover  { background-position:-36px -216px; cursor:context-menu;}
+
+
+.system-tag-span-green { color:#32c5d2;}
+
+

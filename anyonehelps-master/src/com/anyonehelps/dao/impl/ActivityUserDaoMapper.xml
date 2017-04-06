@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.ActivityUserDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.ActivityUser">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="description" property="description" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="status" property="status" javaType="String" />
+		<result column="new_flag" property="newFlag" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.ActivityUser" 
+	useGeneratedKeys="true" keyProperty="id">
+		insert into
+		activity_user(user_id,name,email,area_code,telphone,description,create_date,status,activity_id,new_flag)
+		values
+		(#{userId},#{name},#{email},#{areaCode},#{telphone},#{description},#{createDate},#{status}, #{activityId}, #{newFlag})
+	</insert>
+	
+	<select id="getByUIdAndAId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from activity_user where user_id=#{userId} and activity_id=#{activityId} limit 1
+	</select>
+
+</mapper>

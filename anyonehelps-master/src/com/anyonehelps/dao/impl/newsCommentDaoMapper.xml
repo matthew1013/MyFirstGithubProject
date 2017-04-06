@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.NewsCommentDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.NewsComment">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="new_id" property="newId" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="parent_id" property="parentId" javaType="String" />
+		<result column="user_nick_name" property="userNickName" javaType="String" />
+		<result column="user_pic_url" property="userPicUrl" javaType="String" />
+		<collection column="id" property="replyComments" select="searchByParentId"></collection>
+	</resultMap>
+
+	<insert id="insert" parameterType="com.anyonehelps.model.NewsComment" 
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		news_comment(new_id,user_id,content,create_date,parent_id)
+		values(#{newId},#{userId},#{content},#{createDate},#{parentId})
+	</insert>
+
+	<select id="searchByKey" resultMap="basic_result_map">
+		SELECT nc.*, u.`nick_name` AS user_nick_name,u.pic_url AS user_pic_url FROM 
+		(select *from news_comment) nc INNER JOIN users u on u.id=user_id WHERE nc.new_id=#{newId} and nc.parent_id='-1' order by nc.id desc  
+		limit
+		#{index},#{size} 
+	</select>
+	
+	<select id="countByKey" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) from news_comment WHERE new_id=#{newId} and parent_id='-1'  
+	</select>
+
+	<select id="searchByParentId" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		SELECT nc.*, u.`nick_name` AS user_nick_name,u.pic_url AS user_pic_url FROM 
+		(select *from news_comment) nc INNER JOIN users u on u.id=user_id WHERE nc.parent_id=#{parentId}
+	</select>
+
+	
+</mapper>

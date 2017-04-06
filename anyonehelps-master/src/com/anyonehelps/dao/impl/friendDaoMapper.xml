@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.FriendDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Friend">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="friend_user_id" property="friendUserId" javaType="String" />
+		
+		<collection property="friendUser" column="friend_user_id" select="com.anyonehelps.dao.UserDao.getUserOpenInfoById"></collection>
+	</resultMap>
+	
+	<resultMap id="user_open_map" type="com.anyonehelps.model.User">
+		<id column="id" property="id" javaType="String" />
+		<result column="nick_name" property="nickName" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="email_state" property="emailState" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="telphone_state" property="telphoneState" javaType="String" />
+		<result column="other_contact" property="otherContact" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="province" property="province" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="zip_code" property="zipCode" javaType="String" />
+		<result column="pic_url" property="picUrl" javaType="String" />
+		<result column="school" property="school" javaType="String" />
+		<result column="major" property="major" javaType="String" />
+		<result column="evaluate" property="evaluate" javaType="String" />
+		<result column="evaluate_count" property="evaluateCount" javaType="String" />
+		<result column="evaluate_publish" property="evaluatePublish" javaType="String" />
+		<result column="evaluate_publish_count" property="evaluatePublishCount" javaType="String" />
+		<result column="grade" property="grade" javaType="String" />
+		<result column="brief" property="brief" javaType="String" />
+		<result column="occupation" property="occupation" javaType="String" />
+		<result column="wechat" property="wechat" javaType="String" />
+		<result column="degree" property="degree" javaType="String" />
+		
+		<collection property="su" column="id" select="com.anyonehelps.dao.SpecialtyUserDao.getOpenByUserId"></collection>
+		<collection property="works" column="id" select="com.anyonehelps.dao.WorksDao.getByUserId"></collection>
+		<collection property="countPubDemand" column="id" select="com.anyonehelps.dao.DemandDao.countByUserId"></collection>
+		<collection property="countFinishRD" column="id" select="com.anyonehelps.dao.DemandDao.countRDByState8"></collection>
+		<collection property="education" column="id" select="com.anyonehelps.dao.EducationDao.getByUserId"></collection>
+		<collection property="we" column="id" select="com.anyonehelps.dao.WorkExperienceDao.getByUserId"></collection>
+		
+	</resultMap>
+	
+	<resultMap id="basic_result_map1" type="com.anyonehelps.model.Friend">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="friend_user_id" property="friendUserId" javaType="String" />
+		
+		<collection property="friendUser" column="friend_user_id" select="com.anyonehelps.dao.UserDao.getOnlyUserOpenInfoById"></collection>
+	</resultMap>
+	
+	<insert id="insertFriends" parameterType="java.util.List" >
+		insert into
+		friend(user_id,friend_user_id)
+		values
+		<foreach collection="friends" item="friend" index="index" separator=",">
+			(#{friend.userId,jdbcType=INTEGER},#{friend.friendUserId,jdbcType=INTEGER})
+		</foreach>
+	</insert>
+	
+	<select id="getByUIdAndFUId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from friend where friend_user_id = #{FUId} and user_id = #{userId} 
+	</select>
+	
+	<select id="searchByKey" resultMap="basic_result_map">
+	
+		<choose>
+			<when test="key!=null and key!=''">
+			select friend.* from friend,users 
+			where friend.user_id = #{userId} and friend.friend_user_id = users.id
+			and  (users.nick_name like #{key} or users.telphone like #{key} or users.email like #{key})
+			</when>
+			<otherwise>
+				select * from friend where user_id  = #{userId}
+			</otherwise>
+		</choose>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		<choose>
+			<when test="key!=null and key!=''">
+			select count(*) from friend,users 
+			where friend.user_id = #{userId} and friend.friend_user_id = users.id
+			and  (users.nick_name like #{key} or users.telphone like #{key} or users.email like #{key})
+			</when>
+			<otherwise>
+				select count(*) from friend where user_id  = #{userId}
+			</otherwise>
+		</choose>
+		
+	</select>
+	
+	
+	<select id="searchByKeyAndEd" resultMap="user_open_map">
+	
+		<choose>
+			<when test="key!=null and key!=''">
+			select users.* from friend,users 
+			where friend.friend_user_id = #{userId} and friend.user_id = users.id
+			and  (users.nick_name like #{key} or users.telphone like #{key} or users.email like #{key})
+			</when>
+			<otherwise>
+				select users.* from friend,users where friend_user_id  = #{userId} and friend.user_id = users.id
+			</otherwise>
+		</choose>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+	
+	
+	<select id="countByKeyAndEd" resultType="java.lang.Integer">
+		<choose>
+			<when test="key!=null and key!=''">
+			select count(*) from friend,users 
+			where friend.friend_user_id = #{userId} and friend.user_id = users.id
+			and  (users.nick_name like #{key} or users.telphone like #{key} or users.email like #{key})
+			</when>
+			<otherwise>
+				select count(*) from friend where friend_user_id  = #{userId}
+			</otherwise>
+		</choose>
+		
+	</select>
+	
+	<delete id="deleteByIds">
+		delete from friend
+		where user_id = #{userId} and friend_user_id in
+		<trim prefix="(" suffix=")">
+			<foreach collection="ids" item="id" separator=",">
+				#{id}
+			</foreach>
+		</trim>
+	</delete>
+	
+	<select id="countByUIdAndFUId" resultType="java.lang.Integer">
+		select count(*) from friend where user_id  = #{userId} and friend_user_id = #{friendUserId}
+	</select>
+	
+	<select id="getByFriendId" resultMap="basic_result_map1">
+		select * from friend where friend_user_id  = #{friendUserId}
+	</select>
+</mapper>

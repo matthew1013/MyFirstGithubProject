@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.RecommendDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Recommend">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="sms_state" property="smsState" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="recommender" property="recommender" javaType="String" />
+	</resultMap>
+	
+	<insert id="insertRecommends" parameterType="java.util.List" >
+		insert into
+		recommend(user_id,email,area_code,telphone,state,sms_state,create_date,modify_date,recommender)
+		values
+		<foreach collection="recommends" item="recommend" index="index" separator=",">
+			(#{recommend.userId,jdbcType=INTEGER},#{recommend.email,jdbcType=VARCHAR},
+			#{recommend.areaCode,jdbcType=VARCHAR},#{recommend.telphone,jdbcType=VARCHAR},
+			#{recommend.state,jdbcType=INTEGER},#{recommend.smsState,jdbcType=INTEGER},
+			#{recommend.createDate,jdbcType=VARCHAR},#{recommend.modifyDate,jdbcType=VARCHAR},
+			#{recommend.recommender,jdbcType=INTEGER})
+		</foreach>
+	</insert>
+
+	<select id="searchByKey" resultMap="basic_result_map">
+		select * from recommend
+		where (email like #{key} or telphone like #{key} or area_code like #{key}) and user_id = #{userId}
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from recommend
+		where (email like #{key} or telphone like #{key} or area_code like #{key}) and user_id = #{userId}
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+	</select>
+	
+	<select id="searchByEmail" resultMap="basic_result_map">
+		select * from recommend where email = #{email} and (timestampdiff(day , modify_date,NOW()) <![CDATA[<=]]> 7) limit 1
+	</select>
+	<select id="searchByPhone" resultMap="basic_result_map">
+		select * from recommend where area_code = #{areaCode} and telphone = #{telphone} and (timestampdiff(day , modify_date,NOW()) <![CDATA[<=]]> 7) limit 1
+	</select>
+	
+	<select id="getByUserIdAndPhone" resultMap="basic_result_map">
+		select * from recommend where user_id = #{userId} and area_code = #{areaCode} and telphone = #{telphone} limit 1
+	</select>
+	
+	<select id="getByUserIdAndEmail" resultMap="basic_result_map">
+		select * from recommend where user_id = #{userId} and email = #{email} limit 1
+	</select>
+	
+	<select id="getByUserIdAndPhone2" resultMap="basic_result_map">
+		select * from recommend where user_id = #{userId} and area_code = #{areaCode} and telphone = #{telphone} and (state = 4 or state = 5 or state = 6) limit 1
+	</select>
+	
+	<select id="getByUserIdAndEmail2" resultMap="basic_result_map">
+		select * from recommend where user_id = #{userId} and email = #{email}  and (state = 4 or state = 5 or state = 6) limit 1
+	</select>
+	
+	<update id="updateModifyDate">
+		update recommend set modify_date = #{modifyDate},sms_state = #{smsState} where id = #{id}
+	</update>
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from recommend where id = #{id}
+	</select>
+	
+	<update id="modifyState">
+		update recommend set modify_date = #{modifyDate},state = #{state} where id = #{id}
+	</update>
+	
+	<update id="modifyRecommendState">
+		update recommend set modify_date = #{modifyDate}, state = #{state} where recommender = #{recommender} and user_id = #{userId}
+	</update>
+
+</mapper>

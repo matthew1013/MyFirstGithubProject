@@ -1,0 +1,689 @@
+.portlet .left{
+	float: left;
+}
+.portlet .radius0{
+	float: right;
+    line-height: 32px;
+   	border-radius: 3px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+.portlet.light{
+	padding: 21px 21px 21px 31px;
+}
+.portlet.light > .portlet-title > .caption  {
+    padding: 0; 
+} 
+.portlet .radius1{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+
+.portlet .portlet-body .btn-sumbit{ 
+	color: #ffffff;
+    width: 100px;
+    float: left;
+    background: #4a91fd;
+    border: 1px solid #4a91fd;
+    border-radius: 3px;
+    height: 28px;
+    line-height:16px;
+    margin-right:15px;
+}
+.portlet .portlet-body .btn-sumbit:hover{ 
+    background: #0088ff;
+}
+.portlet .margin-top-30{
+	margin-top: 30px;
+}
+
+.portlet .portlet-body .table thead tr th {
+    vertical-align: middle;
+    text-align: center;
+    padding:0px;
+    line-height:36px;
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0;
+	background:#f6f6f6;
+}
+
+.portlet .portlet-body .table tbody tr td {
+	vertical-align: middle;
+    text-align: center;
+    padding:0px;
+    line-height:36px;
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd){
+	background:#ffffff;
+}
+.table-striped > tbody > tr:nth-of-type(even)
+{
+	background:#fafbff;
+}
+
+.portlet .portlet-body .specialty-my{
+    background: #f8f8f8;
+    border: 1px dashed #a1a1a1;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    height: 170px;
+}
+.portlet .portlet-body .specialty-my .hd {
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+    padding: 0 15px;
+}
+.portlet .portlet-body .specialty-my .bd {
+    padding: 0 15px;
+}
+.portlet .portlet-body .specialty-my .scroll {
+    height: 100px;
+    overflow-y: auto;
+    position: relative;
+}
+.portlet .portlet-body .specialty-my .scroll .special-label,.portlet .portlet-body .specialty-my .scroll .special-custom-label {
+    vertical-align: middle; 
+    position: relative; 
+    display: inline-block; 
+    height: 28px; 
+    margin: 0 8px 8px 0; 
+    line-height: 26px; 
+    color: #666; 
+    opacity: 1;
+    overflow: hidden;
+    background: url(/assets/pages/img/specialty/special-ico-new.png) right top no-repeat;
+}
+.portlet .portlet-body .specialty-my .scroll .special-label em, .portlet .portlet-body .specialty-my .scroll .special-custom-label em {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 12px;
+    height: 28px;
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -115px -29px no-repeat;
+}
+.portlet .portlet-body .specialty-my .scroll .special-label b,.portlet .portlet-body .specialty-my .scroll .special-custom-label b {
+    display: inline-block;
+    height: 28px;
+    line-height: 26px;
+    margin: 0 28px 0 12px;
+    font-weight: normal;
+    cursor: default;
+}
+.portlet .portlet-body .specialty-my .scroll .special-label i.delete, .portlet .portlet-body .specialty-my .scroll .special-custom-label i.delete {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -78px -29px no-repeat;
+    cursor: pointer;
+}
+
+.portlet .portlet-body .specialty-my .scroll .special-label i.delete:hover, .portlet .portlet-body .specialty-my .scroll .special-custom-label i.delete:hover {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -64px -29px no-repeat;
+}
+
+.portlet .portlet-body .specialty-my .scroll .special-label i.auth-pass, .portlet .portlet-body .specialty-my .scroll .special-custom-label i.auth-pass {
+    color: #0088ff;
+   	font-size: 12px;
+   	left: -8px;
+    cursor: pointer;
+}
+
+.portlet .portlet-body .desc{
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0;
+	text-align:left;
+	width: 100px;
+}
+.specialty-list>.specialty-item{
+   	margin-top:20px;
+}
+
+.specialty-list>.specialty-item .nav-tabs {
+    border-bottom: 0px solid #0088ff;
+}
+
+.specialty-list>.specialty-item .nav-tabs>li {
+   	margin-right: 20px;
+   	margin-bottom: 0px; 
+}
+    
+
+.specialty-list>.specialty-item .nav-tabs>li>a {
+    margin: 0;
+    background: none;
+    color: #999999;
+    border: 0px solid #0066ee;
+    padding: 0px 0px 5px 0px;
+}
+.specialty-list>.specialty-item .nav-tabs>li>a:hover,
+	.specialty-list>.specialty-item .nav-tabs>li>a:focus {
+    margin: 0;
+    background: none;
+    color: #0088ff;
+    border: 0px solid #0066ee;
+    border-bottom: 1px solid #0066ee;
+}
+.specialty-list>.specialty-item .nav-tabs>li.active>a,
+	.specialty-list>.specialty-item .nav-tabs>li:hover, .specialty-item .nav-tabs>li:hover>a {
+    background: none;
+    color: #0088ff;
+    border-bottom: 1px solid #0066ee;
+}
+
+.specialty-list>.specialty-item .nav-tabs>li.active,
+	.specialty-list>.specialty-item .nav-tabs>li.active:hover {
+    background: none;
+    border-bottom: 1px solid #0088ff;
+}
+
+.specialty-list>.specialty-item .tab-content .tab-pane .left{
+	float: left;
+	width:100px;
+	text-align: right;
+}
+.specialty-list>.specialty-item .tab-content .tab-pane .left>span{
+	line-height: 28px;
+	font-size: 14px;
+}
+.specialty-list>.specialty-item .tab-content .tab-pane .right{
+	float: left;
+	width: calc(100% - 100px);
+}
+.specialty-list>.specialty-item .tab-content .tab-pane .middle{
+	float: left;
+	width: calc(100% - 100px);
+}
+
+.specialty-list>.specialty-item .tab-content .tab-pane .middle>.zoom>i{
+    color: #4a91fd;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 28px;
+}
+.specialty-list>.specialty-item .tab-content .tab-pane .middle>.zoom>span{
+    font-size: 13px;
+    color: #999999;
+    line-height: 28px;
+    text-align: justify;
+}
+.specialty-list>.specialty-item .special-label {
+    vertical-align: middle; 
+    position: relative; 
+    display: inline-block; 
+    height: 28px; 
+    margin: 0 8px 8px 0; 
+    line-height: 26px; 
+    color: #666; 
+    background: url(/assets/pages/img/specialty/special-ico-new.png) right top no-repeat;
+}
+.specialty-list>.specialty-item .special-label.active {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) right -109px no-repeat;
+	cursor: default;
+}
+.specialty-list>.specialty-item .special-label em{
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   display: block; 
+   width: 18px; 
+   height: 28px; 
+   background: url(/assets/pages/img/specialty/special-ico-new.png) -92px -29px no-repeat;
+}
+.specialty-list>.specialty-item .special-label.active em {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -19px -29px no-repeat;
+	cursor: default;
+}
+.specialty-list>.specialty-item .special-label:hover em {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) 0 -29px no-repeat;
+}
+.specialty-list>.specialty-item .special-label.active:hover em {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -19px -29px no-repeat;
+}
+.specialty-list>.specialty-item .special-label span{
+   	display: inline-block; 
+   	height: 28px; 
+   	line-height: 26px; 
+   	margin: 0 16px 0 24px;
+}
+.specialty-list>.specialty-item .special-label.active span{
+  	cursor: default;
+}
+
+
+.specialty-list>.specialty-custom .left{
+	float: left;
+	width:100px;
+	text-align: right;
+}
+.specialty-list>.specialty-custom .left>span{
+	line-height: 28px;
+	font-size: 14px;
+}
+.specialty-list>.specialty-custom .right{
+	float: left;
+	width: calc(100% - 100px);
+}
+.specialty-list>.specialty-custom .special-label {
+    vertical-align: middle; 
+    position: relative; 
+    display: inline-block; 
+    height: 28px; 
+    margin: 0 8px 8px 0; 
+    line-height: 26px; 
+    color: #666; 
+    background: url(/assets/pages/img/specialty/special-ico-new.png) right top no-repeat;
+}
+.specialty-list>.specialty-custom .special-label.active {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) right -109px no-repeat;
+	cursor: default;
+}
+.specialty-list>.specialty-custom .special-label em{
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   display: block; 
+   width: 18px; 
+   height: 28px; 
+   background: url(/assets/pages/img/specialty/special-ico-new.png) -92px -29px no-repeat;
+}
+.specialty-list>.specialty-custom .special-label.active em {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -19px -29px no-repeat;
+	cursor: default;
+}
+.specialty-list>.specialty-custom .special-label:hover em {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) 0 -29px no-repeat;
+}
+.specialty-list>.specialty-custom .special-label.active:hover em {
+    background: url(/assets/pages/img/specialty/special-ico-new.png) -19px -29px no-repeat;
+}
+.specialty-list>.specialty-custom .special-label span{
+   	display: inline-block; 
+   	height: 28px; 
+   	line-height: 26px; 
+   	margin: 0 16px 0 24px;
+}
+.specialty-list>.specialty-custom .special-label.active span{
+  	cursor: default;
+}
+.specialty-list>.specialty-custom .specialty-custom-add {
+	float: left;
+	width: 180px;
+	border-radius: 0px;
+	height: 28px;
+	color: #676767;
+	padding: 0px 12px;
+}
+.specialty-list>.specialty-custom .specialty-custom-submit {
+	background: #0088ff;
+	color: #ffffff;
+	width: 60px;
+	height: 28px;
+	border-radius: 0px;
+	float: float;
+	margin: 0px 8px 8px 0;
+	padding: 0;
+}
+.specialty-list>.specialty-custom .specialty-custom-submit:hover {
+	background: #0066ee;
+	color: #ffffff;
+}
+
+
+.portlet-body .enclosure-list .enclosure-item{
+
+}
+.portlet-body .enclosure-list .enclosure-item .title{
+	line-height:32px;
+	color:0088ff;
+}
+.portlet-body .enclosure-list .enclosure-item .title:hover{
+	color:0066ee;
+}
+.portlet-body .enclosure-list .enclosure-item .enclosure-delete{
+	font-size: 10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+
+.portlet-body .enclosure-upload{
+	color: #ffffff;
+	width: 100px;
+	float: left;
+	padding: 3px 6px;
+    background: #4a91fd;
+    border: 1px solid #4a91fd;
+    border-radius: 3px;
+    height: 28px;
+}
+.portlet-body .enclosure-upload>span{
+    line-height: 16px;
+}
+.portlet-body .enclosure-format{
+	margin-left:10px;
+	font-size: 10px;
+}
+
+
+
+.specialty-list>.specialty-item .specialty-btn {
+    background:#ffffff;
+	border:2px dashed #cccccc;
+	height:36px;
+	border-radius: 0px;
+	
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    
+    color:#676767;
+    float:left;
+    margin-right:20px;
+    margin-bottom:20px
+}
+
+.specialty-list>.specialty-item .specialty-btn.active {
+	border:2px solid #0088ff;
+	color:#0088ff;
+}
+
+.specialty-list>.specialty-item .specialty-custom-btn {
+    background: #0088ff;
+	height:36px;
+	border-radius: 0px;
+	
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    
+    color:#ffffff;
+    float:left;
+    margin-right:20px;
+    margin-bottom:20px
+}
+.specialty-list>.specialty-item .specialty-custom-item {
+    border: 2px solid #f36a5a;
+    background: #ffffff;
+	height:36px;
+	border-radius: 0px;
+	
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    
+    color:#f36a5a;
+    float:left;
+    margin-right:20px;
+    margin-bottom:20px
+}
+
+.specialty-list>.specialty-item .specialty-btn:hover{
+	color:#0066ee;
+}
+
+input[name="isAgree"]{
+	margin-left:20px;
+}
+
+
+.dlg-specialty-custom{
+	border-radius: 0px;
+    padding: 5px;
+    overflow: visible; 
+    left:-400px;
+}
+.dlg-specialty-custom .ui-dialog-content{
+	padding:0px;
+}
+.dlg-specialty-custom>.ui-dialog-grid>tbody>tr>.ui-dialog-footer>.ui-dialog-button>.ui-dialog-autofocus{
+	background: #0088ff;
+    height: 36px;
+    width:140px;
+    border-radius: 0px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: #ffffff;
+    border: 0px;
+}
+
+.special-remark-dlg{
+	border-radius: 3px;
+    padding: 5px;
+    overflow: visible;
+    left: -450px;
+}
+
+.special-remark-dlg .ui-dialog-content{
+	width: 400px;
+}
+
+
+/* 取消关注提示框start*/
+.tip-dlg{
+	position: fixed;
+    left: calc(50% - 200px);
+    top: 140px;
+    border-radius: 0px;
+}
+.tip-dlg .ui-dialog-content{
+	padding:0px;
+	width: 400px;
+}
+
+.tip-dlg button{
+	width: 80px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px;
+    border-radius: 3px;
+    color: #333333;
+}
+.tip-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.tip-dlg button[i-id="ok"] {
+    color: #ffffff;
+    background:#4a91fd;
+    border-color: #4a91fd;
+}
+
+.tip-dlg button[i-id="ok"]:hover{
+    background-color:#0088ff;
+}
+/* 取消关注提示框end*/
+
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.portlet.light{
+		padding: 10px 5px 21px 5px;
+	}
+	.specialty-list>.specialty-item .tab-content .tab-pane .left {
+	    width: 70px;
+	}
+	.portlet .portlet-body .btn-sumbit {
+	    width: 60px;
+	    margin-right: 5px;
+	}
+	
+	.special-remark-dlg{
+		left: 0px;
+		width:100%;
+		margin-top: 95px;
+		position: fixed;
+		overflow: auto;
+	}
+	.special-remark-dlg table.ui-dialog-grid{
+		width:100%;
+	}
+	.special-remark-dlg .ui-dialog-content{
+		padding:0px;
+		width: 100%;
+	}
+	
+	.tip-dlg{
+		left: 0px;
+		width:100%;
+		margin-top: 95px;
+	}
+	.tip-dlg table.ui-dialog-grid{
+		width:100%;
+	}
+	.tip-dlg .ui-dialog-content{
+		padding:0px;
+		width: 100%;
+	}
+}
+@media (max-width: 375px) {
+	.specialty-list>.specialty-custom .specialty-custom-submit {
+	    width: 50px;
+	    margin: 0px 0px 8px 0;
+	    padding: 0px;
+	}
+	.portlet .portlet-body .btn-sumbit {
+	    width: 60px;
+	    margin-right: 5px;
+	}
+}
+
+@media (max-width: 320px) {
+	.portlet .portlet-body .desc{
+		width: 70px;
+	}
+	.specialty-list>.specialty-custom .specialty-custom-add {
+	    width: 148px;
+	    padding: 0px;
+	}
+	.specialty-list>.specialty-custom .specialty-custom-submit {
+	    width: 40px;
+	    margin: 0px 0px 8px 0;
+	    padding: 0px;
+	}
+	input[name="isAgree"]{
+		margin-left:0px;
+	}
+	
+	.portlet .portlet-body .btn-sumbit {
+	    width: 60px;
+	    margin-right: 5px;
+	}
+	
+}
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+
+
+
+/*
+ * Responsive table
+ */ 
+@media (max-width: 767px) {
+	.portlet .portlet-body .table > thead > tr > th, 
+	.portlet .portlet-body .table > tbody > tr > th, 
+	.portlet .portlet-body .table > tfoot > tr > th, 
+	.portlet .portlet-body .table > thead > tr > td, 
+	.portlet .portlet-body .table > tbody > tr > td, 
+	.portlet .portlet-body .table > tfoot > tr > td {
+		height: 48px;
+    	line-height: 18px;
+    	text-align: left;
+    	padding-top: 8px;
+    	padding-right: 8px;
+    	padding-bottom: 8px;
+	    padding-left: 50%;
+	}
+	.portlet .portlet-body .table th,  
+	.portlet .portlet-body .table td {
+	  padding-left: 50%;
+	  border-top:0;
+	}
+	.portlet .portlet-body table,  
+	.portlet .portlet-body thead,  
+	.portlet .portlet-body tbody,  
+	.portlet .portlet-body th,  
+	.portlet .portlet-body td,  
+	.portlet .portlet-body tr {
+	  display: block;
+	}
+	.portlet .portlet-body thead tr {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+	.portlet .portlet-body tr { 
+	  border: 0px solid #ccc; 
+	}
+	.portlet .portlet-body td {
+	  border: none;
+	  border-bottom: 1px solid #eee;
+	  position: relative;
+	  padding-left: 50%;
+	}
+	.portlet .portlet-body td:before {
+	  position: absolute;
+	  top: 6px;
+	  left: 6px;
+	  width: 45%;
+	  padding-right: 10px;
+	  white-space: nowrap;
+	}
+	.item-specialty td:nth-of-type(1):before { content: "技能"; }
+	.item-specialty td:nth-of-type(2):before { content: "分类"; }
+	.item-specialty td:nth-of-type(3):before { content: "认证凭证"; }
+	.item-specialty td:nth-of-type(4):before { content: "状态"; }
+	.item-specialty td:nth-of-type(5):before { content: "认证说明"; }
+	
+	.portlet .portlet-body table th ,
+	.portlet .portlet-body table td{
+	    text-align: left;
+	}
+	
+}

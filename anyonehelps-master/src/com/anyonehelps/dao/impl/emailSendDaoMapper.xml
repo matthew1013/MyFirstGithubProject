@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.EmailSendDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.EmailSend">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="email" property="email" javaType="String" />
+		<result column="subject" property="subject" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="fail_count" property="failCount" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.EmailSend" >
+		insert into email_send(user_id, email, subject, content, state, fail_count, create_date, modify_date)
+		values(#{userId}, #{email}, #{subject}, #{content}, #{state}, #{failCount}, #{createDate}, #{modifyDate})
+	</insert>
+	
+	<select id="getOneByState0" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from email_send where state = 0 and fail_count <![CDATA[<]]> 3 limit 1
+	</select>
+	
+	<update id="modifyState">
+		update email_send
+		set modify_date=#{date},state=#{state}
+		where id=#{id}
+	</update>
+	
+	
+	<update id="modifyFailCount">
+		update email_send
+		set modify_date = #{date}, 
+		fail_count = fail_count+1,
+		state = 0
+		where id=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.EducationDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Education">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="start_date" property="startDate" javaType="String" />
+		<result column="end_date" property="endDate" javaType="String" />
+		<result column="school" property="school" javaType="String" />
+		<result column="major" property="major" javaType="String" />
+		<result column="education" property="education" javaType="String" />
+		<result column="major_desc" property="majorDesc" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="enclosure" property="enclosure" javaType="String" />
+		<result column="enclosure_name" property="enclosureName" javaType="String" />
+
+		<result column="enclosure_pdf" property="enclosurePdf" javaType="String" />
+		<result column="enclosure_pdf_state" property="enclosurePdfState" javaType="String" />
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+
+	</resultMap>
+	
+	<insert id="insertEducation" parameterType="com.anyonehelps.model.Education" 
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		education(user_id,start_date,end_date,school,major,education,major_desc,modify_date,create_date,enclosure,enclosure_name)
+		values
+		(#{userId},#{startDate},#{endDate},#{school},#{major},#{education},#{majorDesc},#{modifyDate},#{createDate},#{enclosure},#{enclosureName})
+	</insert>
+
+	<select id="getByUserId" resultMap="basic_result_map">
+		select * from education where user_id = #{userId} order by id desc
+	</select>
+	
+	<select id="getById" resultMap="basic_result_map">
+		select * from education where id=#{id} order by id desc
+	</select>
+	
+	<delete id="deleteById">
+		delete from education where user_id = #{userId} and id = #{id}
+	</delete>
+	
+	<update id="modifyEducation">
+		update `education`
+		set `start_date`=#{startDate},
+		`end_date`=#{endDate},
+		`school`=#{school},
+		`major`=#{major},
+		`education`=#{education},
+		`major_desc`=#{majorDesc},
+		`modify_date`=#{modifyDate},
+		`enclosure`=#{enclosure},
+		`enclosure_name`=#{enclosureName}
+		where id = #{id}
+	</update> 
+	
+	<update id="modifyEnclosureName">
+		update `education` set `enclosure_name`=#{enclosureName} where id = #{id}
+	</update> 
+	
+	<select id="getByECS" resultMap="basic_result_map">
+		select * from `education` where enclosure_converter_state = 0 order by id asc
+	</select>
+	
+	<!-- 修改任务附件转换状态 -->
+	<update id="modifyECS">
+		update `education`
+		set `enclosure_converter_state`= 1,
+		`enclosure_pdf`=#{ep},
+		`enclosure_pdf_state`=#{eps}
+		where id = #{id}
+	</update> 
+</mapper>

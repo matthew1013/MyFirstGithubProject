@@ -1,0 +1,83 @@
+/*自适应 start*/
+@media (max-width: 414px) {
+	.portlet.light {
+	    padding: 0px 5px 21px 5px;
+	}
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+
+}
+
+
+@media (min-width: 768px) {
+
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+
+/*
+ * Responsive table
+ */ 
+@media (max-width: 767px) {
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	    padding-left: 50%;
+	    min-height: 36px;
+	}
+	.table th,  .table td {
+	  padding-left: 50%;
+	  border-top:0;
+	}
+	 table,  thead,  tbody,  th,  td,  tr {
+	  display: block;
+	}
+	 thead tr {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+	tr { 
+	  border: 0px solid #ccc; 
+	}
+	 td {
+	  border: none;
+	  border-bottom: 1px solid #eee;
+	  position: relative;
+	  padding-left: 50%;
+	}
+	 td:before {
+	  position: absolute;
+	  top: 6px;
+	  left: 6px;
+	  width: 45%;
+	  padding-right: 10px;
+	  white-space: nowrap;
+	}
+	.item td:nth-of-type(1):before { content: "发票号"; }
+	.item td:nth-of-type(2):before { content: "帐号类型"; }
+	.item td:nth-of-type(3):before { content: "名字"; }
+	.item td:nth-of-type(4):before { content: "帐号类型"; }
+	.item td:nth-of-type(5):before { content: "帐号"; }
+	.item td:nth-of-type(6):before { content: "收款人类别 "; }
+	.item td:nth-of-type(7):before { content: "汇款路线号码"; }
+	.item td:nth-of-type(8):before { content: "金额"; }
+	.item td:nth-of-type(9):before { content: "申请日期"; }
+	.item td:nth-of-type(10):before { content: "处理日期"; }
+	.item td:nth-of-type(11):before { content: "状态"; }
+	.item td:nth-of-type(12):before { content: "备注 "; }
+	
+	.portlet-body table th ,.portlet-body table td{
+	    text-align: left;
+	}
+	
+	
+	
+}

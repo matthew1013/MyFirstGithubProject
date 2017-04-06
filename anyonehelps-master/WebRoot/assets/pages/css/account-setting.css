@@ -1,0 +1,852 @@
+.portlet.light{
+	padding: 21px 21px 21px 31px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+}
+.portlet.light > .portlet-title {
+    padding: 0;
+    min-height: 24px;
+    margin-bottom: 0px;
+}
+.portlet.light>.portlet-title>.nav-tabs>li{
+    margin-left:40px;
+}
+.portlet.light>.portlet-title>.nav-tabs>li.open, .portlet.light>.portlet-title>.nav-tabs>li:hover {
+    background: none;
+    border-bottom: 2px solid #0066ee;
+}
+
+.portlet.light > .portlet-title > .nav-tabs > li > a {
+    margin: 0;
+    padding: 15px 0px 8px 0px;
+	font-size:14px;
+	color:#666666;
+	letter-spacing:0;
+	line-height:14px;
+	text-align:left;
+}
+
+.portlet.light>.portlet-title>.nav-tabs>li.active>a, .portlet.light>.portlet-title>.nav-tabs>li:hover>a {
+    margin: 0px;
+    background: none;
+	font-size:14px;
+	color:#0088ff;
+	letter-spacing:0;
+	line-height:14px;
+	text-align:left;
+}
+.portlet.light>.portlet-title>.nav-tabs>li.active {
+    background: none;
+    border-bottom: 2px solid #0088ff;
+}
+
+
+
+.tab-content{
+	min-height: 900px;
+}
+.tab-content .user{
+	float:left;
+	width: 100%;
+}
+.tab-content .user .user-img{
+	float:left;
+}
+.tab-content .user .user-img img{
+	height: 72px;
+	width: 72px;
+	border-radius: 50%;
+	
+	border: 2px solid #ffffff;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.30);
+}
+.tab-content .user .user-info{
+	float:left;
+	line-height: 24px;
+	width: calc(100% - 92px);
+    margin-left: 20px;
+}
+.tab-content .user .user-info .username{
+	float:left;
+	font-size:14px;
+	color:#676767;
+	line-height: 14px;
+}
+.tab-content .user .user-info .level{
+	float:left;
+	font-size:14px;
+	color:#666666;
+	margin-left:30px;
+	line-height: 14px;
+}
+.tab-content .user .user-info .level img{
+	float:none;
+	margin-left:10px;
+}
+.tab-content .user .user-info .finish-task{
+	float:left;
+	font-size:14px;
+	color:#676767;
+	margin-top: 15px;
+	margin-right: 50px;
+}
+.tab-content .user .user-info .finish-task .margin-left-10{
+	margin-left: 10px;
+}
+
+#finish-sum-amount,#finish-count{
+	margin-left:10px;
+}
+
+.tab-content .user ul li{
+	list-style: none;
+}
+
+.tab-content .user li{
+	float: left;
+	margin-top:10px;
+}
+.tab-content .user ul{
+ 	margin-bottom: 0px;
+ 	margin-left: -10px; 
+}
+
+.tab-content .user ul li .specialty:hover{
+	background: #dddddd;
+	color:#333333;
+}
+.tab-content .user ul li .specialty{
+	padding: 0px 10px 0px 10px;
+    background: #f2f2f2;
+    color: #676767;
+    font-size: 12px;
+    margin-left: 10px;
+    float: left;
+    height: 24px;
+}
+.tab-content>.tab-pane>.line {
+	border-top: 2px solid #dddddd;
+    float: left;
+    width: 100%;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.tab-content .user-form {
+	color:#676767;
+}
+
+.tab-content .user-form span{
+	line-height: 32px;
+}
+.tab-content .user-form .left{
+	float: right;
+    margin-right: 10px;
+}
+.tab-content .user-form .radius0{
+	float: right;
+    line-height: 32px;
+   	border-radius: 3px;
+   	color:#676767;
+}
+
+.tab-content .user-form #telphone{
+	margin-left: 10px;
+    width: calc(100% - 10px);
+}
+    
+.tab-content .user-form .phonecode{
+	width:90px;
+    line-height: 32px;
+   	border-radius: 3px;
+   	color:#676767;
+}
+.tab-content .user-form .verify{
+	padding-left: 10px;
+	line-height: 32px;
+}
+.tab-content .user-form .send-message{
+	border-radius: 3px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.tab-content .user-form .add-file-btn{
+    width: 140px;
+    height: 32px;
+    padding-top: 0px;
+}
+.tab-content .user-form .send-message:hover{
+    background-color: #0066ee;
+}
+
+.tab-content .user-form .show-security{ 
+	width:100px;
+	border-radius: 3px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.tab-content .user-form .show-security:hover{ 
+    background-color: #0066ee;
+}
+.tab-content .user-form .update-btn{ 
+	width:100px;
+	border-radius: 3px;
+	color: #ffffff;
+    background-color: #f97575;
+}
+.tab-content .user-form .update-btn:hover{ 
+    background-color: #F34E4E;
+}
+.tab-content .user-form .update-password-btn{ 
+	width:100px;
+	border-radius: 3px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.tab-content .user-form .update-password-btn:hover{ 
+    background-color: #0066ee;
+}
+.tab-content .user-form .margin-top-30{
+	margin-top: 30px;
+}
+
+
+.tab-content .user-form .btnOperation{ 
+	position: absolute;
+    right: 10px;
+    font-size: 14px;
+    z-index: 100001;
+    display:none;
+}
+
+.tab-content .user-form .btnOperation a{ 
+	float:left;
+	margin-left:10px;
+}
+
+.tab-content .user-form .sex{
+    float: left;
+    line-height: 32px;
+}
+
+.tab-content .user-form .margin-left-21{
+    margin-left: 21px;
+}
+
+.tab-content .color-0088ff{ 
+	color:0088ff;
+}
+.tab-content .color-0088ff:hover{ 
+	color:0066ee;
+}
+.tab-content .user-form .education-item{ 
+	padding: 10px;
+}
+.tab-content .user-form .education-item>p>span{ 
+	font-weight: bold;
+}
+
+.tab-content .user-form .education-item .education-enclosure-edit{ 
+	font-size: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+   	margin-top: 5px;
+   	margin-left: 15px;
+}
+.tab-content .user-form .education-item .education-enclosure-edit:hover{ 
+	color: #ffffff;
+    background-color: #999999;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+    
+.tab-content .user-form .education-item .major-desc{ 
+    display: block;
+    padding: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #676767;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: 0px solid #ccc;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    overflow: visible;
+}
+
+.tab-content .user-form .work-experience-item{ 
+	padding: 10px;
+}
+.tab-content .user-form .work-experience-item>p>span{ 
+	font-weight: bold;
+}
+.tab-content .user-form .work-experience-item .work-experience-enclosure-edit{ 
+	font-size: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+   	margin-top: 5px;
+   	margin-left: 15px;
+}
+.tab-content .user-form .work-experience-item .work-experience-enclosure-edit:hover{ 
+	color: #ffffff;
+    background-color: #999999;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+.tab-content .user-form .work-experience-item .job-desc{ 
+    display: block;
+    padding: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #676767;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: 0px solid #ccc;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    overflow: visible;
+}
+
+
+/*.tab-content .user-form .work-item{ 
+	margin-bottom: 10px;
+}
+.tab-content .user-form .work-item .works-enclosure-edit{ 
+	float: left;
+	font-size: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+   	margin-top: 5px;
+}
+.tab-content .user-form .work-item .works-enclosure-edit:hover{ 
+	color: #ffffff;
+    background-color: #999999;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+    
+.tab-content .user-form .work-item .title{ 
+	font-size:14px;
+    color: #0088ff;
+    line-height: 32px; 
+}
+.tab-content .user-form .work-item .delete{ 
+	font-size:10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+    margin-top: 6px;
+}*/
+
+/**/
+.tab-content .user-form .work-item{
+	background:#ffffff;
+	box-shadow:0 0 10px 0 rgba(0,0,0,0.10);
+	width:calc(33.33333% - 14px);
+	height:200px;
+	float:left;
+}
+.tab-content .user-form .work-item:nth-child(3n+1)
+{
+	margin-right:14px;
+}
+.tab-content .user-form .work-item:nth-child(3n+2)
+{
+	margin-left:7px;
+	margin-right:7px;
+}
+.tab-content .user-form .work-item:nth-child(3n+3)
+{
+	margin-left:14px;
+}
+.tab-content .user-form .work-item:nth-child(-n+6)
+{
+	margin-bottom:20px;
+}
+.tab-content .user-form .work-item .file-extension{
+	height:164px;
+	text-align: center;
+}
+.tab-content .user-form .work-item .file-extension img{
+	margin-top: 50px;
+	width: 64px;
+    height: 64px;
+}
+.tab-content .user-form .work-item .delete {
+   	position: absolute;
+    margin-left: calc(33.3% - 32px);
+    margin-top: -158px;
+    font-size: 10px;
+}
+    
+.tab-content .user-form .work-item .line {
+    border-bottom: 1px solid #dddddd;
+    width: 100%;
+}
+
+.tab-content .user-form .work-item .works-enclosure-edit{ 
+	float: left;
+	font-size: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+   	margin-top: 5px;
+}
+.tab-content .user-form .work-item .works-enclosure-edit:hover{ 
+	color: #ffffff;
+    background-color: #999999;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+.tab-content .user-form .work-item .title {
+	padding:0px 9px;
+}
+.tab-content .user-form .work-item .title>a>span {
+	font-size:12px;
+	color:#333333;
+	line-height:36px;
+	
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.tab-content .user-form .work-item .title>.title1 {
+	width:calc(100% - 20px);
+	float:left;
+}
+
+
+
+.delete-tip-dlg{
+	position: fixed;
+    left: calc(50% - 200px);
+    top: 140px;
+    border-radius: 0px;
+}
+.delete-tip-dlg button{
+	width: 100px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px;
+    border-radius: 0px;
+    color: #333333;
+}
+.delete-tip-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.delete-tip-dlg button.ui-dialog-autofocus {
+    color: #ffffff;
+    background-color:#0088ff;
+    border-color: #0088ff;
+}
+
+.delete-tip-dlg button.ui-dialog-autofocus:hover{
+    background-color:#0066ee;
+}
+    
+/*设置密保框 start*/
+.security-question-dlg{
+	position: fixed;
+    left: calc(50% - 250px);
+    top: 70px;
+    border-radius: 0px;
+}
+.security-question-dlg button{
+	width: 100px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px;
+    border-radius: 0px;
+    color: #333333;
+}
+.security-question-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.security-question-dlg button.ui-dialog-autofocus {
+    color: #ffffff;
+    background-color:#0088ff;
+    border-color: #0088ff;
+   	margin-right: 95px; 
+}
+
+.security-question-dlg button.ui-dialog-autofocus:hover{
+    background-color:#0066ee;
+}
+.security-question-dlg .security-question .question{
+	 margin-top: 20px;
+}
+.security-question-dlg .security-question .left{
+	 float: left;
+	 width:100px;
+}
+.security-question-dlg .security-question .right{
+	 float: left;
+	 padding-left: 10px;
+}
+.security-question-dlg .security-question .question .right>select{
+	width:280px;
+}
+.security-question-dlg .security-question .left>span,.security-question-dlg .security-question .right>span{
+	 float: right;
+	 line-height: 32px;
+}
+
+
+.security-question-dlg .radius0{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+}
+
+.security-question-dlg .right .phonecode{
+	width: 180px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.security-question-dlg .right .answer{
+	width: 280px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.security-question-dlg .right .send-message{
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+    width:100px;
+}
+/*设置密保框 end*/
+
+
+/*修改手机 start*/
+.modify-phone-dlg{
+	position: fixed;
+    left: calc(50% - 250px);
+    top: 70px;
+    border-radius: 0px;
+}
+.modify-phone-dlg button{
+	width: 100px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px;
+    border-radius: 0px;
+    color: #333333;
+}
+.modify-phone-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.modify-phone-dlg button.ui-dialog-autofocus {
+    color: #ffffff;
+    background-color:#0088ff;
+    border-color: #0088ff;
+   	margin-right: 25px; 
+}
+.modify-phone-dlg button.ui-dialog-autofocus:hover{
+    background-color:#0066ee;
+}
+.modify-phone-dlg .modify-phone .question{
+	 margin-top: 20px;
+}
+.modify-phone-dlg .modify-phone .left{
+	 float: left;
+	 width:100px;
+}
+.modify-phone-dlg .modify-phone .right{
+	 float: left;
+	 padding-left: 10px;
+}
+.modify-phone-dlg .modify-phone .question .right>select{
+	width:350px;
+}
+.modify-phone-dlg .modify-phone .left>span,.modify-phone-dlg .modify-phone .right>span{
+	 float: right;
+	 line-height: 32px;
+}
+.modify-phone-dlg .radius0{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+}
+
+.modify-phone-dlg .right .area-code{
+	width: 80px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.modify-phone-dlg .right .phone{
+	width: 170px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.modify-phone-dlg .right .phonecode{
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.modify-phone-dlg .right .answer{
+	width: 350px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.modify-phone-dlg .right .send-message{
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+    width:100px;
+}
+/*修改手机 end*/
+
+
+/*修改邮箱 start*/
+.modify-email-dlg{
+	position: fixed;
+    left: calc(50% - 250px);
+    top: 70px;
+    border-radius: 0px;
+}
+.modify-email-dlg button{
+	width: 100px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px;
+    border-radius: 0px;
+    color: #333333;
+}
+.modify-email-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.modify-email-dlg button.ui-dialog-autofocus {
+    color: #ffffff;
+    background-color:#0088ff;
+    border-color: #0088ff;
+   	margin-right: 25px; 
+}
+.modify-email-dlg button.ui-dialog-autofocus:hover{
+    background-color:#0066ee;
+}
+.modify-email-dlg .modify-email .question{
+	 margin-top: 20px;
+}
+.modify-email-dlg .modify-email .left{
+	 float: left;
+	 width:100px;
+}
+.modify-email-dlg .modify-email .right{
+	 float: left;
+	 padding-left: 10px;
+}
+.modify-email-dlg .modify-email .question .right>select{
+	width:350px;
+}
+.modify-email-dlg .modify-email .left>span,.modify-email-dlg .modify-email .right>span{
+	 float: right;
+	 line-height: 32px;
+}
+.modify-email-dlg .radius0{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+}
+
+.modify-email-dlg .right .email{
+	width: 350px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+
+.modify-email-dlg .right .answer{
+	width: 350px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+.modify-email-dlg .right .send-message{
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+    width:100px;
+}
+/*修改邮箱 end*/
+
+
+/*connor added 2017/03/21*/
+.tip-dlg {
+    left: calc(50% - 240px);
+    top: calc(50% - 190px);
+    position: fixed;
+    padding: 0px;
+}
+
+.tip-dlg .ui-dialog-content{
+	padding:0px;
+	width: 480px;
+}
+.tip-dlg .tip-dlg-content{
+	background:#ffffff;
+	border-radius:3px;
+	width:480px;
+	padding:30px 55px 35px 55px;
+}
+
+.tip-dlg .tip-dlg-content .title{
+	font-size:20px;
+	color:#999999;
+	letter-spacing:0;
+	line-height:20px;
+	text-align:center;
+}
+
+.tip-dlg .tip-dlg-content .content{
+	margin-top:52px;
+} 
+.tip-dlg .tip-dlg-content i{
+	width:24px;
+	font-size: 24px;
+	color:#4a91fd;
+	vertical-align: middle;
+} 
+.tip-dlg .tip-dlg-content span{
+	font-size:14px;
+	color:#666666;
+	letter-spacing:0;
+	text-align:left;
+	line-height:24px;
+} 
+
+.tip-dlg .tip-dlg-content .operate{
+	margin-top:65px;
+	text-align: center;
+} 
+.tip-dlg .tip-dlg-content .operate button{
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:32px;
+	padding: 3px 21px;
+	    
+	font-size:14px;
+	color:#ffffff;
+	letter-spacing:0;
+	text-align:left;
+} 
+
+/*connor added 2017/03/21*/
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.portlet.light>.portlet-title>.nav-tabs>li {
+	    margin-left: 20px;
+	}
+	.tab-content .user .user-info{
+		width: 100%;
+	    margin-left: 0px;
+	}
+	.portlet.light{
+		padding: 21px 5px 21px 5px;
+	}
+	.tab-content .user-form .left {
+	    float: left;
+	}
+	.tab-content .user-form .btnOperation {
+	    margin-top: -10px;
+	}
+	.tab-content .user-form .work-item {
+	    height: 160px;
+	}
+	.tab-content .user-form .work-item .file-extension {
+	    height: 124px;
+	    text-align: center;
+	}
+	.tab-content .user-form .work-item .delete {
+	    margin-left: calc(33.3% - 32px);
+	}
+	.tab-content .user-form .work-item .file-extension img {
+	    margin-top: 30px;
+	}
+	.margin-top-30 {
+    	margin-top: 10px !important;
+	}
+	
+	.modify-pass .user-form .left {
+	    float: right;
+	}
+	.modify-pass .margin-top-30 {
+    	margin-top: 30px !important;
+	}
+	
+	.tip-dlg{
+		left: 2%;
+		width:96%;
+		margin-top: 95px;
+	}
+	.tip-dlg table.ui-dialog-grid{
+		width:96%;
+	}
+	.tip-dlg .ui-dialog-content{
+		padding:0px;
+		width: 100%;
+	}
+	.tip-dlg .tip-dlg-content {
+	    width: 100%;
+	    padding: 0;
+	}
+	.tip-dlg .tip-dlg-content .content {
+	    margin-top: 32px;
+	}
+
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+	.portlet.light>.portlet-title>.nav-tabs>li {
+	    margin-left: 15px;
+	}
+}
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+

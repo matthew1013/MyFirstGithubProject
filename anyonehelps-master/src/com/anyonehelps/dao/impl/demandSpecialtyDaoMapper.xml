@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.DemandSpecialtyDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.DemandSpecialty">
+		<id column="id" property="id" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="specialty_type_id" property="specialtyTypeId" javaType="String" />
+		<result column="specialty_id" property="specialtyId" javaType="String" />
+		<collection property="st" column="specialty_type_id" select="com.anyonehelps.dao.SpecialtyTypeDao.getSTById"></collection>
+		<collection property="specialty" column="specialty_id" select="com.anyonehelps.dao.SpecialtyDao.getSpecialtyById"></collection>
+	
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.DemandSpecialty" >
+		insert into demand_specialty(demand_id,specialty_type_id,specialty_id) 
+		values
+		<foreach collection="list" item="item" index="index" separator="," >  
+        	(#{item.demandId},#{item.specialtyTypeId},#{item.specialtyId})  
+   	 	</foreach>  
+	</insert>
+	
+	<select id="getByDemandId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from demand_specialty where demand_id=#{demandId} order by `id` desc
+	</select> 
+	
+	<delete id="deleteByDemandId" parameterType="java.lang.String">
+		delete from demand_specialty
+		where demand_id = #{demandId}
+	</delete>
+	
+</mapper>

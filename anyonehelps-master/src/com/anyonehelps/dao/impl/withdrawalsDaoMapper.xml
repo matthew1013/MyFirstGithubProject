@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.WithdrawalsDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Withdrawals">
+		<id column="id" property="id" javaType="String" />
+		<result column="userId" property="user_id" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="account" property="account" javaType="String" />
+		<result column="account_type" property="accountType" javaType="String" />
+		<result column="bnk_type" property="bnkType" javaType="String" />
+		<result column="routing_number" property="routingNumber" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="proc" property="proc" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="invoice_no" property="invoiceNo" javaType="String" />
+		
+	</resultMap>
+
+	<insert id="insertWithdrawals" parameterType="com.anyonehelps.model.Withdrawals"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		withdrawals(user_id, type,amount, name, account, account_type, bnk_type, 
+		routing_number, state, proc, remark, create_date, modify_date, invoice_no) 
+		values(#{userId}, #{type}, #{amount}, #{name}, #{account}, #{accountType}, #{bnkType},
+		#{routingNumber}, #{state}, #{proc}, #{remark}, #{createDate}, #{modifyDate}, #{invoiceNo})
+	</insert>
+	
+	<select id="search" resultMap="basic_result_map">
+		select * from withdrawals
+		where user_id=#{userId}
+		<if test="type !=null and type !=''">
+		 	and type=#{type}
+		</if>
+		<if test="state !=null and state !=''">
+		 	and state=#{state}
+		</if>
+		order by id desc
+		limit 
+		#{index},#{size}
+	</select>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from withdrawals
+		where user_id=#{userId}
+		<if test="type !=null and type !=''">
+		 	and type=#{type}
+		</if>
+		<if test="state !=null and state !=''">
+		 	and state=#{state}
+		</if>
+	</select>
+	
+	<select id="sumByUserId" resultType="java.lang.Double">
+		select IFNULL(sum(amount),0) from withdrawals where user_id = #{userId} and (state = 0 or state = 1)
+	</select>
+</mapper>

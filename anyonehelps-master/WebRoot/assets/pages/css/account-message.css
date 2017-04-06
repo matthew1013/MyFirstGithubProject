@@ -1,0 +1,1008 @@
+.portlet.light>.portlet-title>.caption.caption-md>.caption-subject {
+    font-size: 24px;
+    color:#676767;
+}
+
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0px;
+}
+
+.tabbable-line>.nav-tabs>li.open, .tabbable-line>.nav-tabs>li:hover {
+    background: none;
+    border-bottom: 4px solid #0066ee;
+}
+
+.portlet.light>.portlet-title>.nav-tabs>li.active>a, .portlet.light>.portlet-title>.nav-tabs>li:hover>a {
+    margin: 0;
+    background: none;
+    font-size: 14px;
+    color: #0088ff;
+}
+
+.portlet.light>.portlet-title>.nav-tabs>li>.divider {
+    border-bottom: 0px solid #0088ff;
+}
+.portlet.light>.portlet-title>.nav-tabs>li.active>.divider {
+    border-bottom: 2px solid #0088ff;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: -7px;
+}
+
+.tabbable-line>.nav-tabs>li.active {
+    background: none;
+    border-bottom: 4px solid #0088ff;
+}
+
+
+.portlet.light{
+	padding: 21px 21px 21px 31px;
+}
+.tabbable-custom > .tab-content {
+   	border: 0px solid #ddd; 
+    min-height: 843px;
+}
+.tab-content .user{
+	float:left;
+	width: 100%;
+	margin-bottom :40px;
+}
+.tab-content .user .user-img{
+	float:left;
+	padding-left:10px;
+}
+.tab-content .user .user-img img{
+	height: 72px;
+	width: 72px;
+	border-radius: 50%;
+}
+.tab-content .user .user-info{
+	float:left;
+	line-height: 24px;
+}
+.tab-content .user .user-info .username{
+	float:left;
+	font-size:14px;
+	color:#676767;
+}
+.tab-content .user .user-info .level{
+	float:left;
+	font-size:14px;
+	color:#676767;
+	margin-left:50px;
+}
+.tab-content .user .user-info .level img{
+	float:none;
+	margin-left:10px;
+}
+.tab-content .user .user-info .finish-task{
+	float:left;
+	font-size:14px;
+	color:#676767;
+	margin-left:50px;
+}
+#finish-sum-amount,#finish-count{
+	margin-left:10px;
+}
+
+.tab-content .user ul li{
+	list-style: none;
+}
+
+.tab-content .user li{
+	float: left;
+	margin-top:10px;
+}
+.tab-content .user ul{
+ 	margin-bottom: 0px;
+ 	margin-left: -10px; 
+}
+
+.tab-content .user ul li .specialty:hover{
+	background: #dddddd;
+	color:#333333;
+}
+.tab-content .user ul li .specialty{
+	padding: 0px 10px 2px 10px;
+	background: #f2f2f2;
+	color:#676767;
+	font-size: 14px;
+	margin-left: 10px;
+	float: left;
+	height:25px;
+}
+.tab-content .user-form {
+	color:#676767;
+}
+
+.tab-content .user-form span{
+	line-height: 32px;
+}
+.tab-content .user-form .left{
+	float: right;
+    margin-right: 10px;
+}
+.tab-content .user-form .radius0{
+	float: right;
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+}
+.tab-content .user-form .phonecode{
+	width:100px;
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+}
+.tab-content .user-form .verify{
+	padding-left: 10px;
+}
+.tab-content .user-form .send-message{
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.tab-content .user-form .send-message:hover{
+    background-color: #0066ee;
+}
+.tab-content .user-form .update-btn{ 
+	width:100px;
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #f97575;
+}
+.tab-content .user-form .update-btn:hover{ 
+    background-color: #F34E4E;
+}
+.tab-content .user-form .update-password-btn{ 
+	width:100px;
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.tab-content .user-form .update-password-btn:hover{ 
+    background-color: #0066ee;
+}
+.tab-content .user-form .margin-top-30{
+	margin-top: 30px;
+}
+
+
+.tab-content .user-form .btnOperation{ 
+	position:absolute; 
+	right:5px; 
+	z-index:100001;
+	display:none; 
+}
+
+.tab-content .user-form .btnOperation a{ 
+	float:left;
+	margin-left:2px;
+}
+
+.tab-content .color-0088ff{ 
+	color:0088ff;
+}
+.tab-content .color-0088ff:hover{ 
+	color:0066ee;
+}
+
+.tab-content .user-form .work-item{ 
+	margin-bottom: 10px;
+}
+.tab-content .user-form .work-item .title{ 
+	font-size:14px;
+    color: #0088ff;
+    line-height: 20px; 
+}
+.tab-content .user-form .work-item .delete{ 
+	font-size:10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+}
+
+/*系统消息 start*/
+
+.tab-content .tab-pane .operate{
+	margin-bottom: 15px;
+}
+.tab-content .tab-pane .operate .left{
+	width:30px;
+	float:left;
+}
+.tab-content .tab-pane .operate .right{
+	width:calc(100% - 30px);
+	float:left;
+	line-height: 25px;
+}
+.tab-content .tab-pane .operate .right>a{
+	font-size: 16px;
+    margin-top: 12px;
+    margin-right: 8px;
+    color: #0088ff;
+}
+.tab-content .tab-pane .operate .right>a:hover{
+    color: #0066ee;
+}
+.tab-content .tab-pane .operate .right>a>i{
+	font-size: 18px;
+}
+.tab-content .tab-pane .operate .right>a>span{
+	font-size: 14px;
+}
+
+.tab-content .tab-pane .ms-list .ms-item{
+	float: left;
+	width: 100%;
+}
+
+.tab-content .tab-pane .ms-list .ms-item .left{
+	float: left;
+	width: 30px;
+}
+
+.tab-content .tab-pane .ms-list .ms-item .right{
+	border-bottom:2px solid #dddddd;
+	padding: 20px 20px 20px 20px;
+	float: left;
+	width: calc(100% - 30px);
+}
+.tab-content .tab-pane .ms-list .ms-item .right.full{
+	width: 100%;
+}
+.tab-content .tab-pane .ms-list .ms-item .right.unread{
+	background:#f8f8f8;
+}
+
+
+.tab-content .tab-pane .ms-list .ms-item .right .div-left{
+	float: left;
+	padding-right: 20px;
+    padding-top: 14px;
+    height:60px;
+}
+.tab-content .tab-pane .ms-list .ms-item .right .div-left .system-pic{
+	background: #0088ff;
+    padding: 15px 16px;
+    border-radius: 100%;
+    color: #ffffff;
+	font-size:24px;
+	border:2px solid #ffffff;
+	box-shadow:0 0 5px 0 rgba(0,0,0,0.30);
+	width:56px;
+	height:56px;
+	border-radius:100%;
+}
+
+.tab-content .tab-pane .ms-list .ms-item .right .div-right{
+	float: left;
+	width: calc(100% - 80px);
+}
+
+.tab-content .tab-pane .ms-list .ms-item .right .div-right .delete>i{
+	float: right;
+    margin-left: 20px;
+    color:#676767
+}
+
+.tab-content .tab-pane .ms-list .ms-item .right .div-right .content{
+	font-size:14px;
+	letter-spacing:0px;
+	text-align:justify;
+	word-break: break-all;
+	word-wrap: break-word;
+	
+	font-size:14px;
+	color:#666666;
+	line-height:28px;
+}
+.tab-content .tab-pane .ms-list .ms-item .right .div-right .content:hover{
+	color:#333333;
+}
+
+
+.tab-content .tab-pane .ms-list .ms-item .right .div-right .username{
+	font-size:14px;
+	letter-spacing:0px;
+	text-align:left;
+	color:#4a91fd;
+	line-height:14px;
+}
+.tab-content .tab-pane .ms-list .ms-item .right .div-right .username:hover{
+	color:#0088ff;
+}
+.tab-content .tab-pane .ms-list .ms-item .right .div-right .create-date{
+    letter-spacing: 0px;
+    float: right;
+    text-align: left;
+    
+	font-size:12px;
+	color:#999999;
+	line-height:14px;
+}
+
+.tab-content .tab-pane .ms-list .ms-item .right .delete{
+	font-size:12px;
+	color:#999999;
+	line-height:12px;
+	float: right;
+	margin-left:20px;
+}
+.tab-content .tab-pane .ms-list .ms-item .right .delete:hover{
+	color:#666666;
+}
+
+.tab-content .tab-pane .ms-list .ms-item .right .recommend-operation{
+	font-size:12px;
+	color:#999999;
+	line-height:12px;
+	float: right;
+	margin-left:20px;
+}
+.tab-content .tab-pane .ms-list .ms-item .right .recommend-operation:hover{
+	color:#666666;
+}
+/*系统消息 end*/
+
+
+/*用户消息 start*/ 
+.tab-content .tab-pane .mu-list .mu-item{
+	float: left;
+	width: 100%;
+}
+
+.tab-content .tab-pane .mu-list .mu-item .left{
+	float: left;
+	width: 30px;
+}
+
+.tab-content .tab-pane .mu-list .mu-item .right{
+	border:1px solid #dddddd;
+	padding: 20px 20px 20px 20px;
+	float: left;
+	width: calc(100% - 30px);
+}
+.tab-content .tab-pane .mu-list .mu-item .right.full{
+	width: 100%;
+}
+.tab-content .tab-pane .mu-list .mu-item .right.unread{
+	background:#f8f8f8;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-left{
+	float: left;
+	padding-right: 20px;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-left .user-pic>img{
+	border:2px solid #ffffff;
+	box-shadow:0 0 5px 0 rgba(0,0,0,0.30);
+	width:56px;
+	height:56px;
+	border-radius:100%;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-left .user-pic>img:hover{
+	opacity: 0.6;
+}
+
+.tab-content .tab-pane .mu-list .mu-item .right .div-right{
+	float: left;
+	width: calc(100% - 80px);
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-right .content{
+	letter-spacing:0px;
+	text-align:justify;
+	word-break: break-all;
+	word-wrap: break-word;
+	font-size:14px;
+	color:#666666;
+	line-height:28px;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-right .content:hover{
+	color:#333333;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-right .username{
+	font-size:14px;
+	letter-spacing:0px;
+	text-align:left;
+	font-size:14px;
+	color:#4a91fd;
+	line-height:14px;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .div-right .username:hover{
+	color:#0088ff;
+}
+
+.tab-content .tab-pane .mu-list .mu-item .right .div-right .create-date{
+    letter-spacing: 0px;
+    float: right;
+    text-align: left;
+    font-size:12px;
+	color:#999999;
+	line-height:14px;
+}
+
+
+.tab-content .tab-pane .mu-list .mu-item .right .delete{
+	font-size:12px;
+	color:#999999;
+	line-height:12px;
+	float: right;
+	margin-left:20px;
+}
+.tab-content .tab-pane .mu-list .mu-item .right .delete:hover{
+	color:#666666;
+}
+
+.tab-content .tab-pane .mu-list .mu-read.read{
+	font-size:12px;
+	color:#999999;
+	line-height:12px;
+	float: right;
+	margin-left:20px;
+}
+.tab-content .tab-pane .mu-list .mu-item .mu-read.read:hover{
+	color:#666666;
+}
+
+
+/*用户消息 end*/
+
+.search-pagination{
+	text-align: center;
+}
+.search-pagination .pagination{
+	margin-top: 30px;
+}
+
+
+/*私信start*/
+.tab-content .tab-pane .m-list .m-item{
+	border:1px solid #dddddd;
+	padding: 20px 20px 20px 20px;
+	float: left;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.tab-content .tab-pane.fade .widget-container.chat-page {
+	    height: 700px;
+    padding: 0 0 52px 221px;
+	position: relative;
+	/*background-color: #f2f2f2;*/
+}
+
+.tab-content .tab-pane.fade .contact-list {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 222px;
+	height: 100%;
+	border-right: 1px solid #dddddd;
+	background-color: #ddd;
+}
+
+.tab-content .tab-pane.fade .contact-list .blacklist-heading {
+	background-color: transparent;
+	color: #777777;
+	border-bottom: 1px solid #d6d6d6;
+	padding-top: 12px;
+	padding-bottom: 14px;
+	background-color: #f2f2f2;
+}
+.tab-content .tab-pane.fade .contact-list .blacklist-heading  .blacklist-pic{
+	background: #0088ff;
+	padding: 6px 9px 6px 9px;
+	border-radius: 100%;
+	color: #ffffff;
+	margin-right: 10px;
+	margin-left: 15px;
+}
+
+.tab-content .tab-pane.fade .contact-list .heading {
+	background-color: transparent;
+	color: #777777;
+	border-bottom: 1px solid #d6d6d6;
+	padding-top: 12px;
+	padding-bottom: 14px;
+	background-color: #f2f2f2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	
+	font-size:14px;
+	letter-spacing:0px;
+	text-align:left;
+}
+
+.tab-content .tab-pane.fade .contact-list .heading i {
+	margin-top: 4px;
+	font-size: 1em;
+}
+
+.tab-content .tab-pane.fade .contact-list ul {
+	list-style: none;
+	padding-left: 15px;
+	margin: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100%;
+	background-color: #ddd;
+}
+
+.tab-content .tab-pane.fade .contact-list ul li {
+	border-bottom: 1px solid #d6d6d6;
+	margin: 0;
+}
+.tab-content .tab-pane.fade .contact-list ul li a.active {
+	background-color: #e6e6e6;
+	color: #666666;
+}
+
+.tab-content .tab-pane.fade .contact-list ul li a {
+	display: block;
+	position: relative;
+	left: -15px;
+	width: 220px;
+	padding-left: 15px;
+	padding: 8px 0 8px 15px;
+	color: #888888;
+}
+
+.tab-content .tab-pane.fade .contact-list ul li a:hover {
+	background-color: #e6e6e6;
+	color: #666666;
+}
+
+.tab-content .tab-pane.fade .contact-list ul li img {
+	border-radius: 50%;
+	margin-right: 10px;
+	
+	border: 1px solid #ffffff;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.30);
+}
+
+.tab-content .tab-pane.fade .contact-list ul li i {
+	font-size: 12px;
+	float: right;
+	margin: 9px 20px 0 0;
+}
+
+.tab-content .tab-pane.fade .contact-list ul li i .text-danger {
+	color: #d9534f;
+}
+
+.tab-content .tab-pane.fade .heading {
+	position: relative !important;
+	background: rgba(255, 255, 255, 0.94);
+	height: 50px;
+	padding: 15px 15px;
+	color: #007aff;
+	font-size: 15px;
+	width: 100%;
+	font-weight: 400;
+	margin: 0;
+}
+
+.tab-content .tab-pane.fade .heading .return {
+	display:none;
+}
+
+.tab-content .tab-pane.fade .widget-content {
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: white;
+	height: 100%;
+	position: relative;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.tab-content .tab-pane.fade .widget-content .scrollbar-path-vertical {
+	bottom: 56px !important;
+}
+.tab-content .tab-pane.fade .widget-content .more-heading {
+	position: relative !important;
+	background: rgba(255, 255, 255, 0.94);
+	height: 50px;
+	padding: 15px 15px;
+	color: #007aff;
+	font-size: 15px;
+	width: 100%;
+	font-weight: 400;
+	margin: 0;
+	text-align: center;
+}
+
+
+.tab-content .tab-pane.fade .widget-content ul {
+	list-style: none;
+	padding: 0;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li {
+	margin-bottom: 14px;
+	position: relative;
+	float: left;
+   	padding-right: 20%;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li:last-child {
+	margin-bottom: 0;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li img {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	border-radius: 50%;
+	
+	border: 1px solid #ffffff;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.30);
+}
+
+.tab-content .tab-pane.fade .widget-content ul li .bubble {
+	padding: 12px 15px;
+	background: #e5e5ea;
+	border-radius: 15px;
+	position: relative;
+	margin-left: 40px;
+}
+.tab-content .tab-pane.fade .widget-content ul li .bubble:hover {
+	background: #e5e5ea;
+}
+.tab-content .tab-pane.fade .widget-content ul li .bubble:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: -5px;
+	background: url("/assets/pages/img/message/chat-left.png") left top no-repeat;
+	width: 13px;
+	height: 13px;
+	display: block;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li .delete {
+	position: absolute;
+    margin-right: -10px;
+    left: calc(130% + 30px);
+    bottom: 5px;
+}
+.tab-content .tab-pane.fade .widget-content ul li.current-user .delete {
+	position: relative;
+    margin-right: 0;
+    left: 0;
+    bottom: 0;
+    float:right;
+	width:25px;
+}
+
+
+@media ( min--moz-device-pixel-ratio : 1.3) , ( -o-min-device-pixel-ratio : 2.6 /
+		2) , ( -webkit-min-device-pixel-ratio : 1.3) , (
+		min-device-pixel-ratio : 1.3) , ( min-resolution : 1.3dppx) {
+	.tab-content .tab-pane.fade .widget-content ul li .bubble:after {
+		background-image: url("/assets/pages/img/message/chat-left@2x.png");
+		background-size: 13px 13px;
+	}
+}
+
+.tab-content .tab-pane.fade .widget-content ul li .bubble .user-name {
+	font-size: 1.1em;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li .bubble p.message {
+	font-size: 0.95em;
+	margin-bottom: 12px;
+	color: #333333;
+	min-width: 200px;
+	word-break:break-all;
+    padding-right: 10px;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li .bubble .time {
+	font-size: 0.8em;
+	color: #888888;
+	margin-bottom: 0;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user {
+    float: right;
+   	padding-right: 0;
+   	padding-left: 20%;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user img {
+	right: 0;
+	left: auto;
+	
+	border: 1px solid #ffffff;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.30);
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user .bubble {
+	background: #9eea6a;
+	width: calc(100% - 40px);
+	margin-left: 0px;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user .bubble:hover {
+	background: #98e165;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user .bubble:after
+	{
+	background: url("/assets/pages/img/message/chat-right.png") left top no-repeat;
+	left: auto;
+	right: -6px;
+}
+
+@media ( min--moz-device-pixel-ratio : 1.3) , ( -o-min-device-pixel-ratio : 2.6 /
+		2) , ( -webkit-min-device-pixel-ratio : 1.3) , (
+		min-device-pixel-ratio : 1.3) , ( min-resolution : 1.3dppx) {
+	.tab-content .tab-pane.fade .widget-content ul li.current-user .bubble:after
+		{
+		background-image: url("/assets/pages/img/message/chat-right@2x.png");
+		background-size: 13px 13px;
+	}
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user p, .chat .widget-content ul li.current-user a
+{
+	color: #333333 !important;
+}
+
+.tab-content .tab-pane.fade .widget-content ul li.current-user .time {
+	opacity: 0.75;
+}
+
+.tab-content .tab-pane.fade .post-message {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 52px;
+	padding: 8px 60px 8px 8px;
+	background: #f2f2f2;
+}
+
+.tab-content .tab-pane.fade .post-message input[type="text"] {
+	width: calc(100% - 80px);
+	height: 100%;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+.tab-content .tab-pane.fade .post-message .submit-message{
+	position: relative;
+	/* top: 12px; */
+    right: 10px;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: #0088ff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 20px;
+    outline:none;
+}
+
+.tab-content .tab-pane.fade .post-message .submit-message:hover{
+	color: #0066ee;
+}
+/*私信end*/
+
+
+/* 私信黑名单框 start */
+.blacklist-dlg{
+	border-radius: 0px;
+	left: calc(50% - 300px);
+  	padding:0px;
+  	margin-top: 70px;
+  	position: fixed;
+}
+.blacklist-dlg .ui-dialog-content{
+	width:600px
+}
+
+.blacklist-dlg .blacklist-item{
+	min-height:400px;
+}
+.blacklist-dlg .blacklist-item .blacklist-list{
+	min-height: 330px;
+}
+
+
+.blacklist-dlg .blacklist-item .blacklist-list .user-pic>img{
+	height: 44px;
+	width: 44px;
+}
+.blacklist-dlg .blacklist-item .blacklist-list .user-pic>img:hover{
+	color: #333333;
+}
+
+.blacklist-dlg .blacklist-item .search-key {
+	line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 28px;
+   	float:left;
+   	width:calc(100% - 100px);
+}
+.blacklist-dlg .blacklist-item .search-start {
+	border: none;
+    color: #ffffff;
+    letter-spacing: 1px;
+    background: #0088ff;
+    width: 100px;
+    height: 34px;
+}
+.blacklist-dlg .blacklist-item .search-start:hover {
+    background: #0066ee;
+}
+
+.blacklist-dlg .blacklist-item .search-i {
+	color: #ccc;
+    display: block;
+    position: absolute;
+    margin: 10px 10px 3px 5px;
+    width: 18px;
+    font-size: 16px;
+    text-align: center;
+}
+.blacklist-dlg .blacklist-item .remove-btn{
+	background:#0088ff;
+	color:#ffffff;
+	width:100px;
+	height:36px;
+	border-radius: 0px;
+	float:right;
+}
+
+.blacklist-dlg .blacklist-item .remove-btn:hover{
+	background:#0066ee;
+	color:#ffffff;
+}
+
+.blacklist-dlg .blacklist-item .username{
+	font-size:14px;
+	color:#676767;
+	line-height:22px;
+	margin-left:20px;
+}
+.blacklist-dlg .blacklist-item .occupation{
+	font-size:14px;
+	color:#333333;
+	line-height:22px;
+	margin-left:20px;
+	float:left;
+	width: 180px;
+    overflow: auto;
+}
+.blacklist-dlg .blacklist-item .evaluate{
+	width: 80px;
+    float: left;
+    overflow: auto;
+    margin-left: 20px;
+}
+
+.blacklist-dlg .blacklist-item .evaluate>a>i{
+	line-height:22px;
+	color: #aaaaaa;
+}
+.blacklist-dlg .blacklist-item .evaluate>a>i.active{
+	color: #f08739;
+}
+
+.blacklist-dlg .blacklist-item .evaluate-count{
+	float:left;
+    color: #999999;
+    font-size: 12px;
+   	line-height: 24px;
+}
+.blacklist-dlg .blacklist-item .evaluate-count:hover{
+    color: #676767;
+}
+/* 私信黑名单框 end */
+
+/* 私信黑名单提示框start*/
+.blacklist-add-tip-dlg{
+	position: fixed;
+    left: calc(50% - 180px);
+    top: 140px;
+    border-radius: 0px;
+}
+.blacklist-add-tip-dlg button{
+	width: 100px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px;
+    border-radius: 0px;
+    color: #333333;
+}
+.blacklist-add-tip-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.blacklist-add-tip-dlg button.ui-dialog-autofocus {
+    color: #ffffff;
+    background-color:#0088ff;
+    border-color: #0088ff;
+}
+
+.blacklist-add-tip-dlg button.ui-dialog-autofocus:hover{
+    background-color:#0066ee;
+}
+/* 私信黑名单提示框end*/
+
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.portlet.light{
+		padding: 21px 5px 21px 5px;
+	}
+	.tab-content .tab-pane.fade .widget-container.chat-page {
+	    height: 700px;
+	    padding: 0 0 52px 0px;
+	    position: relative;
+	}
+	.tab-content .tab-pane.fade .contact-list {
+	    width: 100%;
+	}
+	.tab-content .tab-pane.fade .widget-content.phone-style {
+	    overflow-y: auto;
+	    display:none;
+	}
+	.tab-content .tab-pane.fade .contact-list ul li a {
+	    width: 100%;
+	}
+	.tab-content .tab-pane.fade .heading .return {
+		display:inline;
+	}
+	
+	
+	.blacklist-dlg{
+		left: 0px;
+		width:100%;
+		margin-top: 95px;
+	}
+	.blacklist-dlg table.ui-dialog-grid{
+		width:100%;
+	}
+	.blacklist-dlg .ui-dialog-content{
+		padding:0px;
+		width: 100%;
+	}
+
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+}
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/

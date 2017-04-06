@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.ProTypeDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.ProType">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<collection property="pros" column="id" select="com.anyonehelps.dao.ProDao.getByPTId"></collection>
+	</resultMap>
+	
+	<resultMap id="basic_result_map2" type="com.anyonehelps.model.ProType">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+	</resultMap>
+	
+	<select id="getAllProType" resultMap="basic_result_map">
+		select * from pro_type
+	</select>
+	
+	<select id="getPTById" resultMap="basic_result_map2">
+		select * from pro_type where id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.ProType" >
+		insert into pro_type(id,name) values (#{id},#{name})
+	</insert>
+	
+</mapper>

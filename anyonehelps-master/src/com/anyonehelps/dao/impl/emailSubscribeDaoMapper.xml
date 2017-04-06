@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.EmailSubscribeDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.EmailSubscribe">
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insertOrUpdate" parameterType="com.anyonehelps.model.EmailSubscribe" >
+		insert into email_subscribe(user_id, create_date, modify_date)
+		values(#{userId}, #{createDate}, #{modifyDate})
+		on
+		duplicate key update
+		modify_date=#{modifyDate}
+	</insert>
+	
+	<delete id="deleteByUserId">
+		delete from email_subscribe
+		where user_id = #{userId}
+	</delete>
+	
+	<select id="countByUserId" resultType="java.lang.Integer">
+		select count(*) from email_subscribe where user_id  = #{userId}
+	</select>
+</mapper>

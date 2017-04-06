@@ -1,0 +1,175 @@
+.portlet .left{
+	float: right;
+    margin-right: 10px;
+}
+.portlet .radius0{
+	float: right;
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+
+.portlet .radius1{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+
+.portlet .btn-0088ff{ 
+	width:100px;
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.portlet .btn-0088ff:hover{ 
+    background-color: #0066ee;
+}
+.portlet .margin-top-30{
+	margin-top: 30px;
+}
+
+
+.portlet .portlet-body .balance{
+	background:#ffffff;
+	border:1px solid #dddddd;
+	height:89px;
+	padding:16px 0px 24px 0px;
+}
+.portlet .portlet-body .balance.middle{
+	border-left:0px solid #dddddd;
+}
+.portlet .portlet-body .balance .balance-desc{
+	text-align: center;
+	height: 20px;
+}
+.portlet .portlet-body .balance .balance-desc>span{
+	font-size:14px;
+	color:#676767;
+}
+.portlet .portlet-body .balance .balance-usd,
+.portlet .portlet-body .balance .balance-withdrawal,
+.portlet .portlet-body .balance .balance-total,
+.portlet .portlet-body .balance .balance-freeze{
+	text-align: center;
+	height: 26px;
+}
+.portlet .portlet-body .balance .balance-usd>span,
+.portlet .portlet-body .balance .balance-withdrawal>span,
+.portlet .portlet-body .balance .balance-total>span,
+.portlet .portlet-body .balance .balance-freeze>span{
+	font-size:24px;
+	color:#45ba50;
+}
+
+.portlet .portlet-body .nav.nav-tabs{
+	border: none;
+    margin: 0;
+    margin-top: 18px;
+}
+
+.portlet .portlet-body .nav-tabs > li.active > a,
+.portlet .portlet-body .nav-tabs > li.active > a:hover, 
+.portlet .portlet-body .nav-tabs > li.active > a:focus {
+    border: 3px solid #ddd;
+    border-bottom: 0px solid #ddd; 
+}
+
+.portlet .portlet-body .tab-content {
+    background-color: #fff;
+    margin-top: -2px;
+    border: 3px solid #ddd;
+    padding: 10px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+.portlet .portlet-body .problem-list{
+	margin-top:100px;
+}
+.portlet .portlet-body .title {
+    margin-top: 40px;
+}
+.portlet .portlet-body .title>span {
+	font-size:18px;
+	color:#999999;
+}
+.portlet .portlet-body .title>a>span{
+	font-size:16px;
+	margin-left:5px;
+}
+.portlet .portlet-body .title>a>i {
+	font-size:16px;
+	margin-left:15px;
+}
+.portlet .portlet-body .problem {
+    margin-top: 15px;
+	opacity:0.7;  /*haokun added*/
+}
+.portlet .portlet-body .problem>span {
+	font-size:14px;
+	color:black; 
+	font-weight: bold; /*haokun added*/
+}
+.portlet .portlet-body .answer>span {
+	font-size:14px;
+	color:#676767; 
+	letter-spacing: 0px;
+	opacity:0.7;  /*haokun added*/
+}
+
+
+/*haokun added 2017/02/17 解决充值页面金额上下箭头问题*/
+input[type=number] {  
+    -moz-appearance:textfield;  
+}  
+
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;  
+    margin: 0;  
+}  
+
+
+@media screen and (max-width: 414px) {
+	.portlet.light {
+	    padding: 0px 5px 21px 5px;
+	}
+	.portlet .portlet-body .balance .balance-usd>span, 
+	.portlet .portlet-body .balance .balance-withdrawal>span, 
+	.portlet .portlet-body .balance .balance-total>span, 
+	.portlet .portlet-body .balance .balance-freeze>span {
+	    font-size: 16px;
+	}
+	.portlet .portlet-body .balance {
+	    height: 69px;
+	}
+	.portlet .left {
+		margin-right: 0px;
+	}
+	.portlet .portlet-body .problem-list{
+		margin-top:20px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.portlet .portlet-body .balance .balance-usd>span, 
+	.portlet .portlet-body .balance .balance-withdrawal>span, 
+	.portlet .portlet-body .balance .balance-total>span, 
+	.portlet .portlet-body .balance .balance-freeze>span {
+	    font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.portlet .portlet-body .balance .balance-usd>span, 
+	.portlet .portlet-body .balance .balance-withdrawal>span, 
+	.portlet .portlet-body .balance .balance-total>span, 
+	.portlet .portlet-body .balance .balance-freeze>span {
+	    font-size: 12px;
+	}
+}
+

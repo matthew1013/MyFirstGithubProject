@@ -1,0 +1,227 @@
+.portlet>.portlet-body .radius0{
+	border-radius: 0px;
+}
+/* base info start*/
+.portlet>.portlet-body>.base-info{
+	border:1px solid #eeeeee;
+	padding: 21px 21px 51px 31px;
+}
+.portlet>.portlet-body>.base-info>.base-title{
+	border-bottom: 1px solid #dddddd;
+	min-height: 38px;
+}
+.portlet>.portlet-body>.base-info .sex{
+    float: left;
+    line-height: 32px;
+}
+.portlet>.portlet-body>.base-info .margin-left-21{
+    margin-left: 21px;
+}
+.portlet>.portlet-body>.base-info>.base-title>.caption>.caption-subject {
+	font-family:PingFangSC-Semibold;
+	font-size:14px; 
+	color:#676767;
+	font-weight:600;
+}
+.portlet>.portlet-body>.base-info .progress, .portlet>.portlet-body>.pro-info .progress{
+	width:140px;
+	border-radius:0px;
+	display:none;
+}
+.portlet>.portlet-body>.base-info .progress .bar, .portlet>.portlet-body>.pro-info .progress .bar{
+	width: 0%;
+	height: 18px;
+	background: green;
+}
+
+
+.portlet>.portlet-body>.base-info .right-10, .portlet>.portlet-body>.pro-info .right-10{
+	float: right;
+    margin-right: 10px;
+    line-height: 32px;
+}
+
+
+.portlet>.portlet-body>.base-info .file-upload, .portlet>.portlet-body>.pro-info .file-upload{
+	background:#0088ff;
+	color:#ffffff;
+	width:140px;
+	height:36px;
+	border-radius: 0px;
+	float:left;
+}
+.portlet>.portlet-body>.base-info .file-upload span, .portlet>.portlet-body>.pro-info .file-upload span{
+	line-height:normal;
+}
+.portlet>.portlet-body>.base-info .upload-list .id-item, .portlet>.portlet-body>.pro-info .upload-list .id-item{
+
+}
+.portlet>.portlet-body>.base-info .upload-list .item .title, .portlet>.portlet-body>.pro-info .upload-list .item .title{
+	line-height:32px;
+	color:0088ff;
+}
+.portlet>.portlet-body>.base-info .upload-list .item .title:hover, .portlet>.portlet-body>.pro-info .upload-list .item .title:hover{
+	color:0066ee;
+}
+.portlet>.portlet-body>.base-info .upload-list .item .delete, .portlet>.portlet-body>.pro-info .upload-list .item .delete{
+	font-size: 10px;
+    color: #ffffff;
+    background-color: #999999;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding-left: 4px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+/* base info end*/
+
+
+/* pro info start*/
+.portlet>.portlet-body>.pro-info{
+	border:1px solid #eeeeee;
+	padding: 21px 21px 51px 31px;
+	margin-top:50px;
+}
+.portlet>.portlet-body>.pro-info>.base-title{
+	border-bottom: 1px solid #dddddd;
+	min-height: 38px;
+}
+.portlet>.portlet-body>.pro-info .sex{
+    float: left;
+    line-height: 32px;
+}
+.portlet>.portlet-body>.pro-info .margin-left-21{
+    margin-left: 21px;
+}
+.portlet>.portlet-body>.pro-info>.base-title>.caption>.caption-subject {
+	font-family:PingFangSC-Semibold;
+	font-size:14px; 
+	color:#676767;
+	font-weight:600;
+}
+
+.portlet>.portlet-body .submit-btn{
+	background:#0088ff;
+	color:#ffffff;
+	width:140px;
+	height:36px;
+	border-radius: 0px;
+	float:right;
+}
+
+.portlet>.portlet-body .submit-btn:hover{
+	background:#0066ee;
+	color:#ffffff;
+}
+
+.file-desc{
+	margin-left:10px;
+	line-height: 32px;
+}
+
+/* base pro end*/
+
+
+.ui-dialog.dlg-pay{
+  	left: 20%;
+  	margin-top: 70px;
+  	position: fixed;
+  	border-radius: 0px;
+  	background:#ffffff;
+  	padding:0px
+} 
+.ui-dialog.dlg-pay .ui-dialog-body .ui-dialog-content{
+  	padding:0px;
+  	width : 660px;
+} 
+
+
+.dlg-pay .pay .wclose{
+	color: #cccccc;
+    float: right;
+} 
+
+.dlg-pay .pay .line{
+	border:1px solid #cccccc;
+	height:1px;
+	margin-top: 17px;
+	margin-right: 14px;
+} 
+
+.dlg-pay .pay .title{
+	font-size:24px;
+	color:#0088ff;
+	text-align: center;
+} 
+
+.dlg-pay .pay .info{
+	margin-top:36px;
+} 
+
+.dlg-pay .pay .info .desc{
+	word-spacing:5px;
+	text-align:justify;
+	line-height: 30px;
+	font-size: 14px;
+} 
+.dlg-pay .pay .info span.active{
+	color:#0088ff;
+} 
+
+.dlg-pay .pay .ok{
+	background: #0088ff;
+    color: #ffffff;
+    width: 100px;
+    height: 36px;
+    border-radius: 0px;
+    float: right;
+   	border: 0px;
+   	margin-top:20px;
+} 
+.dlg-pay .pay .ok:hover{
+	background: #0066ee;
+} 
+
+    
+
+@media screen and (max-width: 414px) {
+	.portlet.light {
+	    padding: 0px 5px 21px 5px;
+	}
+	.portlet>.portlet-body>.base-info,
+	.portlet>.portlet-body>.pro-info {
+	    padding: 21px 5px 51px 5px;
+	}
+	.portlet>.portlet-body>.base-info .right-10, 
+	.portlet>.portlet-body>.pro-info .right-10 {
+	    float: left;
+	}
+	.file-desc{
+		margin-left:0px;
+		line-height: 14px;
+	}
+	.margin-top-30 {
+	    margin-top: 10px !important;
+	}
+	
+	.ui-dialog.dlg-pay{
+		left: 0px;
+		width:100%;
+		margin-top: 95px;
+	}
+	.ui-dialog.dlg-pay table.ui-dialog-grid{
+		width:100%;
+	}
+	.ui-dialog.dlg-pay .ui-dialog-body .ui-dialog-content{
+		padding:0px;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
+}
+

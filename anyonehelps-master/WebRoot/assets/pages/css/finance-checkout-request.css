@@ -1,0 +1,76 @@
+.portlet span{
+	line-height: 32px;
+}
+.portlet .left{
+	float: right;
+    margin-right: 10px;
+}
+.portlet .radius0{
+	float: right;
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+
+.portlet .radius1{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+
+.portlet .btn-0088ff{ 
+	width:100px;
+	border-radius: 0px;
+	color: #ffffff;
+    background-color: #0088ff;
+}
+.portlet .btn-0088ff:hover{ 
+    background-color: #0066ee;
+}
+.portlet .margin-top-30{
+	margin-top: 30px;
+}
+.portlet .bnk-type,.portlet .account-type{
+	float: left;
+    margin-right: 30px;
+    line-height: 30px;
+}
+
+/*haokun add 2017/02/13*/
+.portlet .desc{
+	margin-right:100px;
+	background-color:#ff6666;
+	border-radius:25px;
+	color:white;
+	text-align: center;
+}
+
+
+@media screen and (max-width: 414px) {
+	.portlet.light {
+	    padding: 0px 5px 21px 5px;
+	    min-height: 500px; 
+	}
+	.portlet .left {
+	   	float: left; 
+	}
+	.portlet .margin-top-30 {
+	    margin-top: 10px !important;
+	}
+	.portlet .desc {
+    	margin-left: 0px; 
+    	margin-right: 0px; 
+	}
+	.portlet.light .form .form-body{
+	    padding-top: 10px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
+}
+

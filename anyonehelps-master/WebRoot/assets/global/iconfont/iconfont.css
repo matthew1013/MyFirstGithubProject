@@ -1,0 +1,82 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1464503314'); /* IE9*/
+  src: url('iconfont.eot?t=1464503314#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1464503314') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1464503314') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1464503314#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:14px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*add chenkanghua start*/
+.icon-specialty:before { content: "\e600"; }
+.icon-sousuo:before { content: "\e601"; }
+.icon-star:before { content: "\e602"; }
+.icon-liuyan:before { content: "\e60d"; }
+.icon-money:before { content: "\e68c"; }
+.icon-task-count:before { content: "\e60f"; }
+.icon-daniushequ:before { content: "\e604"; }
+.icon-sms:before { content: "\e605"; }
+.icon-finance-checkout-request:before { content: "\e606"; }  
+.icon-clock:before { content: "\e607"; }
+.icon-user-great-add:before { content: "\e608"; }
+.icon-bidding:before { content: "\e609"; }
+.icon-finance-records:before { content: "\e60a"; } 
+.icon-task-finance:before { content: "\e627"; } 
+.icon-message:before { content: "\e60c"; }
+.icon-boint:before { content: "\e60b"; }
+.icon-boint-my:before { content: "\e60e"; }
+.icon-finance:before { content: "\e610"; } 
+.icon-user-great-search:before { content: "\e611"; }
+.icon-task-pub:before { content: "\e612"; }
+.icon-user-profile:before { content: "\e613"; }
+.icon-user:before { content: "\e614"; }
+.icon-level:before { content: "\e615"; }
+.icon-task:before { content: "\e616"; }
+.icon-finance-checkout-records:before { content: "\e618"; } 
+.icon-user-great:before { content: "\e619"; }
+
+.icon-task-arbitration:before { content: "\e61a"; }
+.icon-leave-message:before { content: "\e61b"; }
+.icon-task-acc:before { content: "\e61c"; }
+.icon-map:before { content: "\e61d"; }
+.icon-finance-recharge:before { content: "\e61e"; }
+.icon-follow:before { content: "\e61f"; }
+.icon-follow-user:before { content: "\e617"; }
+.icon-task-follow:before { content: "\e620"; }
+.icon-task-add:before { content: "\e621"; }
+.icon-user-great-helps:before { content: "\e622"; } 
+.icon-task-multiplex:before { content: "\e626"; } 
+
+
+
+.icon-add:before { content: "\e868"; }
+.icon-minus:before { content: "\e6c1"; }
+.icon-note:before { content: "\e709"; }  
+.icon-video:before { content: "\e665"; }  
+.icon-select:before { content: "\e625"; } 
+.icon-invite:before { content: "\e63b"; }  
+
+
+.icon-info-info:before { content: "\e629"; }  
+.icon-info-success:before { content: "\e62a"; }  
+.icon-info-warning:before { content: "\e62b"; }  
+
+/*add chenkanghua end*/
+
+
+
+
+
+
+
+    
+
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.MessageUserDao">
+
+	<sql id="all_column">message_user.id,message_user.user_id,message_user.send_user_id,message_user.send_user_nick,message_user.content,message_user.link,message_user.create_date,message_user.modify_date,message_user.state
+	</sql>
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.MessageUser">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="send_user_id" property="sendUserId" javaType="String" />
+		<result column="send_user_nick" property="sendUserNick" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="link" property="link" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		
+		<collection property="sendUser" column="send_user_id" select="com.anyonehelps.dao.UserDao.getUserOpenInfoById"> </collection> 
+	</resultMap>
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from message_user where id=#{id}
+	</select>	
+	<insert id="insertMessage" parameterType="com.anyonehelps.model.MessageUser">
+		insert into
+		message_user(user_id,send_user_id,send_user_nick,content,link,create_date,modify_date,state)
+		values(#{userId},#{sendUserId},#{sendUserNick},#{content},#{link},#{createDate},#{modifyDate},#{state})
+	</insert>
+
+	<select id="searchMessageByKey" resultMap="basic_result_map">
+		select
+		<include refid="all_column" />
+		from message_user
+		where content like #{key} and user_id=#{userId} and state !=2
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="count" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) from message_user where user_id = #{userId} and state = 0
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from message_user
+		where content like #{key} and user_id=#{userId} and state !=2
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+	</select>
+
+	<update id="updateModifyDate">
+		update message_user
+		set modify_date=#{date}, state=#{state}
+		where id=#{id}
+	</update>
+	
+	<update id="modifyAllRead">
+		update message_user
+		set modify_date=#{date}, state=1
+		where user_id=#{userId} and state=0
+	</update>
+	
+	<update id="modifyStateByIds">
+		update message_user
+		set modify_date=#{date}, state=#{state}
+		where user_id=#{userId} and id in
+		<trim prefix="(" suffix=")">
+			<foreach collection="ids" item="id" separator=",">
+				#{id}
+			</foreach>
+		</trim>
+	</update>
+</mapper>

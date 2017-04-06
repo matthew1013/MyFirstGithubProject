@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.AccountDetailDao">
+
+	<resultMap id="account_detail_result_map" type="com.anyonehelps.model.AccountDetail">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="currency" property="currency" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="invoice_no" property="invoiceNo" javaType="String" />
+		<result column="third_no" property="thirdNo" javaType="String" />
+		<result column="remark1" property="remark1" javaType="String" />
+		
+	</resultMap>
+	<resultMap id="account_detail_result_map2" type="com.anyonehelps.model.AccountDetail">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="currency" property="currency" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="invoice_no" property="invoiceNo" javaType="String" />
+		<result column="third_no" property="thirdNo" javaType="String" />
+		<result column="remark1" property="remark1" javaType="String" />
+		<association property="demand" column="demand_id" select="com.anyonehelps.dao.DemandDao.getDemandById"></association>     <!--haokun added 2017/03/09-->
+		<association property="user" column="user_id" select="com.anyonehelps.dao.UserDao.getUserById"></association>
+	</resultMap>
+
+	<insert id="insertAccountDetail" parameterType="com.anyonehelps.model.AccountDetail"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		account_detail(user_id, amount, currency, name, type, state, create_date, modify_date, remark, demand_id, invoice_no, third_no,remark1)
+		values
+		(#{userId},#{amount},#{currency},#{name},#{type},#{state},#{createDate},#{modifyDate},#{remark},#{demandId},#{invoiceNo},#{thirdNo},#{remark1})
+	</insert>
+
+	<!-- <update id="modifyAccountDetail" parameterType="com.anyonehelps.model.AccountDetail">
+		update
+		account_detail
+		set state=#{state},
+		remark = #{remark},
+		modify_date=#{modifyDate}
+		where id=#{id} and state='0'
+	</update> -->
+
+	<!-- <delete id="deleteAccountDetailByUserIds">
+		delete from account_detail
+		where user_id in
+		<foreach collection="list" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete> -->
+	
+	<select id="getAccountDetailByUserId" parameterType="java.lang.String" resultMap="account_detail_result_map">
+		select * from account_detail where user_id=#{userId} order by `create_date` desc
+	</select>
+
+	<select id="getById" parameterType="java.lang.String" resultMap="account_detail_result_map2">
+		select * from account_detail where id=#{id}
+	</select>
+	<select id="getByRemark" parameterType="java.lang.String" resultMap="account_detail_result_map">
+		select * from account_detail where remark=#{remark}
+	</select>
+	<select id="sumAmountByType" resultType="java.lang.Double">
+		select IFNULL(sum(amount),0)
+		from account_detail where
+		user_id=#{userId} and type = #{type}
+		
+	</select>
+	
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(account_detail.id)
+		from account_detail left join users as u on
+		account_detail.user_id=u.id
+		<where>
+			<if test="userId != null and userId != ''">
+				account_detail.user_id=#{userId}
+			</if>
+			<if test="key != null and key != ''">
+				and (account_detail.name like #{key} 
+					or account_detail.amount like #{key} 
+					or account_detail.demand_id like #{key}
+					or account_detail.invoice_no like #{key}
+					or account_detail.third_no like #{key}
+					or account_detail.remark1 like #{key})
+			</if>
+			<if test="state != null and state != ''">
+				and account_detail.state = #{state}
+			</if>
+			<if test="types!=null and types.size()>0">
+				<foreach collection="types" item="type"
+					open="and account_detail.type in (" close=")" separator=",">
+					#{type}
+				</foreach>
+			</if> 
+			<if test="demandId != null and demandId != ''">
+				and account_detail.demand_id = #{demandId}
+			</if>
+			<if test="sdate!=null and sdate!=''">
+				and account_detail.create_date <![CDATA[>=]]>
+				#{sdate}
+			</if>
+			<if test="edate!=null and edate!=''">
+				and account_detail.create_date <![CDATA[<=]]>
+				#{edate}
+			</if>
+		</where>
+	</select>
+
+	<select id="searchByKey" resultMap="account_detail_result_map2">
+		select account_detail.*
+		from account_detail left join users as u on
+		account_detail.user_id=u.id
+		<where>
+			<if test="userId != null and userId != ''">
+				account_detail.user_id=#{userId}
+			</if>
+			<if test="key != null and key != ''">
+				and (account_detail.name like #{key} 
+					or account_detail.amount like #{key} 
+					or account_detail.demand_id like #{key}
+					or account_detail.invoice_no like #{key}
+					or account_detail.third_no like #{key}
+					or account_detail.remark1 like #{key})
+			</if>
+			<if test="state != null and state != ''">
+				and account_detail.state = #{state}
+			</if>
+			<if test="types!=null and types.size()>0">
+				<foreach collection="types" item="type"
+					open="and account_detail.type in (" close=")" separator=",">
+					#{type}
+				</foreach>
+			</if> 
+			<if test="demandId != null and demandId != ''">
+				and account_detail.demand_id = #{demandId}
+			</if>
+			<if test="sdate!=null and sdate!=''">
+				and account_detail.create_date <![CDATA[>=]]>
+				#{sdate}
+			</if>
+			<if test="edate!=null and edate!=''">
+				and account_detail.create_date <![CDATA[<=]]>
+				#{edate}
+			</if>
+		</where>
+		order by account_detail.modify_date desc, account_detail.state asc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="checkIfScanPayDetail" resultType="java.lang.String">
+		SELECT state FROM account_detail WHERE user_id=#{userId} AND amount=#{amount} AND remark=#{remark}
+	</select>
+	<update id="updateStateByPaySuccess">
+		UPDATE account_detail SET state=1 WHERE user_id=#{userId} AND remark=#{remark}
+	</update>
+</mapper>

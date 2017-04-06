@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.ProUserDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.ProUser">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="realname" property="realname" javaType="String" />
+		<result column="sex" property="sex" javaType="String" />
+		<result column="id_upload" property="idUpload" javaType="String" /> 
+		<result column="id_upload_name" property="idUploadName" javaType="String" />
+		<result column="pro_type_id" property="proTypeId" javaType="String" />
+		<result column="pro_id" property="proId" javaType="String" />
+		<result column="pro_name" property="proName" javaType="String" />
+		<result column="reason" property="reason" javaType="String" />
+		<result column="education_upload" property="educationUpload" javaType="String" />
+		<result column="education_upload_name" property="educationUploadName" javaType="String" />
+		<result column="other_upload" property="otherUpload" javaType="String" />
+		<result column="other_upload_name" property="otherUploadName" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		
+		<result column="authorize_flag" property="authorizeFlag" javaType="String" />
+		<result column="authorize_content" property="authorizeContent" javaType="String" />
+		
+		<result column="id_upload_pdf" property="idUploadPdf" javaType="String" />
+		<result column="id_upload_pdf_state" property="idUploadPdfState" javaType="String" />
+		<result column="education_upload_pdf" property="educationUploadPdf" javaType="String" />
+		<result column="education_upload_pdf_state" property="educationUploadPdfState" javaType="String" />
+		<result column="other_upload_pdf" property="otherUploadPdf" javaType="String" />
+		<result column="other_upload_pdf_state" property="otherUploadPdfState" javaType="String" />
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+		
+	</resultMap>
+	
+	<resultMap id="open_map" type="com.anyonehelps.model.ProUser">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="sex" property="sex" javaType="String" />
+		<result column="pro_type_id" property="proTypeId" javaType="String" />
+		<result column="pro_id" property="proId" javaType="String" />
+		<result column="pro_name" property="proName" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.ProUser"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		pro_user(user_id,realname,sex,id_upload,id_upload_name,pro_type_id,pro_id,reason,education_upload,education_upload_name,
+		other_upload,other_upload_name,state,create_date,modify_date)
+		values(#{userId},#{realname},#{sex},#{idUpload},#{idUploadName},#{proTypeId},#{proId},#{reason},#{educationUpload},#{educationUploadName},
+		#{otherUpload},#{otherUploadName},#{state},#{createDate},#{modifyDate})
+	</insert>
+	
+	<update id="modifyState">
+		update `pro_user`
+		set `state`=#{state},
+		`modify_date`=#{modifyDate}
+		where `id`=#{id} and `user_id`=#{userId}
+	</update>
+	
+	<update id="modify">
+		update `pro_user` set 
+		`realname`=#{realname},
+		`sex`=#{sex},
+		`id_upload`=#{idUpload},
+		`id_upload_name`=#{idUploadName},
+		`pro_type_id`=#{proTypeId},
+		`pro_id`=#{proId},
+		`reason`=#{reason},
+		`education_upload`=#{educationUpload},
+		`education_upload_name`=#{educationUploadName},
+		`other_upload`=#{otherUpload},
+		`other_upload_name`=#{otherUploadName},
+		`state`=#{state},
+		`create_date`=#{createDate},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `user_id`=#{userId}
+	</update>
+	
+	<select id="getByUserId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from pro_user where user_id=#{userId} limit 1;
+	</select>	
+	
+	<select id="getByUserIdAndProId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from pro_user where user_id=#{userId} and pro_id = #{proId} limit 1;
+	</select>	
+	
+	<select id="getOpenByUserId" parameterType="java.lang.String" resultMap="open_map">
+		select pro_user.*,pro.name as pro_name from pro_user,pro where pro_user.user_id=#{userId} and pro_user.pro_id = pro.id
+	</select>	
+	
+	<select id="countByAuthorizeFlag1"  resultType="java.lang.Integer">
+		select count(*) from pro_user where user_id=#{userId} and authorize_flag = 1
+	</select>
+	
+	
+	<select id="searchByUserId" resultMap="basic_result_map">
+		select pro_user.*,pro.name as pro_name from pro_user,pro where user_id = #{userId} and pro_user.pro_id = pro.id
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countByUserId" resultType="java.lang.Integer">
+		select count(*) from pro_user where user_id = #{userId}
+	</select>
+	
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from pro_user where id=#{id}
+	</select>	
+	
+		
+	<select id="getByECS" resultMap="basic_result_map">
+		select * from `pro_user` where enclosure_converter_state = 0 order by id asc
+	</select>
+	
+	<!-- 修改附件转换状态 -->
+	<update id="modifyECS">
+		update `pro_user`
+		set `enclosure_converter_state`= 1,
+		`id_upload_pdf`=#{idp},
+		`id_upload_pdf_state`=#{idps},
+		`education_upload_pdf`=#{eps},
+		`education_upload_pdf_state`=#{eps},
+		`other_upload_pdf`=#{ops},
+		`other_upload_pdf_state`=#{ops}
+		where id = #{id}
+	</update> 
+	
+		
+</mapper>

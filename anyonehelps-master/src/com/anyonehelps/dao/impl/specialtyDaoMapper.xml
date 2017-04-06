@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.SpecialtyDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Specialty">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="flag" property="flag" javaType="String" />
+		<result column="specialty_type_id" property="specialtyTypeId" javaType="String" />
+	</resultMap>
+	
+	<insert id="insertSpecialty" parameterType="com.anyonehelps.model.Specialty" 
+		useGeneratedKeys="true" keyProperty="id">
+		insert into specialty(id,name,specialty_type_id) values (#{id},#{name},#{specialtyTypeId})
+	</insert>
+	<select id="getSpecialtyBySTId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from specialty where specialty_type_id = #{specialtyTypeId} order by `flag` asc
+	</select>
+	<select id="getSpecialtyById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from specialty where id = #{id} 
+	</select>
+</mapper>

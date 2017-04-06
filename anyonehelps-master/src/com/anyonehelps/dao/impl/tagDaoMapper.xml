@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.TagDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Tag">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="level" property="level" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insertTag" parameterType="com.anyonehelps.model.Tag" >
+		insert into
+		tag(name,level,create_date)
+		values
+		(#{name},#{level},#{createDate})
+	</insert>
+
+	<select id="getAll" resultMap="basic_result_map">
+		select * from tag order by level desc
+	</select>
+	
+	<select id="getById" resultMap="basic_result_map">
+		select * from tag where id=#{id} order by id desc
+	</select>
+	
+	<delete id="deleteById">
+		delete from tag where id = #{id}
+	</delete>
+</mapper>

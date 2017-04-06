@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.MessageBlacklistDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.MessageBlacklist">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="friend_id" property="friendId" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="friend_nick_name" property="friendNickName" javaType="String" />
+		<result column="friend_pic_url" property="friendPicUrl" javaType="String" />
+		<result column="friend_evaluate" property="friendEvaluate" javaType="String" />
+		<result column="friend_evaluate_count" property="friendEvaluateCount" javaType="String" />
+		<result column="friend_evaluate_publish" property="friendEvaluatePublish" javaType="String" />
+		<result column="friend_evaluate_publish_count" property="friendEvaluatePublishCount" javaType="String" />
+		<result column="friend_occupation" property="friendOccupation" javaType="String" />
+		
+		<result column="friend_honest" property="friendHonest" javaType="String" />
+		<result column="friend_quality" property="friendQuality" javaType="String" />
+		<result column="friend_punctual" property="friendPunctual" javaType="String" />
+		<result column="friend_honest_publish" property="friendHonestPublish" javaType="String" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.anyonehelps.model.MessageBlacklist">
+		insert into
+		blacklist(user_id,friend_id,create_date)
+		values(#{userId},#{friendId},#{createDate})
+	</insert>
+
+	<select id="searchByKey" resultMap="basic_result_map">
+	
+		SELECT p.id,p.user_id,p.friend_id,p.create_date, u.`nick_name` AS friend_nick_name,u.pic_url AS friend_pic_url,
+		u.evaluate AS friend_evaluate, u.evaluate_count AS friend_evaluate_count, u.evaluate_publish AS friend_evaluate_publish,
+		u.evaluate_publish_count AS friend_evaluate_publish_count, u.honest AS friend_honest,
+		u.quality AS friend_quality, u.punctual AS friend_punctual,
+		u.honest_publish AS friend_honest_publish, u.occupation AS friend_occupation FROM 
+		(SELECT * FROM blacklist  ORDER BY id ASC) p
+		INNER JOIN users u on u.id=friend_id WHERE p.user_id=#{userId} and ( u.nick_name like #{key} or u.email like #{key} or telphone like #{key} )  ORDER BY p.id DESC 
+		limit
+		#{index},#{size}
+		
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		SELECT count(*) FROM 
+		(SELECT * FROM blacklist) p
+		INNER JOIN users u on u.id=friend_id WHERE p.user_id=#{userId} and ( u.nick_name like #{key} or u.email like #{key} or telphone like #{key} )
+	</select>
+	
+	<select id="getByFriendId" parameterType="java.lang.String" resultMap="basic_result_map">
+		SELECT p.id,p.user_id,p.friend_id,p.create_date, u.`nick_name` AS friend_nick_name,u.pic_url AS friend_pic_url,
+		u.evaluate AS friend_evaluate, u.evaluate_count AS friend_evaluate_count, u.evaluate_publish AS friend_evaluate_publish,
+		u.evaluate_publish_count AS friend_evaluate_publish_count, u.honest AS friend_honest,
+		u.quality AS friend_quality, u.punctual AS friend_punctual,
+		u.honest_publish AS friend_honest_publish, u.occupation AS friend_occupation FROM 
+		(SELECT * FROM blacklist WHERE user_id = #{userId} and friend_id = #{friendId}  limit 1) p
+		INNER JOIN users u on u.id = friend_id limit 1;
+	</select>
+	
+	<delete id="deleteById">
+		delete from `blacklist` where `id` = #{id}
+	</delete>
+	
+</mapper>

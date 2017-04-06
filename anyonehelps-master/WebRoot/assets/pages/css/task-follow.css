@@ -1,0 +1,443 @@
+.portlet.light > .portlet-title {
+    padding: 0;
+    min-height: 24px;
+    margin-bottom: 0px;
+}
+.portlet.light .portlet-body {
+    padding-top: 0px;
+}
+
+/*任务信息 start*/
+.task-list>.no-data{
+	margin-top:18px;
+	text-align:center;
+	border: 1px solid #dddddd;
+	padding: 20px 20px 20px 20px;
+}
+.task-list>.task-item{
+	margin-top:18px;
+	background:#ffffff;
+	border:1px solid #eeeeee;
+	box-shadow:0 0 10px 0 rgba(0,0,0,0.10);
+	border-radius:3px;
+	padding:21px;
+}
+.task-list>.task-item .title{
+	height:24px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    float: left;
+    width: calc(100% - 80px);
+	
+}
+.task-list>.task-item .title a{
+	font-size:16px;
+	color:#0088ff;
+	line-height:24px;
+	text-align:justify;
+}
+.task-list>.task-item .title.private a{
+	color:#333333;
+}
+.task-list>.task-item .amount{
+	float: right;
+	margin-left: 20px;
+}
+
+.task-list>.task-item .amount>span{
+	font-size:21px;
+	color:#333333;
+	letter-spacing:0;
+	line-height:24px;
+	text-align:left;
+}
+.task-list>.task-item .amount span.amount-sm{
+	font-size:12px;
+	color:#333333;
+	letter-spacing:0;
+	line-height:24px;
+	text-align:left;
+	vertical-align: text-top;
+}
+
+.task-list>.task-item>.info{
+	margin-top:10px;
+}
+.task-list>.task-item>.info>span{
+	float:left;
+	font-size:12px;
+	color:#666666;
+	letter-spacing:0;
+	line-height:12px;
+	text-align:left;
+}
+.task-list>.task-item>.info>.task-id{
+	margin-left:3px;
+}
+.task-list>.task-item>.info>.expire-date{
+	margin-left:30px;
+}
+
+.task-list>.task-item>.content{
+	margin-top:10px;
+	font-size:14px;
+	color:#999999;
+	line-height:24px;
+	text-align:left;
+}
+
+.task-list>.task-item p{
+	margin:10px 0 0 0;
+}
+
+/*任务信息 end*/
+
+/*任务附件 start*/
+.task-list>.task-item>.enclosure{
+	margin-top:10px;
+}
+
+.task-list>.task-item>.enclosure>span{
+	color:#676767;
+	float:left;
+	font-size:12px;
+	letter-spacing:0;
+	line-height:12px;
+	text-align:left;
+	width:40px;
+}
+.task-list>.task-item>.enclosure>ul{
+	float:left;
+	width:calc(100% - 40px);
+}
+
+.task-list>.task-item>.enclosure>ul>li{
+	list-style: none;
+	line-height:12px;
+	margin-top:8px;
+}
+.task-list>.task-item>.enclosure>ul>li a{
+	font-size:12px;
+	color:#0088ff;
+	letter-spacing:0;
+	line-height:12px;
+	text-align:left;
+}
+.task-list>.task-item>.enclosure>ul>li a:hover{
+	color:#0066ee;
+}
+.task-list>.task-item>.enclosure>ul>:first-child{
+	margin-top:0px;
+}
+.task-list>.task-item .line {
+    width: 100%;
+    border-top: 1px solid #dddddd;
+}
+/*任务附件 end*/
+
+/*附加任务 start*/
+.task-list>.task-item>.attach-list>.attach-item{
+	margin-top:10px;
+}
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.open{
+	float: left;
+    margin-right: 10px;
+}
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.open>i{
+	color:#4a91fd;    
+	font-size: 20px;
+    margin-top: 2px;
+    cursor:pointer;
+}
+
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-title{
+	float: left;
+    margin-right: 33px;
+}
+
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-title>span{
+	font-size:13px;
+	color:#999999;
+	line-height:20px;
+	text-align:justify;
+}
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-expire-date{
+	float: left;
+    margin-right: 30px;
+}
+
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-expire-date>span{
+	font-size:13px;
+	color:#999999;
+	line-height:20px;
+	text-align:justify;
+}
+
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-amount{
+	float: left;
+}
+
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-amount>span{
+	font-size:21px;
+	color:#333333;
+	letter-spacing:0;
+	line-height:20px;
+	text-align:left;
+}
+.task-list>.task-item>.attach-list>.attach-item>.attach-info>.attach-amount span.amount-sm{
+	font-size:12px;
+	color:#333333;
+	letter-spacing:0;
+	line-height:20px;
+	text-align:left;
+	vertical-align: text-bottom;
+}
+
+
+.task-list>.task-item>.attach-list>.attach-item>.content{
+	margin-top:8px;
+	font-size:14px;
+	color:#999999;
+	line-height:24px;
+	text-align:justify;
+}
+
+.task-list>.task-item>.attach-list>.attach-item p{
+	margin:10px 0 0 0;
+}
+
+
+.task-list>.task-item>.attach-list>.attach-item .achieve>.achieve-tip>span{
+	font-size: 12px;
+    color: #0088ff;
+    text-align: left;
+    font-weight: 600;
+}
+.task-list>.task-item>.attach-list>.attach-item .achieve>div>pre{
+	float: left;
+    width: 100%;
+    padding: 0px;
+    margin-top: 0px;
+    display: block;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+	font-size:12px;
+	color:#999999;
+	line-height:20px;
+	text-align:left;
+}
+/*附加任务 end*/
+
+/*所需技能和基本操作 start*/
+.task-list>.task-item>.specialty{
+	margin-top:18px;
+}
+.task-list>.task-item>.specialty>.left{
+	float: left;
+    width: 100%;
+}
+.task-list>.task-item>.specialty>.left ul li .specialty-item{
+	padding: 0px 10px 0px 10px;
+	color:#666666;
+	font-size: 12px;
+	margin-right: 10px;
+	float: left;
+	line-height:24px;
+	
+	background:#ffffff;
+	border:1px solid #cccccc;
+	border-radius:3px;
+	margin-bottom: 10px;
+}
+.task-list>.task-item>.specialty>.left ul li .specialty-item:hover{
+	background: #dddddd;
+	color:#333333;
+}
+/*所需技能和基本操作 end*/
+
+
+.task-list>.task-item>.bottom .user{
+	float:left;
+}
+.task-list>.task-item>.bottom .user>span{
+	font-size:12px;
+	color:#676767;
+	letter-spacing:0;
+	line-height:28px;
+	text-align:left;
+}
+.task-list>.task-item>.bottom .user>span.username{
+	font-size:12px;
+	letter-spacing:0;
+	line-height:12px;
+	text-align:left;
+	color:#4a91fd;
+}
+.task-list>.task-item>.bottom>.operate>button{
+	float:right;
+	font-size:14px;
+	color:#ffffff;
+	margin-left:10px;
+	background:#4a91fd;
+	border:1px solid #4a91fd;
+	border-radius:3px;
+	height:28px;
+	line-height: 7px;
+}
+.task-list>.task-item>.bottom>.operate>button:hover{
+	background:#0088ff;
+}
+
+.task-list>.task-item> .receive-demand{
+	margin-top:20px;
+}
+.task-list>.task-item> .receive-demand .receive-amount-desc{
+	float: left;
+    line-height: 34px;
+    font-size: 16px;
+    width:90px;
+}
+.task-list>.task-item> .receive-demand .receive-amount{
+	border:1px solid #dddddd;
+	color: #999999;
+	border-radius: 3px;
+	width: calc(100% - 120px);
+	float: left;
+}
+
+.task-list>.task-item> .receive-demand .finish-day-desc{
+	float: left;
+    line-height: 34px;
+    font-size: 16px;
+   	width:100px;
+   	margin-left:10px;
+}
+.task-list>.task-item> .receive-demand .finish-day{
+	border:1px solid #dddddd;
+	color: #999999;
+	border-radius: 3px;
+	width: calc(100% - 110px);
+	float: left;
+}
+
+.task-list>.task-item> .receive-demand .receive-remark{
+	border:1px solid #dddddd;
+	border-radius: 0px;
+}
+
+.task-list>.task-item> .receive-demand .operate{
+	width:240px;
+	float:right;
+}
+
+.task-list>.task-item> .receive-demand .receive-submit,.task-list>.task-item> .receive-demand .close-task-receive{
+	float:right;
+	font-size:14px;
+	color:#ffffff;
+	margin-left:10px;
+	background:#4a91fd;
+	border:1px solid #4a91fd;
+	border-radius:3px;
+	height:28px;
+	line-height: 7px;
+}
+
+.task-list>.task-item> .receive-demand .receive-submit:hover,.task-list>.task-item> .receive-demand .close-task-receive:hover{
+	background:#0088ff;
+}
+
+
+.tip-dlg {
+    left: calc(50% - 240px);
+    top: calc(50% - 190px);
+    position: fixed;
+    padding: 0px;
+}
+
+.tip-dlg .ui-dialog-content{
+	padding:0px;
+}
+.tip-dlg .tip-dlg-content{
+	background:#ffffff;
+	border-radius:3px;
+	width:480px;
+	padding:30px 55px 35px 55px;
+}
+
+.tip-dlg .tip-dlg-content .title{
+	font-size:20px;
+	color:#999999;
+	letter-spacing:0;
+	line-height:20px;
+	text-align:center;
+}
+
+.tip-dlg .tip-dlg-content .content{
+	margin-top:52px;
+} 
+.tip-dlg .tip-dlg-content i{
+	width:24px;
+	font-size: 24px;
+	color:#4a91fd;
+	vertical-align: middle;
+} 
+.tip-dlg .tip-dlg-content span{
+	font-size:14px;
+	color:#666666;
+	letter-spacing:0;
+	text-align:left;
+	line-height:24px;
+} 
+
+.tip-dlg .tip-dlg-content .operate{
+	margin-top:65px;
+	text-align: center;
+} 
+.tip-dlg .tip-dlg-content .operate button{
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:32px;
+	padding: 3px 21px;
+	    
+	font-size:14px;
+	color:#ffffff;
+	letter-spacing:0;
+	text-align:left;
+} 
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.task-list>.task-item>.bottom .user {
+	    float: none;
+	}
+	.task-list>.task-item>.bottom>.operate>button {
+	    float: left;
+	    margin-right: 10px;
+	    margin-left: 0px;
+	}
+	
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+}
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+

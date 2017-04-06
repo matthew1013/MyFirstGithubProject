@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.MessageDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Message">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="friend_id" property="friendId" javaType="String" />
+		<result column="sender_id" property="senderId" javaType="String" />
+		<result column="receiver_id" property="receiverId" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		
+		<result column="count" property="count" javaType="String" />
+		<result column="friend_nick_name" property="friendNickName" javaType="String" />
+		<result column="friend_pic_url" property="friendPicUrl" javaType="String" />
+		
+	</resultMap>
+
+	<insert id="insert" parameterType="com.anyonehelps.model.Message">
+		insert into
+		message(user_id,friend_id,sender_id,receiver_id,content,state,create_date,modify_date)
+		values(#{userId},#{friendId},#{senderId},#{receiverId},#{content},#{state},#{createDate},#{modifyDate})
+	</insert>
+
+	<select id="searchByKey" resultMap="basic_result_map">
+		SELECT p.id, COUNT(p.id) AS count,p.user_id,p.friend_id,p.sender_id,p.receiver_id,p.create_date,p.modify_date,p.state,p.content, u.`nick_name` AS friend_nick_name,u.pic_url AS friend_pic_url FROM 
+		(SELECT * FROM message where content like #{key} and state !=2
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+		
+		ORDER BY id DESC) p INNER JOIN users u on u.id=friend_id WHERE p.user_id=#{userId} 
+		AND friend_id not in (SELECT friend_id FROM blacklist WHERE user_id = #{userId} )
+		GROUP BY p.friend_id ORDER BY p.id DESC 
+		limit
+		#{index},#{size}
+		
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from (select * from message 
+		where content like #{key} and state !=2
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+		and user_id=#{userId}
+		AND friend_id not in (SELECT friend_id FROM blacklist WHERE user_id = #{userId} )
+		group by friend_id ) as m
+	</select>
+	
+	<select id="searchByKeyAndFriendId" resultMap="basic_result_map">
+		SELECT p.id, p.user_id,p.friend_id,p.sender_id,p.receiver_id,p.create_date,p.modify_date,p.state,p.content, u.`nick_name` AS friend_nick_name,u.pic_url AS friend_pic_url FROM 
+		(SELECT * FROM message where content like #{key} 
+		and state!=2
+		and user_id=#{userId} 
+		and friend_id=#{friendId}
+		ORDER BY id DESC) p INNER JOIN users u on u.id=friend_id ORDER BY p.id DESC 
+		limit
+		#{index},#{size}
+		
+	</select>
+	
+	<select id="countByKeyAndFriendId" resultType="java.lang.Integer">
+		select count(*) from message 
+		where content like #{key} and  state !=2
+		and friend_id = #{friendId}
+		and user_id=#{userId}
+	</select>
+
+	<update id="modifyState">
+		update message
+		set modify_date=#{date},state=#{state}
+		where id=#{id}
+	</update>
+	
+	<update id="modifySessionState">
+		update message
+		set modify_date=#{date},state=#{state}
+		where user_id = #{userId} and friend_id = #{friendId}
+	</update>
+	
+	<delete id="deleteByFriendId">
+		delete from `message` where `user_id` = #{userId} and `friend_id` = #{friendId}
+	</delete>
+	
+	<delete id="deleteByIds">
+		delete from `message`
+		where user_id = #{userId} and id in
+		<trim prefix="(" suffix=")">
+			<foreach collection="ids" item="id" separator=",">
+				#{id}
+			</foreach>
+		</trim>
+	</delete>
+	
+</mapper>

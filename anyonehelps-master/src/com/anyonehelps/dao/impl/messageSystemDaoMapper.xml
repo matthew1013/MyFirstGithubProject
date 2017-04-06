@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.MessageSystemDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.MessageSystem">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="level" property="level" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="link" property="link" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		
+		<result column="recommender" property="recommender" javaType="String" />
+		<result column="recommend_state" property="recommendState" javaType="String" />
+		<result column="recommend_date" property="recommendDate" javaType="String" />
+	</resultMap>
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from message_system where id=#{id}
+	</select>	
+	<insert id="insertMessage" parameterType="com.anyonehelps.model.MessageSystem">
+		insert into
+		message_system(user_id,level,title,content,link,create_date,modify_date,state,recommender)
+		values(#{userId},#{level},#{title},#{content},#{link},#{createDate},#{modifyDate},#{state},#{recommender})
+	</insert>
+
+	<select id="searchMessageByKey" resultMap="basic_result_map">
+		select * from message_system
+		where title like #{key} and content like #{key} and user_id=#{userId} and state !=2
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="count" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) from message_system where user_id = #{userId} and state = 0
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from message_system
+		where title like #{key} and content like #{key} and user_id=#{userId} and state !=2
+		<if test="state == '0'.toString() or state =='1'.toString()">
+		 	and state=#{state}
+		</if>
+	</select>
+
+	<update id="updateModifyDate">
+		update message_system
+		set modify_date=#{date}, state=#{state}
+		where id=#{id}
+	</update>
+	
+	<update id="modifyAllRead">
+		update message_system
+		set modify_date=#{date}, state=1
+		where user_id=#{userId} and state=0
+	</update>
+	
+	<update id="modifyStateByIds">
+		update message_system
+		set modify_date=#{date}, state=#{state}
+		where user_id=#{userId} and id in
+		<trim prefix="(" suffix=")">
+			<foreach collection="ids" item="id" separator=",">
+				#{id}
+			</foreach>
+		</trim>
+	</update>
+	
+	<update id="modifyRecommendState">
+		update message_system
+		set recommend_date=#{recommenderDate}, recommend_state=#{recommenderState}
+		where user_id=#{userId} and recommender = #{recommender}
+	</update>
+	
+	<update id="modifyRecommendState2">
+		update message_system
+		set recommend_date=#{recommenderDate}, recommend_state=#{recommenderState}
+		where user_id=#{userId} and recommender <![CDATA[>]]>  0 and recommender <![CDATA[<>]]> #{recommenderState} 
+	</update>
+	
+</mapper>

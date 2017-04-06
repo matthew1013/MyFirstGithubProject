@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.AuthorityDao">
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Authority_url">
+		<id column="authority_id" property="authority_id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="menu_id" property="menu_id" javaType="String" />
+	</resultMap>
+	<select id="selectAuthority_ul" parameterType="java.lang.String"
+		resultMap="basic_result_map">
+		select authority_url.*
+		from authority_url
+inner join authority_user on authority_url.authority_id=authority_user.authority_id
+where authority_user.users_id=#{id}
+	</select>
+</mapper>

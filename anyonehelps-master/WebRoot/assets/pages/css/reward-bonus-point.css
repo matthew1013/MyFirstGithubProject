@@ -1,0 +1,211 @@
+.portlet-body .search-desc{
+	font-size:14px;
+	color:#676767;
+	line-height:30px;
+}
+.portlet-body .search-item .now-week{ 
+	width:80px;
+	color: #ffffff;
+    background:#4a91fd;
+	border-radius:3px;
+	height:34px;
+	font-size:14px;
+	line-height: 14px;
+   	float:left;
+   	
+    margin-top: 10px;
+}
+.portlet-body .search-item .now-month{ 
+	width:80px;
+	color: #ffffff;
+    background:#4a91fd;
+	border-radius:3px;
+	height:34px;
+	font-size:14px;
+	line-height: 14px;
+   	float:left;
+   	margin-left:10px;
+    margin-top: 10px;
+}
+
+.portlet-body .search-item .key{
+    line-height: 32px;
+   	border-radius: 3px;
+   	color:#676767;
+   	padding:0px 12px;
+   	float:left;
+   	width:202px;
+   	margin-left:30px;
+    margin-top: 10px;
+    background: #fafafa;
+}
+.portlet-body .search-item .sd{
+    line-height: 32px;
+   	border-radius: 3px;
+   	color:#676767;
+   	padding:0px 12px;
+   	float:left;
+   	width:152px;
+   	margin-left:18px;
+    margin-top: 10px;
+    background: #fafafa;
+}
+.portlet-body .search-item .ed{
+    line-height: 32px;
+   	border-radius: 3px;
+   	color:#676767;
+   	padding:0px 12px;
+   	float:left;
+   	width:152px;
+   	margin-left:18px;
+    margin-top: 10px;
+    background: #fafafa;
+}
+
+.portlet-body .search-item .search-btn{ 
+	width:80px;
+	color: #ffffff;
+    background:#4a91fd;
+	border-radius:3px;
+	height:34px;
+	
+	font-size:14px;
+	line-height: 14px;
+	
+   	margin-left:19px;
+    margin-top: 10px;
+}
+.portlet-body .search-item .now-week:hover,
+.portlet-body .search-item .now-month:hover,
+.portlet-body .search-item .search-btn:hover{ 
+    background-color: #0088ff;
+}
+.portlet-body .bonus-point{
+	border: 1px solid #dddddd;
+	padding: 30px;
+	margin-top: 30px;
+}
+
+.portlet-body table th ,.portlet-body table td{
+    text-align: center;
+}
+.portlet-body .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fafafa;
+}
+.portlet-body .search-pagination{
+	text-align:center;
+}
+
+
+/*自适应 start*/
+@media (max-width: 1199px){
+	.portlet-body .search-item .key{
+		width:162px;
+		margin-left:20px;
+	}
+	.portlet-body .search-item .search-btn{ 
+		margin-left:10px;
+	}
+}
+@media (max-width: 414px) {
+
+	.page-content .portlet.light.bordered {
+		padding: 0px 5px 21px 5px;
+	}
+	.portlet-body .bonus-point{
+		border: 0px solid #dddddd;
+		padding: 0px;
+		margin-top: 30px;
+	}
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+	.portlet-body .search-item .key{
+	   	width:182px;
+	   	margin-left: 0px;
+	}
+	.portlet-body .search-item .search-btn{ 
+		width:80px;
+	   	margin-left:10px;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.portlet-body .search-item .now-week{ 
+		width:50px;
+	}
+	.portlet-body .search-item .now-month{ 
+		width:50px;
+	}
+	.portlet-body .search-item .key{
+	   	width:162px;
+	}
+	.portlet-body .search-item .sd{
+	   	width:112px;
+	}
+	.portlet-body .search-item .ed{
+	   	width:112px;
+	}
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+
+/*
+ * Responsive table
+ */ 
+@media (max-width: 767px) {
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	    padding-left: 50%;
+	}
+	.table th,  .table td {
+	  padding-left: 50%;
+	  border-top:0;
+	}
+	 table,  thead,  tbody,  th,  td,  tr {
+	  display: block;
+	}
+	 thead tr {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+	tr { 
+	  border: 0px solid #ccc; 
+	}
+	 td {
+	  border: none;
+	  border-bottom: 1px solid #eee;
+	  position: relative;
+	  padding-left: 50%;
+	}
+	 td:before {
+	  position: absolute;
+	  top: 6px;
+	  left: 6px;
+	  width: 45%;
+	  padding-right: 10px;
+	  white-space: nowrap;
+	}
+	.item td:nth-of-type(1):before { content: "我的邀请人"; }
+	.item td:nth-of-type(2):before { content: "与推荐人关系"; }
+	.item td:nth-of-type(3):before { content: "奖励金额"; }
+	.item td:nth-of-type(4):before { content: "说明"; }
+	.item td:nth-of-type(5):before { content: "获得时间"; }
+	.item td:nth-of-type(5):before { content: "操作"; }
+	
+	.portlet-body table th ,.portlet-body table td{
+	    text-align: left;
+	}
+	
+	
+	
+}

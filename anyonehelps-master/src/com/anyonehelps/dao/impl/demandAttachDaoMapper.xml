@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.DemandAttachDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.DemandAttach">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="expire_date" property="expireDate" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="achieve" property="achieve" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		
+	</resultMap>
+	
+	<insert id="insertDemandAttach" parameterType="com.anyonehelps.model.DemandAttach"
+		useGeneratedKeys="true" keyProperty="id" >
+		insert into
+		demand_attach(user_id, demand_id, amount, expire_date, content, achieve, create_date, state, modify_date)
+		values (#{userId}, #{demandId}, #{amount}, #{expireDate}, #{content}, #{achieve}, #{createDate}, #{state}, #{modifyDate}) 
+	</insert>
+	
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from demand_attach where id = #{id} 
+	</select>
+	
+	<select id="getByDemandId" resultMap="basic_result_map">
+		select * from demand_attach where demand_id = #{demandId}
+	</select>
+
+	<delete id="deleteById">
+		delete from demand_attach where  id = #{id}
+	</delete>	
+	
+	<update id="modifyState">
+		update `demand_attach`
+		set `state`=#{state},
+		`modify_date`=#{modifyDate}
+		where id = #{id} 
+	</update> 
+</mapper>

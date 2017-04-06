@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.SpecialtyTypeDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.SpecialtyType">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		
+		<collection property="specialtys" column="id" select="com.anyonehelps.dao.SpecialtyDao.getSpecialtyBySTId"></collection>
+	</resultMap>
+	
+	<resultMap id="basic_result_map2" type="com.anyonehelps.model.SpecialtyType">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+	</resultMap>
+	
+	<select id="getAllSpecialtyType" resultMap="basic_result_map">
+		select * from specialty_type
+	</select>
+	
+	<select id="getSTById" resultMap="basic_result_map2">
+		select * from specialty_type where id = #{id}
+	</select>
+	
+	<insert id="insertSpecialtyType" parameterType="com.anyonehelps.model.SpecialtyType" >
+		insert into specialty_type(id,name) values (#{id},#{name})
+	</insert>
+	
+</mapper>

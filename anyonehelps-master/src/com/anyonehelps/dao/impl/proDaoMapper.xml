@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.ProDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Pro">
+		<id column="id" property="id" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+		<result column="flag" property="flag" javaType="String" />
+		<result column="pro_type_id" property="proTypeId" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.Pro" 
+		useGeneratedKeys="true" keyProperty="id">
+		insert into pro(id, name, pro_type_id) values (#{id}, #{name}, #{proTypeId})
+	</insert>
+	<select id="getByPTId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from pro where pro_type_id = #{proTypeId}
+	</select>
+	<select id="getById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from pro where id = #{id} limit 1
+	</select>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.ActivityDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Activity">
+		<id column="id" property="id" javaType="String" />
+		<result column="create_by" property="createBy" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="update_by" property="updateBy" javaType="String" />
+		<result column="expire_date" property="expireDate" javaType="String" />
+		<result column="remarks" property="remarks" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="author" property="author" javaType="String" />
+		<result column="source" property="source" javaType="String" />
+		<result column="visit_num" property="visitNum" javaType="String" />
+		<result column="cover_img" property="coverImg" javaType="String" />
+		<result column="link" property="link" javaType="String" />
+		
+	</resultMap>
+	
+	<select id="searchByKey" resultMap="basic_result_map">
+		select * from activity order by id desc
+		limit
+		#{size}
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		select count(*) from activity
+	</select>
+	
+	<select id="getById" resultMap="basic_result_map">
+		select * from activity where id = #{id}
+	</select>
+	
+	<update id="modifyVisitNum">
+		update activity set visit_num=visit_num + 1 where id = #{id}
+	</update>
+</mapper>

@@ -1,0 +1,109 @@
+/* here you can put your own css to customize and override the theme */
+
+.page-sidebar.navbar-collapse {
+    background:#f6f6f6;
+	box-shadow:0 0 10px 0 rgba(0,0,0,0.10);
+	border: 0px solid #dddddd;
+}
+.page-content .portlet.light.bordered {
+    background:#ffffff;
+	box-shadow:0 0 10px 0 rgba(0,0,0,0.10);
+	border: 0px solid #dddddd !important;
+}
+
+.page-sidebar .page-sidebar-menu > li > a > i{
+	width:18px;
+	margin-right:10px;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.open > a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.active > a,
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover > a,
+.page-sidebar .page-sidebar-menu .sub-menu > li.open > a,
+.page-sidebar .page-sidebar-menu .sub-menu > li.active > a {
+	color: #0088ff;
+	background:#f6f6f6;}
+      
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a > i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.open > a > i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.active > a > i,
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover > a > i,
+.page-sidebar .page-sidebar-menu .sub-menu > li.open > a > i,
+.page-sidebar .page-sidebar-menu .sub-menu > li.active > a > i {
+ 	color: #0088ff; }
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.open > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.active > a, .page-sidebar .page-sidebar-menu .sub-menu > li:hover > a, .page-sidebar .page-sidebar-menu .sub-menu > li.open > a, .page-sidebar .page-sidebar-menu .sub-menu > li.active > a {
+	border-left: 3px solid #0088ff;
+}
+
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a,
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover > a {
+	color: #26b6ff;
+	background:#f6f6f6;
+}
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a > i,
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover > a > i {
+ 	color: #26b6ff; }
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a,
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover > a{
+	border-left: 3px solid #26b6ff;
+}
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li:hover > a,
+.page-sidebar .page-sidebar-menu > li:hover > a {
+      background: #26b6ff;
+      color: #ffffff; }
+
+.page-sidebar .page-sidebar-menu .sub-menu, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu {
+    margin: 10px 0px 15px 0px;
+}
+.page-sidebar .page-sidebar-menu .sub-menu li > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu li > a {
+    padding: 0px 14px 0px 60px;
+}
+
+.page-sidebar .page-sidebar-menu > li > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li > a {
+    display: block;
+    position: relative;
+    margin: 0px;
+    border: 0px;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li > a > i[class^="icon-"], .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li > a > i[class*="icon-"], .page-sidebar .page-sidebar-menu .sub-menu > li > a > i[class^="icon-"], .page-sidebar .page-sidebar-menu .sub-menu > li > a > i[class*="icon-"] {
+    margin-right: 10px;
+    width:14px;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li > a, .page-sidebar .page-sidebar-menu .sub-menu > li > a {
+    color: #676767;
+}
+
+
+body>.container{
+	margin-top: 90px;
+}
+/*body .header-top .top-nav .task-pub-btn-xs{
+	display:none;
+}*/
+
+@media (max-width: 414px) {
+	body>.container{
+		margin-top:70px;
+	}
+	/*.header-top .top-nav .task-pub-btn-xs{
+		display:inline-block;
+		width: 50px;
+	}*/
+	
+	body .header-top .top-nav .person .dropdown-toggle,
+	body .header-top .top-nav .person .dropdown-menu{
+		display:none;
+	}
+	body .header-top .top-nav .person .responsive-toggler{
+		display:inline-block;
+	}
+	
+}

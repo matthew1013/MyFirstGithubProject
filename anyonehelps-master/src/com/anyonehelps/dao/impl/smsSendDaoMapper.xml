@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.SmsSendDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.SmsSend">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="area_code" property="areaCode" javaType="String" />
+		<result column="telphone" property="telphone" javaType="String" />
+		<result column="content" property="content" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="fail_count" property="failCount" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.SmsSend" >
+		insert into sms_send(user_id, area_code, telphone, content, state, fail_count, create_date, modify_date)
+		values(#{userId}, #{areaCode}, #{telphone}, #{content}, #{state}, #{failCount}, #{createDate}, #{modifyDate})
+	</insert>
+	
+	<select id="getOneByState0" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from sms_send where state = 0 and fail_count <![CDATA[<]]> 3 limit 1
+	</select>
+	
+	<update id="modifyState">
+		update sms_send
+		set modify_date=#{date},state=#{state}
+		where id=#{id}
+	</update>
+	
+	<update id="modifyFailCount">
+		update sms_send
+		set modify_date = #{date}, 
+		fail_count = fail_count+1,
+		state = 0
+		where id=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.AccountDao">
+
+	<resultMap id="account_result_map" type="com.anyonehelps.model.Account">
+		<id column="user_id" property="userId" javaType="String" />
+		<result column="usd" property="usd" javaType="String" />
+		<result column="freeze_usd" property="freezeUsd" javaType="String" />
+		<result column="forward_usd" property="forwardUsd" javaType="String" />
+		<result column="bonus_point" property="bonusPoint" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+		<association property="user" column="user_id" select="com.anyonehelps.dao.UserDao.getUserById"></association>
+		<collection property="details" column="user_id" select="com.anyonehelps.dao.AccountDetailDao.getAccountDetailByUserId"></collection>
+	</resultMap>
+
+	<insert id="insertOrUpdateAccount" parameterType="com.anyonehelps.model.Account">
+		insert into account(user_id, usd, create_date, modify_date)
+		values(#{userId}, #{usd}, #{createDate}, #{modifyDate})
+		on
+		duplicate key update
+		usd = usd + #{usd},
+		modify_date=#{modifyDate}
+	</insert>
+	
+	<update id="modifyUsdByUserId" parameterType="com.anyonehelps.model.Account">
+		update account
+		set usd=#{usd},
+		modify_date=#{modifyDate}
+		where user_id=#{userId}
+	</update>
+	
+	<update id="modifyBonusPoint">
+		update account
+		set bonus_point= bonus_point+#{bonusPoint},
+		modify_date=#{modifyDate}
+		where user_id=#{userId}
+	</update>
+	
+	<update id="addFreezeUsd">
+		update account
+		set freeze_usd = freeze_usd + #{freezeUsd},
+		modify_date = #{modifyDate}
+		where user_id = #{userId}
+	</update>
+	
+	<update id="reduceFreezeUsd">
+		update account
+		set freeze_usd = freeze_usd-#{freezeUsd},
+		modify_date = #{modifyDate}
+		where user_id = #{userId}
+	</update>
+	
+	<update id="addForwardUsd">
+		update account
+		set forward_usd = forward_usd+#{forwardUsd},
+		modify_date = #{modifyDate}
+		where user_id = #{userId}
+	</update>
+	
+	<update id="reduceForwardUsd">
+		update account
+		set forward_usd = forward_usd-#{forwardUsd},
+		modify_date = #{modifyDate}
+		where user_id = #{userId}
+	</update>
+		
+	<select id="getAccountByUserId" parameterType="java.lang.String" resultMap="account_result_map">
+		select * from account where user_id=#{userId}
+	</select>	
+	
+</mapper>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.DemandFollowDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.DemandFollow">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		
+		<collection property="demand" column="demand_id" select="com.anyonehelps.dao.DemandDao.getDemandById"></collection>
+	</resultMap>
+	
+	<insert id="insertDemandFollows" parameterType="java.util.List" >
+		insert into
+		demand_follow(user_id,demand_id)
+		values
+		<foreach collection="demandFollows" item="demandFollow" index="index" separator=",">
+			(#{demandFollow.userId,jdbcType=INTEGER},#{demandFollow.demandId,jdbcType=INTEGER})
+		</foreach>
+	</insert>
+	
+	<select id="getByUIdAndDFId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from demand_follow where demand_id = #{DFId} and user_id = #{userId} 
+	</select>
+	
+	<select id="searchByKey" resultMap="basic_result_map">
+		<choose>
+			<when test="key!=null and key!=''">
+			select demand_follow.* from demand_follow,demand 
+			where demand_follow.user_id = #{userId} and demand_follow.demand_id = demand.id
+			and  (demand.title like #{key} or demand.content like #{key})
+			</when>
+			<otherwise>
+				select * from demand_follow where user_id  = #{userId}
+			</otherwise>
+		</choose>
+		order by id desc
+		limit
+		#{index},#{size}
+	</select>
+
+	<select id="countByKey" resultType="java.lang.Integer">
+		<choose>
+			<when test="key!=null and key!=''">
+			select count(*) from demand_follow,demand 
+			where demand_follow.user_id = #{userId} and demand_follow.demand_id = demand.id
+			and  (demand.title like #{key} or demand.content like #{key})
+			</when>
+			<otherwise>
+				select count(*) from demand_follow where user_id  = #{userId}
+			</otherwise>
+		</choose>
+	</select>
+	
+	<delete id="deleteByIds">
+		delete from demand_follow
+		where user_id = #{userId} and demand_id in
+		<trim prefix="(" suffix=")">
+			<foreach collection="ids" item="id" separator=",">
+				#{id}
+			</foreach>
+		</trim>
+	</delete>
+	<select id="countByUserIdAndDemandId" resultType="java.lang.Integer">
+		select count(*) from demand_follow where user_id  = #{userId} and demand_id = #{demandId}
+	</select>
+	
+	<select id="getByDemandId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select * from demand_follow where demand_id = #{demandId}
+	</select>
+	
+	
+</mapper>

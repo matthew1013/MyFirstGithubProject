@@ -1,0 +1,778 @@
+.portlet.light>.portlet-title>.nav-tabs>li.open, ..portlet.light>.portlet-title>.nav-tabs>li:hover {
+    background: none;
+    border-bottom: 4px solid #0066ee;
+}
+.portlet.light>.portlet-title>.nav-tabs>li.active>a, .portlet.light>.portlet-title>.nav-tabs>li:hover>a {
+    margin: 0;
+    background: none;
+    color: #0088ff;
+}
+.portlet.light>.portlet-title>.nav-tabs>li.active {
+    background: none;
+    border-bottom: 4px solid #0088ff;
+}
+
+.task-list>.task-item{
+	margin-bottom:50px;
+}
+
+.task-list>.task-item>.title{
+	background:#0088ff;
+	height:37px;
+}
+.task-list>.task-item>.title.bg-gray{
+	background:#676767;
+}
+
+.task-list>.task-item>.title a{
+	font-size:16px;
+	color:#ffffff;
+	text-align:left;
+	line-height: 37px;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.task-list>.task-item>.title ul li{
+	list-style: none;
+	float:right;
+	line-height:37px;
+}
+
+.task-list>.task-item>.title .delete{
+	color:#ffffff;
+}
+.task-list>.task-item>.title .remark{
+	color:#ffffff;
+}
+.task-list>.task-item>.title .remark>i{
+    top: 0px;
+    font-size: 16px;
+}
+
+.task-list>.task-item>.info{
+	height:38px;
+	border:1px solid #eeeeee;
+}
+.task-list>.task-item>.info>span{
+	float:left;
+	line-height:38px;
+	font-size:12px;
+	color:#676767;
+	letter-spacing:0px;
+	text-align:left;
+	margin-left:50px;
+}
+
+.task-list>.task-item>.info>.create-date{
+	margin-left:10px;
+}
+.task-list>.task-item>.info>.task-id{
+	color:#0088ff;
+	margin-left:5px;
+}
+.task-list>.task-item>.info>.expire-date{
+	color:#0088ff;
+	margin-left:5px;
+}
+.task-list>.task-item>.info>.amount{
+	color:#0088ff;
+	margin-left:5px;
+}
+.task-list>.task-item>.info>.bid-count{
+	color:#0088ff;
+	margin-left:5px;
+}
+/*进度 start*/
+.task-list>.task-item .task-state-desc{
+    padding: 10px;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #dddddd;
+}
+
+.task-list>.task-item .task-state-desc .state{
+	float:left;
+	width: 68px;
+}
+.task-list>.task-item .task-state-desc .state>.state-desc{
+	margin-left: auto;
+    margin-right: auto;
+    width: 28px;
+}
+.task-list>.task-item .task-state-desc .state>.state-desc.color999999{
+	color: #999999; 
+}
+   
+.task-list>.task-item .task-state-desc .state>.task-state-dot{
+	background:#0088ff;
+	width:16px;
+	height:16px;
+	border-radius:100%;
+	margin-top: 4px;
+	margin-left: auto;
+    margin-right: auto;
+}
+.task-list>.task-item .task-state-desc  .state>.annular{
+	background:#e1eefa;
+	border:1px solid #0088ff;
+	width:14px;
+	height:14px;
+}
+.task-list>.task-item .task-state-desc .divider{
+	padding: 10px 4px 2px 4px;
+	border-bottom: 1px solid  #0088ff;
+	float: left;
+	width: 52px;
+    margin-left: -26px;
+    margin-right: -26px;
+}
+.task-list>.task-item .task-state-desc .dashed{
+	border-bottom: 1px dashed  #0088ff;
+}
+/*进度 end*/
+
+.task-list>.task-item>.content{
+	border:1px solid #eeeeee;
+	margin-top:3px;
+	padding: 7px 10px 7px 10px;
+}
+.task-list>.task-item>.content>.enclosure>span{
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0px;
+	text-align:left;
+	float:left;
+}
+
+.task-list>.task-item>.content>.enclosure>ul>li{
+	list-style: none;
+	float:left;
+	line-height:28px;
+	margin-right:30px;
+}
+.task-list>.task-item>.content>.enclosure>ul>li img{
+	height:48px;
+}
+.task-list>.task-item>.content>.achieve>span{
+	float: left;
+    width: 70px;
+    text-align: right;
+}
+.task-list>.task-item>.content>.achieve>pre{
+	float: left;
+    width: calc(100% - 100px);
+    display: block;
+    padding: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+}
+.task-list>.task-item>.achieve-receive,.task-list>.task-item>.pay-reason,.task-list>.task-item>.refute-reason{
+	border:1px solid #eeeeee;
+	margin-top:3px;
+	padding: 7px 10px 7px 10px;
+}
+.task-list>.task-item>.achieve-receive>div>span,.task-list>.task-item>.pay-reason>div>span,.task-list>.task-item>.refute-reason>div>span{
+	float: left;
+    width: 300px;
+}
+.task-list>.task-item>.achieve-receive>div>pre,.task-list>.task-item>.pay-reason>div>pre,.task-list>.task-item>.refute-reason>div>pre{
+	float: left;
+    width: calc(100% - 100px);
+    display: block;
+    padding: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+}
+
+.task-list>.task-item>.attach-list>.attach-item{
+	border:1px solid #eeeeee;
+	margin-top:3px;
+	padding: 7px 10px 7px 10px;
+}
+.task-list>.task-item>.attach-list>.attach-item>.title>span{
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0px;
+	text-align:left;
+}
+.task-list>.task-item>.attach-list>.attach-item>.title>.margin-left-20{
+	margin-left:20px;
+}
+.task-list>.task-item>.attach-list>.attach-item>.title>.amount{
+	color:#0088ff;
+}
+.task-list>.task-item>.attach-list>.attach-item>.title>a>i{
+	float:right;
+	color:#cccccc;
+	margin-right:10px;
+}
+.task-list>.task-item>.attach-list>.attach-item>.content{
+	margin-top:15px;
+}
+
+.task-list>.task-item>.attach-add>.attach-add-item{
+	border:1px solid #eeeeee;
+	margin-top:3px;
+	padding: 7px 10px 7px 10px;
+}
+.task-list>.task-item>.attach-add>.attach-add-item .desc{
+	float:right;
+	margin-right:10px;
+	line-height:32px;
+	margin-top: 10px;
+}
+.task-list>.task-item>.attach-add>.attach-add-item .amount,.task-list>.task-item>.attach-add>.attach-add-item .content,.task-list>.task-item>.attach-add>.attach-add-item .expire-time{
+	margin-top:10px;
+}
+
+.task-list>.task-item>.attach-add>.attach-add-item .radius0{
+	float: right;
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+   	padding:0px 12px;
+}
+.task-list>.task-item>.attach-add>.attach-add-item .attach-add-submit,.task-list>.task-item>.attach-add>.attach-add-item .attach-add-cancel{
+	background:#0088ff;
+	width:120px;
+	float:left;
+	font-size:14px;
+	color:#ffffff;
+	height:36px;
+	border-radius: 0px;
+	margin-right:20px;
+}
+.task-list>.task-item>.attach-add>.attach-add-item .attach-add-submit:hover,.task-list>.task-item>.attach-add>.attach-add-item .attach-add-cancel:hover{
+	background:#0066ee;
+}
+.task-list>.task-item>.attach-add>.attach-add-item .attach-add-submit.bg-gray, .task-list>.task-item>.attach-add>.attach-add-item .attach-add-cancel.bg-gray{
+	background:#999999;
+}
+.task-list>.task-item>.attach-add>.attach-add-item .attach-add-submit.bg-gray:hover,.task-list>.task-item>.attach-add>.attach-add-item .attach-add-cancel.bg-gray:hover{
+	background:#676767;
+}
+
+.opacity08{
+	opacity:0.8;
+}
+.task-list>.task-item>.user{
+	margin-top:3px;
+}
+.task-list>.task-item>.user .left{
+	border:1px solid #eeeeee;
+	padding-right:10px;
+}
+.task-list>.task-item>.user .right{
+	border:1px solid #eeeeee;
+}
+.task-list>.task-item>.user .left>.vertical,.task-list>.task-item>.user .right>.vertical{
+	background:#5ab2ff;
+	width:30px;
+	float:left;
+	font-size:14px;
+	color:#ffffff;
+	letter-spacing:0px;
+	text-align:left;    
+	padding: 9px;
+	height:108px;
+}
+.task-list>.task-item>.user .left>.vertical.bg-gray,.task-list>.task-item>.user .right>.vertical.bg-gray{
+	background:#999999;
+}
+.task-list>.task-item>.user .left>.receive-user>ul li,.task-list>.task-item>.user .right>.bid-user>ul li{
+	list-style: none;
+	float:left;
+}
+.task-list>.task-item>.user .left>.receive-user{
+	padding: 10px 10px 10px 10px;
+	float:left;
+	width: calc(100% - 30px);
+	height:108px;
+	overflow: auto;
+}
+.task-list>.task-item>.user .left>.receive-user .img-28{
+	width:28px;
+	height:28px;
+	margin-right:15px;
+	margin-bottom:5px;
+}
+
+.task-list>.task-item>.user .right>.bid-user{
+	padding: 10px 10px 10px 10px;
+	float:left;
+	/*width: calc(100% - 180px);*/
+}
+.task-list>.task-item>.user .right>.bid-user .img-50{
+	width:50px;
+	height:50px;
+	margin-right:15px;
+	margin-bottom:5px;
+}
+.task-list>.task-item>.operate>.task-attach-add{
+	background:#0088ff;
+	width:120px;
+	float:left;
+	font-size:14px;
+	color:#ffffff;
+	height:36px;
+	margin-top:20px;
+	border-radius: 0px;
+	margin-right:20px;
+}
+
+.task-list>.task-item>.operate>.task-start,.task-list>.task-item>.operate>.task-end,
+	.task-list>.task-item>.operate>.task-complete,.task-list>.task-item>.operate>.task-edit,
+	.task-list>.task-item>.operate>a>.task-select,.task-list>.task-item>.operate>.task-arbitration,
+	.task-list>.task-item>.operate>.task-evaluate,.task-list>.task-item>.operate>.task-pay{
+	background:#0088ff;
+	width:120px;
+	float:right;
+	font-size:14px;
+	color:#ffffff;
+	height:36px;
+	margin-top:20px;
+	border-radius: 0px;
+	margin-left:20px;
+}
+.task-list>.task-item>.operate>.task-start:hover,.task-list>.task-item>.operate>.task-end:hover,
+	.task-list>.task-item>.operate>.task-complete:hover,.task-list>.task-item>.operate>.task-edit:hover,
+	.task-list>.task-item>.operate>a>.task-select:hover,.task-list>.task-item>.operate>.task-attach-add:hover,
+	.task-list>.task-item>.operate>.task-arbitration:hover,.task-list>.task-item>.operate>.task-evaluate:hover,
+	.task-list>.task-item>.operate>.task-pay:hover{
+	background:#0066ee;
+}
+.task-list>.task-item>.operate>.task-start.bg-gray,.task-list>.task-item>.operate>.task-end.bg-gray,
+	.task-list>.task-item>.operate>.task-complete.bg-gray,.task-list>.task-item>.operate>.task-edit.bg-gray,
+	.task-list>.task-item>.operate>a>.task-select.bg-gray,.task-list>.task-item>.operate>.task-attach-add.bg-gray,
+	.task-list>.task-item>.operate>.task-arbitration.bg-gray,.task-list>.task-item>.operate>.task-evaluate.bg-gray,
+	.task-list>.task-item>.operate>.task-pay.bg-gray{
+	background:#999999;
+}
+.task-list>.task-item>.operate>.task-start.bg-gray:hover,.task-list>.task-item>.operate>.task-end.bg-gray:hover,
+	.task-list>.task-item>.operate>.task-complete.bg-gray:hover,.task-list>.task-item>.operate>.task-edit.bg-gray:hover,
+	.task-list>.task-item>.operate>a>.task-select.bg-gray:hover,.task-list>.task-item>.operate>.task-attach-add.bg-gray:hover,
+	.task-list>.task-item>.operate>.task-arbitration.bg-gray:hover,.task-list>.task-item>.operate>.task-evaluate.bg-gray:hover,
+	.task-list>.task-item>.operate>.task-pay.bg-gray:hover{
+	background:#676767;
+}
+
+.task-list>.task-item>.user .right >a>.vertical-right{
+	background:#5ab2ff;
+	width:30px;
+	float:right;
+	font-size:14px;
+	color:#ffffff;
+	letter-spacing:0px;
+	text-align:left;    
+	padding: 0px 9px;
+	height:108px;
+}
+
+.task-list>.task-item>.user .right >a>.vertical-right.bg-gray{
+	background:#999999;
+}
+.margin-right-3{
+	margin-right:3px;
+}
+.user-menu{
+   	border-radius: 0px;
+    padding: 5px;
+    overflow: visible; 
+}
+.remark-dlg{
+	border-radius: 0px;
+    padding: 5px;
+    overflow: visible; 
+    left:-300px;
+}
+.task-select-dlg{
+	border-radius: 0px;
+	left: 20%;
+  	margin-top: 75px;
+  	position: fixed;
+  	padding:0px;
+}
+
+.task-select-dlg .user-select-list .title{
+	background:#0088ff;
+	height:36px;
+}
+.task-select-dlg .user-select-list .title>span{
+	color:#ffffff;
+    line-height: 36px;
+    margin-left: 300px;
+}
+.task-select-dlg .user-select-list .title>a{
+    font-size: 10px;
+    color: #0088ff;
+    background-color: #ffffff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    padding: 1px 2px;
+    ine-height: 36px;
+    margin: 10px;
+    float: right;
+}
+.task-select-dlg .user-select-list .user-info{
+    padding: 0 30px;
+    height: 400px;
+    overflow: auto;
+}
+
+.task-select-dlg .user-select-list .user-info a>i{
+	line-height:22px;
+	color: #aaaaaa;
+}
+.task-select-dlg .user-select-list .user-info a>i.active{
+	color: #f08739;
+}
+
+.task-select-dlg .user-select-list .user-info>.user{
+	margin-top: 30px;
+   	overflow: hidden;
+    white-space: nowrap;
+}
+.task-select-dlg .user-select-list .user-info>.user>.checkbox-div{
+   	float:left;
+   	margin: 10px 15px 0px 0px;
+}
+.task-select-dlg .user-select-list .user-info>.user>.img-div{
+    float:left;
+    margin-right:5px;
+}
+.task-select-dlg .user-select-list .user-info>.user>.user-div{
+    float:left;
+    width: 100px;
+}
+.task-select-dlg .user-select-list .user-info>.user>.user-div span{
+	font-size:12px;
+	color:#676767;
+	letter-spacing:0px;
+	text-align:left;
+}
+.task-select-dlg .user-select-list .user-info>.user>.user-div a{
+	font-size:12px;
+	color:#0088ff;
+	letter-spacing:0px;
+	text-align:left;
+	margin-top:8px;
+}
+.task-select-dlg .user-select-list .operate{
+    background:#c7c8dd;
+	height:50px;
+}
+.task-select-dlg .user-select-list .operate .user-select-ok{
+	background: #ffffff;
+    width: 100px;
+    float: right;
+    font-size: 14px;
+    color: #676767;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    margin-right: 40px;
+    padding: 1px;
+}
+
+.task-select-dlg .user-select-list .operate .user-select-cancel{
+	background: #ffffff;
+    width: 100px;
+    float: right;
+    font-size: 14px;
+    color: #676767;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    margin-right: 20px;
+    padding: 1px;
+}
+
+.task-select-dlg .user-select-list .user-info>.user>.img-div .img-40{
+   	width:40px;
+	height:40px;
+}
+
+/**/
+
+/* 评价框 start
+*/
+.task-evaluate-dlg{
+	border-radius: 0px;
+	left: 20%;
+  	margin-top: 75px;
+  	position: fixed;
+  	padding:0px;
+}
+.task-evaluate-dlg .task-evaluate-list .title{
+	background:#0088ff;
+	height:36px;
+}
+.task-evaluate-dlg .task-evaluate-list .title>span{
+	color:#ffffff;
+    line-height: 36px;
+    margin-left: 300px;
+}
+.task-evaluate-dlg .task-evaluate-list .title>a{
+    font-size: 10px;
+    color: #0088ff;
+    background-color: #ffffff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    padding: 1px 2px;
+    ine-height: 36px;
+    margin: 10px;
+    float: right;
+}
+
+.task-evaluate-dlg .task-evaluate-list .user-info{
+    padding: 0px 30px 0px 40px;
+    height: 400px;
+    overflow: auto;
+}
+
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item{
+	margin-top:20px;
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div{
+	float:left;
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .img-50{
+	width:50px;
+	height:50px;
+	margin-right:15px;
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .username{
+	font-size:14px;
+	color:#676767;
+	letter-spacing:0px;
+	text-align:left;
+	line-height: 50px;
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .star{
+	margin-top:10px;
+	/*width: 450px;*/
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .star>.desc{
+	float:left;
+	line-height: 47px;
+	width:100px;
+	text-align:right;
+	margin-right:15px;
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .star>.rating{
+	float:left;
+}
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .star>.star-rating{
+	float:left;
+}
+
+.task-evaluate-dlg .task-evaluate-list .user-info>.evaluate-item>.left-div .evaluate{
+	width: 550px;
+    border-radius: 0px;
+}
+.task-evaluate-dlg .task-evaluate-list .operate{
+    background:#c7c8dd;
+	height:50px;
+}
+.task-evaluate-dlg .task-evaluate-list .operate .task-evaluate-ok{
+	background: #ffffff;
+    width: 100px;
+    float: right;
+    font-size: 14px;
+    color: #676767;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    margin-right: 40px;
+    padding: 1px;
+}
+
+.task-evaluate-dlg .task-evaluate-list .operate .task-evaluate-cancel{
+	background: #ffffff;
+    width: 100px;
+    float: right;
+    font-size: 14px;
+    color: #676767;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    margin-right: 20px;
+    padding: 1px;
+}
+
+.task-evaluate-dlg .task-evaluate-list .operate .task-evaluate-ok:hover{
+	background: #ded8d8;
+}
+
+.task-evaluate-dlg .task-evaluate-list .operate .task-evaluate-cancel:hover{
+	background: #ded8d8;
+}
+
+/*评价框 end
+*/
+
+
+/* 任务裁决框 start*/
+.task-arbitration-dlg{
+	border-radius: 0px;
+	left: 20%;
+  	margin-top: 75px;
+  	position: fixed;
+  	padding:0px;
+}
+.task-arbitration-dlg .task-arbitration-list .title{
+	background:#0088ff;
+	height:36px;
+}
+.task-arbitration-dlg .task-arbitration-list .title>span{
+	color:#ffffff;
+    line-height: 36px;
+    margin-left: 300px;
+}
+.task-arbitration-dlg .task-arbitration-list .title>a{
+    font-size: 10px;
+    color: #0088ff;
+    background-color: #ffffff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    padding: 1px 2px;
+    ine-height: 36px;
+    margin: 10px;
+    float: right;
+}
+.task-arbitration-dlg .task-arbitration-list .arbitration{
+    padding: 30px;
+    height: 400px;
+    overflow: auto;
+}
+
+.task-arbitration-dlg .task-arbitration-list .arbitration-upload{
+	background:#0088ff;
+	color:#ffffff;
+	width:140px;
+	border-radius: 0px;
+	float:left;
+	height: 30px;
+	margin-top:10px;
+}
+.task-arbitration-dlg .task-arbitration-list .arbitration-upload span{
+	line-height:normal;
+}
+
+.task-arbitration-dlg .task-arbitration-list .operate{
+    background:#c7c8dd;
+	height:50px;
+}
+.task-arbitration-dlg .task-arbitration-list .operate .task-arbitration-ok{
+	background: #ffffff;
+    width: 100px;
+    float: right;
+    font-size: 14px;
+    color: #676767;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    margin-right: 40px;
+    padding: 1px;
+}
+
+.task-arbitration-dlg .task-arbitration-list .operate .task-arbitration-cancel{
+	background: #ffffff;
+    width: 100px;
+    float: right;
+    font-size: 14px;
+    color: #676767;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    margin-right: 20px;
+    padding: 1px;
+}
+
+.task-arbitration-dlg .task-arbitration-list .operate .task-arbitration-ok:hover{
+	background: #ded8d8;
+}
+
+.task-arbitration-dlg .task-arbitration-list .operate .task-arbitration-cancel:hover{
+	background: #ded8d8;
+}
+
+/* 任务裁决框  end*/
+
+
+/*
+*/
+.radius0{
+	border-radius: 0px;
+}
+
+.ui-dialog-body{
+	padding:0px;
+}
+.ui-dialog-content{
+	padding:0px;
+}
+
+
+/*查找 start*/
+.search >.type,.search >.location,.search >.sort,.search >.key{
+	float: left;
+	margin-bottom:20px;
+	margin-right:10px;
+}
+
+.search >.type>select,.search >.location>select,.search >.sort>select{
+    width: 120px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #676767;
+    border-radius: 0px;
+}
+.search >.key>i{
+	color: #ccc;
+    display: block;
+    position: absolute;
+   	margin: 100px 50px 3px 5px;
+    width: 18px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.search >.key>input{
+	width: 180px;
+    padding-left: 25px;
+    border-radius: 0;
+    border: 2px solid #0088ff;
+    height: 34px;
+    color: #999999;
+}
+.search >.key>button{
+    position: absolute;
+    border: none;
+    color: #ffffff;
+    background: #0088ff;
+    width: 80px;
+    height: 34px;
+    margin-top: -34px;
+    margin-left: 180px;
+}
+/*查找 end*/ 

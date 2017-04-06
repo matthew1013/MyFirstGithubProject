@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.AdminRecommendDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.AdminRecommend">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="modify_date" property="modifyDate" javaType="String" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.anyonehelps.model.AdminRecommend"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into admin_recommend(user_id,demand_id,create_date,modify_date)
+		values (#{userId},#{demandId},#{createDate},#{modifyDate})
+	</insert>
+	<select id="getCountByUserId"  resultType="java.lang.Integer">
+		select count(*) from admin_recommend where user_id=#{userId} and demand_id=#{demandId}
+	</select>
+</mapper>

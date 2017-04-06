@@ -1,0 +1,56 @@
+.footer{
+	position: relative;
+	height: 200px;
+	background: #fff;
+	top: 50px;
+}
+
+.footer .log-bottom{
+	margin-top: 55px;
+	margin-bottom: 34px;
+}
+ 
+.footer .about ul{  
+	list-style-type:none; 
+	padding-left:0px;
+	}
+.footer .about ul li{ 
+	display:inline-block;
+	padding:0px 30px;
+	border-right:1px solid #767676;
+}
+.footer .about ul li a{ 
+	line-height:20px;
+	font-size:14px;
+	color:#767676;
+	letter-spacing:0px;
+	text-align:left;
+}
+.footer .about ul li a:hover{ 
+	color:#0088ff;
+}
+.footer .about .lastItem{ 
+	border-width:0px;
+}
+.footer .copyright{
+	margin:auto; 
+	text-align:center;
+	font-size:14px;
+	color:#767676;
+	letter-spacing:0px;
+}
+
+
+/*自适应start*/
+@media screen and (max-width: 767px) {
+	.footer .about ul li {
+	    padding: 0px 10px;
+	}
+	.footer .copyright>span{
+		display: inline-block;
+	}
+}
+
+/*自适应end*/
+
+

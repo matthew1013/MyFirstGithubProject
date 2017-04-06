@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.ReceiveDemandDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.ReceiveDemand">
+		<id column="id" property="id" javaType="String" />
+		<result column="demand_id" property="demandId" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+		<result column="remark" property="remark" javaType="String" />
+		<result column="finish_day" property="finishDay" javaType="String" />
+		<result column="readme" property="readme" javaType="String" />
+		<!-- <result column="evaluate" property="evaluate" javaType="String" />  -->
+		<result column="evaluate_state" property="evaluateState" javaType="String" />
+		<result column="evaluate_state_receiver" property="evaluateStateReceiver" javaType="String" />
+		<result column="user_nick_name" property="userNickName" javaType="String" />
+		<result column="state" property="state" javaType="String" />
+		<result column="amount" property="amount" javaType="String" />
+		<result column="ip" property="ip" javaType="String" />
+		<result column="country" property="country" javaType="String" />
+		<result column="city" property="city" javaType="String" />
+		<result column="region" property="region" javaType="String" />
+		
+		<result column="location_open" property="locationOpen" javaType="String" />
+		<result column="location_name" property="locationName" javaType="String" />
+		<result column="location_country" property="locationCountry" javaType="String" />
+		<result column="location_province" property="locationProvince" javaType="String" />
+		<result column="location_district" property="locationDistrict" javaType="String" />
+		<result column="latitude" property="latitude" javaType="String" />
+		<result column="longitude" property="longitude" javaType="String" />
+		
+		<result column="pay_state" property="payState" javaType="String" />
+		<result column="pay_percent" property="payPercent" javaType="String" />
+		<result column="pay_reason" property="payReason" javaType="String" />
+		<result column="pay_reason_url1" property="payReasonUrl1" javaType="String" />
+		<result column="pay_reason_url2" property="payReasonUrl2" javaType="String" />
+		<result column="pay_reason_url3" property="payReasonUrl3" javaType="String" />
+		<result column="pay_reason_url4" property="payReasonUrl4" javaType="String" />
+		<result column="pay_reason_url5" property="payReasonUrl5" javaType="String" />
+		<result column="pay_reason_url1_name" property="payReasonUrl1Name" javaType="String" />
+		<result column="pay_reason_url2_name" property="payReasonUrl2Name" javaType="String" />
+		<result column="pay_reason_url3_name" property="payReasonUrl3Name" javaType="String" />
+		<result column="pay_reason_url4_name" property="payReasonUrl4Name" javaType="String" />
+		<result column="pay_reason_url5_name" property="payReasonUrl5Name" javaType="String" />
+		
+		<result column="refute_percent" property="refutePercent" javaType="String" />
+		<result column="refute_reason" property="refuteReason" javaType="String" />
+		<result column="refute_reason_url1" property="refuteReasonUrl1" javaType="String" />
+		<result column="refute_reason_url2" property="refuteReasonUrl2" javaType="String" />
+		<result column="refute_reason_url3" property="refuteReasonUrl3" javaType="String" />
+		<result column="refute_reason_url4" property="refuteReasonUrl4" javaType="String" />
+		<result column="refute_reason_url5" property="refuteReasonUrl5" javaType="String" />
+		<result column="refute_reason_url1_name" property="refuteReasonUrl1Name" javaType="String" />
+		<result column="refute_reason_url2_name" property="refuteReasonUrl2Name" javaType="String" />
+		<result column="refute_reason_url3_name" property="refuteReasonUrl3Name" javaType="String" />
+		<result column="refute_reason_url4_name" property="refuteReasonUrl4Name" javaType="String" />
+		<result column="refute_reason_url5_name" property="refuteReasonUrl5Name" javaType="String" />
+		
+		<result column="rule_percent" property="rulePercent" javaType="String" />
+		<result column="rule_reason" property="ruleReason" javaType="String" />
+		<result column="result_desc" property="resultDesc" javaType="String" />
+		<result column="result_url1" property="resultUrl1" javaType="String" />
+		<result column="result_url2" property="resultUrl2" javaType="String" />
+		<result column="result_url3" property="resultUrl3" javaType="String" />
+		<result column="result_url4" property="resultUrl4" javaType="String" />
+		<result column="result_url5" property="resultUrl5" javaType="String" />
+		<result column="result_url1_name" property="resultUrl1Name" javaType="String" />
+		<result column="result_url2_name" property="resultUrl2Name" javaType="String" />
+		<result column="result_url3_name" property="resultUrl3Name" javaType="String" />
+		<result column="result_url4_name" property="resultUrl4Name" javaType="String" />
+		<result column="result_url5_name" property="resultUrl5Name" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+		<result column="pay_reason_url1_pdf" property="payReasonUrl1Pdf" javaType="String" />
+		<result column="pay_reason_url2_pdf" property="payReasonUrl2Pdf" javaType="String" />
+		<result column="pay_reason_url3_pdf" property="payReasonUrl3Pdf" javaType="String" />
+		<result column="pay_reason_url4_pdf" property="payReasonUrl4Pdf" javaType="String" />
+		<result column="pay_reason_url5_pdf" property="payReasonUrl5Pdf" javaType="String" />
+	
+		<result column="pay_reason_pdf1_state" property="payReasonPdf1State" javaType="String" />
+		<result column="pay_reason_pdf2_state" property="payReasonPdf2State" javaType="String" />
+		<result column="pay_reason_pdf3_state" property="payReasonPdf3State" javaType="String" />
+		<result column="pay_reason_pdf4_state" property="payReasonPdf4State" javaType="String" />
+		<result column="pay_reason_pdf5_state" property="payReasonPdf5State" javaType="String" />
+	
+		<result column="refute_reason_url1_pdf" property="refuteReasonUrl1Pdf" javaType="String" />
+		<result column="refute_reason_url2_pdf" property="refuteReasonUrl2Pdf" javaType="String" />
+		<result column="refute_reason_url3_pdf" property="refuteReasonUrl3Pdf" javaType="String" />
+		<result column="refute_reason_url4_pdf" property="refuteReasonUrl4Pdf" javaType="String" />
+		<result column="refute_reason_url5_pdf" property="refuteReasonUrl5Pdf" javaType="String" />
+	
+		<result column="refute_reason_pdf1_state" property="refuteReasonPdf1State" javaType="String" />
+		<result column="refute_reason_pdf2_state" property="refuteReasonPdf2State" javaType="String" />
+		<result column="refute_reason_pdf3_state" property="refuteReasonPdf3State" javaType="String" />
+		<result column="refute_reason_pdf4_state" property="refuteReasonPdf4State" javaType="String" />
+		<result column="refute_reason_pdf5_state" property="refuteReasonPdf5State" javaType="String" />
+	
+		<result column="rule_reason_url1_pdf" property="ruleReasonUrl1Pdf" javaType="String" />
+		<result column="rule_reason_url2_pdf" property="ruleReasonUrl2Pdf" javaType="String" />
+		<result column="rule_reason_url3_pdf" property="ruleReasonUrl3Pdf" javaType="String" />
+		<result column="rule_reason_url4_pdf" property="ruleReasonUrl4Pdf" javaType="String" />
+		<result column="rule_reason_url5_pdf" property="ruleReasonUrl5Pdf" javaType="String" />
+	
+		<result column="rule_reason_pdf1_state" property="ruleReasonPdf1State" javaType="String" />
+		<result column="rule_reason_pdf2_state" property="ruleReasonPdf2State" javaType="String" />
+		<result column="rule_reason_pdf3_state" property="ruleReasonPdf3State" javaType="String" />
+		<result column="rule_reason_pdf4_state" property="ruleReasonPdf4State" javaType="String" />
+		<result column="rule_reason_pdf5_state" property="ruleReasonPdf5State" javaType="String" />
+		
+		<result column="result_url1_pdf" property="resultUrl1Pdf" javaType="String" />
+		<result column="result_url2_pdf" property="resultUrl2Pdf" javaType="String" />
+		<result column="result_url3_pdf" property="resultUrl3Pdf" javaType="String" />
+		<result column="result_url4_pdf" property="resultUrl4Pdf" javaType="String" />
+		<result column="result_url5_pdf" property="resultUrl5Pdf" javaType="String" />
+	
+		<result column="result_pdf1_state" property="resultPdf1State" javaType="String" />
+		<result column="result_pdf2_state" property="resultPdf2State" javaType="String" />
+		<result column="result_pdf3_state" property="resultPdf3State" javaType="String" />
+		<result column="result_pdf4_state" property="resultPdf4State" javaType="String" />
+		<result column="result_pdf5_state" property="resultPdf5State" javaType="String" />
+		
+		<collection property="evaluate" column="id" select="com.anyonehelps.dao.EvaluateDao.getByRDId"></collection>
+		<collection property="evaluateReceiver" column="id" select="com.anyonehelps.dao.EvaluateDao.getByRDIdReceiver"></collection>
+	</resultMap>
+	
+	
+	
+	<resultMap id="basic_result_map1" type="com.anyonehelps.model.ReceiveDemand">
+		<id column="id" property="id" javaType="String" />
+		<result column="pay_reason_url1" property="payReasonUrl1" javaType="String" />
+		<result column="pay_reason_url2" property="payReasonUrl2" javaType="String" />
+		<result column="pay_reason_url3" property="payReasonUrl3" javaType="String" />
+		<result column="pay_reason_url4" property="payReasonUrl4" javaType="String" />
+		<result column="pay_reason_url5" property="payReasonUrl5" javaType="String" />
+		<result column="pay_reason_url1_name" property="payReasonUrl1Name" javaType="String" />
+		<result column="pay_reason_url2_name" property="payReasonUrl2Name" javaType="String" />
+		<result column="pay_reason_url3_name" property="payReasonUrl3Name" javaType="String" />
+		<result column="pay_reason_url4_name" property="payReasonUrl4Name" javaType="String" />
+		<result column="pay_reason_url5_name" property="payReasonUrl5Name" javaType="String" />
+		
+		<result column="refute_reason_url1" property="refuteReasonUrl1" javaType="String" />
+		<result column="refute_reason_url2" property="refuteReasonUrl2" javaType="String" />
+		<result column="refute_reason_url3" property="refuteReasonUrl3" javaType="String" />
+		<result column="refute_reason_url4" property="refuteReasonUrl4" javaType="String" />
+		<result column="refute_reason_url5" property="refuteReasonUrl5" javaType="String" />
+		<result column="refute_reason_url1_name" property="refuteReasonUrl1Name" javaType="String" />
+		<result column="refute_reason_url2_name" property="refuteReasonUrl2Name" javaType="String" />
+		<result column="refute_reason_url3_name" property="refuteReasonUrl3Name" javaType="String" />
+		<result column="refute_reason_url4_name" property="refuteReasonUrl4Name" javaType="String" />
+		<result column="refute_reason_url5_name" property="refuteReasonUrl5Name" javaType="String" />
+		
+		<result column="result_url1" property="resultUrl1" javaType="String" />
+		<result column="result_url2" property="resultUrl2" javaType="String" />
+		<result column="result_url3" property="resultUrl3" javaType="String" />
+		<result column="result_url4" property="resultUrl4" javaType="String" />
+		<result column="result_url5" property="resultUrl5" javaType="String" />
+		<result column="result_url1_name" property="resultUrl1Name" javaType="String" />
+		<result column="result_url2_name" property="resultUrl2Name" javaType="String" />
+		<result column="result_url3_name" property="resultUrl3Name" javaType="String" />
+		<result column="result_url4_name" property="resultUrl4Name" javaType="String" />
+		<result column="result_url5_name" property="resultUrl5Name" javaType="String" />
+		
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		
+		<result column="pay_reason_url1_pdf" property="payReasonUrl1Pdf" javaType="String" />
+		<result column="pay_reason_url2_pdf" property="payReasonUrl2Pdf" javaType="String" />
+		<result column="pay_reason_url3_pdf" property="payReasonUrl3Pdf" javaType="String" />
+		<result column="pay_reason_url4_pdf" property="payReasonUrl4Pdf" javaType="String" />
+		<result column="pay_reason_url5_pdf" property="payReasonUrl5Pdf" javaType="String" />
+	
+		<result column="pay_reason_pdf1_state" property="payReasonPdf1State" javaType="String" />
+		<result column="pay_reason_pdf2_state" property="payReasonPdf2State" javaType="String" />
+		<result column="pay_reason_pdf3_state" property="payReasonPdf3State" javaType="String" />
+		<result column="pay_reason_pdf4_state" property="payReasonPdf4State" javaType="String" />
+		<result column="pay_reason_pdf5_state" property="payReasonPdf5State" javaType="String" />
+	
+		<result column="refute_reason_url1_pdf" property="refuteReasonUrl1Pdf" javaType="String" />
+		<result column="refute_reason_url2_pdf" property="refuteReasonUrl2Pdf" javaType="String" />
+		<result column="refute_reason_url3_pdf" property="refuteReasonUrl3Pdf" javaType="String" />
+		<result column="refute_reason_url4_pdf" property="refuteReasonUrl4Pdf" javaType="String" />
+		<result column="refute_reason_url5_pdf" property="refuteReasonUrl5Pdf" javaType="String" />
+	
+		<result column="refute_reason_pdf1_state" property="refuteReasonPdf1State" javaType="String" />
+		<result column="refute_reason_pdf2_state" property="refuteReasonPdf2State" javaType="String" />
+		<result column="refute_reason_pdf3_state" property="refuteReasonPdf3State" javaType="String" />
+		<result column="refute_reason_pdf4_state" property="refuteReasonPdf4State" javaType="String" />
+		<result column="refute_reason_pdf5_state" property="refuteReasonPdf5State" javaType="String" />
+	
+		<result column="rule_reason_url1_pdf" property="ruleReasonUrl1Pdf" javaType="String" />
+		<result column="rule_reason_url2_pdf" property="ruleReasonUrl2Pdf" javaType="String" />
+		<result column="rule_reason_url3_pdf" property="ruleReasonUrl3Pdf" javaType="String" />
+		<result column="rule_reason_url4_pdf" property="ruleReasonUrl4Pdf" javaType="String" />
+		<result column="rule_reason_url5_pdf" property="ruleReasonUrl5Pdf" javaType="String" />
+	
+		<result column="rule_reason_pdf1_state" property="ruleReasonPdf1State" javaType="String" />
+		<result column="rule_reason_pdf2_state" property="ruleReasonPdf2State" javaType="String" />
+		<result column="rule_reason_pdf3_state" property="ruleReasonPdf3State" javaType="String" />
+		<result column="rule_reason_pdf4_state" property="ruleReasonPdf4State" javaType="String" />
+		<result column="rule_reason_pdf5_state" property="ruleReasonPdf5State" javaType="String" />
+		
+		<result column="result_url1_pdf" property="resultUrl1Pdf" javaType="String" />
+		<result column="result_url2_pdf" property="resultUrl2Pdf" javaType="String" />
+		<result column="result_url3_pdf" property="resultUrl3Pdf" javaType="String" />
+		<result column="result_url4_pdf" property="resultUrl4Pdf" javaType="String" />
+		<result column="result_url5_pdf" property="resultUrl5Pdf" javaType="String" />
+	
+		<result column="result_pdf1_state" property="resultPdf1State" javaType="String" />
+		<result column="result_pdf2_state" property="resultPdf2State" javaType="String" />
+		<result column="result_pdf3_state" property="resultPdf3State" javaType="String" />
+		<result column="result_pdf4_state" property="resultPdf4State" javaType="String" />
+		<result column="result_pdf5_state" property="resultPdf5State" javaType="String" />
+		
+	</resultMap>
+	
+	
+	
+	
+	<select id="getReceiveDemandById" parameterType="java.lang.String" resultMap="basic_result_map">
+		select receive_demand.*,u.nick_name as user_nick_name from receive_demand left join `users` as u on receive_demand.user_id=u.id where receive_demand.id=#{id}
+	</select>
+	<select id="getReceiveDemandByDemandId" parameterType="java.lang.String" resultMap="basic_result_map">
+		select receive_demand.*,u.nick_name as user_nick_name from receive_demand left join `users` as u on receive_demand.user_id=u.id where demand_id=#{demandId} order by `create_date` desc
+	</select>
+	<insert id="insertReceiveDemand" parameterType="com.anyonehelps.model.ReceiveDemand"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		receive_demand(demand_id,user_id,create_date,remark,state,finish_day,readme,
+		amount,ip,country,city,region,location_open,location_name,location_country,location_province,location_district,latitude,longitude)
+		values(#{demandId},#{userId},#{createDate},#{remark},#{state},#{finishDay},#{readme},
+		#{amount},#{ip},#{country},#{city},#{region},#{locationOpen},#{locationName},#{locationCountry},#{locationProvince},#{locationDistrict},#{latitude},#{longitude})
+	</insert>
+	
+	<update id="modifyEvaluate">
+		update receive_demand
+		set
+		evaluate_state=1
+		where id=#{id}
+	</update>
+	<update id="modifyEvaluatePublish">
+		update receive_demand
+		set
+		evaluate_state_receiver=1
+		where id=#{id}
+	</update>
+	
+	<update id="modifyState">
+		update receive_demand
+		set
+		state = #{state} 
+		where id = #{id}
+	</update>
+	<update id="modifyStateByDemandId">
+		update receive_demand
+		set
+		state = #{state} 
+		where demand_id = #{demandId}
+	</update>
+	
+	<update id="modifyRemark">
+		update `receive_demand`
+		set `remark`=#{remark},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `user_id`=#{userId}
+	</update>
+	
+	<update id="modifyAmount">
+		update `receive_demand`
+		set `amount`=#{amount},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `user_id`=#{userId}
+	</update>
+
+	<update id="modifyPay">
+		update `receive_demand`
+		set `pay_state`=#{payState},
+		`pay_percent`=#{payPercent},
+		`pay_reason`=#{payReason},
+		`pay_reason_url1`=#{payReasonUrl1},
+		`pay_reason_url2`=#{payReasonUrl2},
+		`pay_reason_url3`=#{payReasonUrl3},
+		`pay_reason_url4`=#{payReasonUrl4},
+		`pay_reason_url5`=#{payReasonUrl5},
+		`pay_reason_url1_name`=#{payReasonUrl1Name},
+		`pay_reason_url2_name`=#{payReasonUrl2Name},
+		`pay_reason_url3_name`=#{payReasonUrl3Name},
+		`pay_reason_url4_name`=#{payReasonUrl4Name},
+		`pay_reason_url5_name`=#{payReasonUrl5Name},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `demand_id`=#{demandId}
+	</update>
+	
+	<update id="opposePay">
+		update `receive_demand`
+		set `pay_state`=#{payState},
+		`refute_percent`=#{refutePercent}, 
+		`refute_reason`=#{refuteReason},
+		`refute_reason_url1`=#{refuteReasonUrl1},
+		`refute_reason_url2`=#{refuteReasonUrl2},
+		`refute_reason_url3`=#{refuteReasonUrl3},
+		`refute_reason_url4`=#{refuteReasonUrl4},
+		`refute_reason_url5`=#{refuteReasonUrl5},
+		`refute_reason_url1_name`=#{refuteReasonUrl1Name},
+		`refute_reason_url2_name`=#{refuteReasonUrl2Name},
+		`refute_reason_url3_name`=#{refuteReasonUrl3Name},
+		`refute_reason_url4_name`=#{refuteReasonUrl4Name},
+		`refute_reason_url5_name`=#{refuteReasonUrl5Name},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `demand_id`=#{demandId}
+	</update>
+	
+	<update id="endDemand">
+		update `receive_demand`
+		set `pay_state`=#{payState},
+		`rule_percent`=#{rulePercent}, 
+		`rule_reason`=#{ruleReason},
+		`rule_reason_url1`=#{ruleReasonUrl1},
+		`rule_reason_url2`=#{ruleReasonUrl2},
+		`rule_reason_url3`=#{ruleReasonUrl3},
+		`rule_reason_url4`=#{ruleReasonUrl4},
+		`rule_reason_url5`=#{ruleReasonUrl5},
+		`rule_reason_url1_name`=#{ruleReasonUrl1Name},
+		`rule_reason_url2_name`=#{ruleReasonUrl2Name},
+		`rule_reason_url3_name`=#{ruleReasonUrl3Name},
+		`rule_reason_url4_name`=#{ruleReasonUrl4Name},
+		`rule_reason_url5_name`=#{ruleReasonUrl5Name},
+		`modify_date`=#{modifyDate}
+		where id = #{id}
+	</update>
+	
+	<update id="modifyResult">
+		update `receive_demand`
+		set `result_desc`=#{resultDesc},
+		`result_url1`=#{resultUrl1},
+		`result_url2`=#{resultUrl2},
+		`result_url3`=#{resultUrl3},
+		`result_url4`=#{resultUrl4},
+		`result_url5`=#{resultUrl5},
+		`result_url1_name`=#{resultUrl1Name},
+		`result_url2_name`=#{resultUrl2Name},
+		`result_url3_name`=#{resultUrl3Name},
+		`result_url4_name`=#{resultUrl4Name},
+		`result_url5_name`=#{resultUrl5Name},
+		`modify_date`=#{modifyDate}
+		where id = #{id} and `demand_id`=#{demandId}
+	</update>
+	
+	
+	
+	<update id="modifyPayState">
+		update `receive_demand`
+		set `pay_state`=#{payState},
+		`modify_date`=#{modifyDate}
+		where id = #{id}  
+	</update>
+	
+	<select id="countByUserIdAndDemandId" resultType="java.lang.Integer">
+		select count(*) from receive_demand where user_id  = #{userId} and demand_id = #{demandId}
+	</select>
+	
+	<delete id="deleteById">
+		delete from `receive_demand` where `id` = #{id}
+	</delete>
+	
+	
+	<select id="getByECS" resultMap="basic_result_map1">
+		select * from `receive_demand` where enclosure_converter_state = 0 order by id asc
+	</select>
+	
+	<!-- 修改任务附件转换状态 -->
+	<update id="modifyECS"  parameterType="com.anyonehelps.model.ReceiveDemand">
+		update `receive_demand`
+		set `enclosure_converter_state`= 1,
+		`pay_reason_url1_pdf`=#{payReasonUrl1Pdf},
+		`pay_reason_url2_pdf`=#{payReasonUrl2Pdf},
+		`pay_reason_url3_pdf`=#{payReasonUrl3Pdf},
+		`pay_reason_url4_pdf`=#{payReasonUrl4Pdf},
+		`pay_reason_url5_pdf`=#{payReasonUrl5Pdf},
+		
+		`pay_reason_pdf1_state`=#{payReasonPdf1State},
+		`pay_reason_pdf2_state`=#{payReasonPdf2State},
+		`pay_reason_pdf3_state`=#{payReasonPdf3State},
+		`pay_reason_pdf4_state`=#{payReasonPdf4State},
+		`pay_reason_pdf5_state`=#{payReasonPdf5State},
+		
+		`refute_reason_url1_pdf`=#{refuteReasonUrl1Pdf},
+		`refute_reason_url2_pdf`=#{refuteReasonUrl2Pdf},
+		`refute_reason_url3_pdf`=#{refuteReasonUrl3Pdf},
+		`refute_reason_url4_pdf`=#{refuteReasonUrl4Pdf},
+		`refute_reason_url5_pdf`=#{refuteReasonUrl5Pdf},
+		
+		`refute_reason_pdf1_state`=#{refuteReasonPdf1State},
+		`refute_reason_pdf2_state`=#{refuteReasonPdf2State},
+		`refute_reason_pdf3_state`=#{refuteReasonPdf3State},
+		`refute_reason_pdf4_state`=#{refuteReasonPdf4State},
+		`refute_reason_pdf5_state`=#{refuteReasonPdf5State},
+	
+		`rule_reason_url1_pdf`=#{ruleReasonUrl1Pdf},
+		`rule_reason_url2_pdf`=#{ruleReasonUrl2Pdf},
+		`rule_reason_url3_pdf`=#{ruleReasonUrl3Pdf},
+		`rule_reason_url4_pdf`=#{ruleReasonUrl4Pdf},
+		`rule_reason_url5_pdf`=#{ruleReasonUrl5Pdf},
+		
+		
+		`rule_reason_pdf1_state`=#{ruleReasonPdf1State},
+		`rule_reason_pdf2_state`=#{ruleReasonPdf2State},
+		`rule_reason_pdf3_state`=#{ruleReasonPdf3State},
+		`rule_reason_pdf4_state`=#{ruleReasonPdf4State},
+		`rule_reason_pdf5_state`=#{ruleReasonPdf5State},
+	
+		`result_url1_pdf`=#{resultUrl1Pdf},
+		`result_url2_pdf`=#{resultUrl2Pdf},
+		`result_url3_pdf`=#{resultUrl3Pdf},
+		`result_url4_pdf`=#{resultUrl4Pdf},
+		`result_url5_pdf`=#{resultUrl5Pdf},
+
+		`result_pdf1_state`=#{resultPdf1State},
+		`result_pdf2_state`=#{resultPdf2State},
+		`result_pdf3_state`=#{resultPdf3State},
+		`result_pdf4_state`=#{resultPdf4State},
+		`result_pdf5_state`=#{resultPdf5State}
+		
+		where id = #{id}
+	</update> 
+	
+</mapper>

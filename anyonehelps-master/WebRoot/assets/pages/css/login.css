@@ -1,0 +1,787 @@
+
+/* Cubic Bezier Transition */
+/***
+Login page
+***/
+/* bg color */
+body {
+    /*background-color: #ECECEC !important; */
+	
+	margin:0;
+	/*color:#6a6f8c;   /*这个颜色是紫蓝色*/
+	/*color:#808080;
+	background:#c8c8c8;*/
+	font:600 16px/18px 'Open Sans',sans-serif;
+	background:url("/assets/pages/img/login/bg.jpg") no-repeat!important;   /*haokun modified 2017/03/23 */
+	background-size: 100% 1024px !important;
+}
+
+/*haokun added 2017/03/24 游览器自动填充*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-webkit-text-fill-color: #fff;
+	
+}
+input:-moz-autofill {
+    -moz-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-moz-text-fill-color: #fff;
+}
+input:-ms-autofill {
+    -ms-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-ms-text-fill-color: #fff;
+}
+input:-o-autofill {
+    -o-box-shadow: 0 0 0 1000px rgba(48, 48, 80, 0.8) inset !important;
+	-o-text-fill-color: #fff;
+}
+/*haokun added 2017/03/24 游览器自动填充*/
+
+/*haokun modified start 2017/03/15*/
+.content {
+    /*
+	padding:0; 
+	border: 0;
+	background-color: #ffffff;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-ms-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+	width: 600px;
+	margin: 40px auto 10px auto;
+	overflow: hidden;
+	position: relative;
+	margin-top:90px;
+	*/
+	
+	
+	position: relative;
+	margin-top:90px;
+	width:100%;
+	/*margin:auto;*/
+	margin-left:40%;  /*haokun modified 2017/03/23 */
+	max-width:525px;
+	min-height:800px;
+	/*box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);*/
+	
+}
+
+
+.content .tabbable-custom{
+	width:100%;
+	 height:100%;
+	/*position:absolute;*/    /*haokun deleted 2017/03/16*/
+	padding:50px 10px 10px 10px;
+	background:rgba(15, 20, 36,.9) !important;  /*haokun modified 2017/03/23 这个颜色是蓝色*/
+    /*background:rgba(89, 89, 89,.9) !important; /*这个颜色是灰色*/
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.tooltip-login{
+	color:white;
+}
+
+.content .tabbable-custom .tab-content{
+	background:rgba(255,255,255,0);
+	border:none;
+}
+
+.content .tabbable-custom .tab-content .email-register-form .form-group .control-label,
+.content .tabbable-custom .tab-content .register-form .form-group .control-label,
+.content .tabbable-custom .tab-content .email-login-form .form-group .control-label,
+.content .tabbable-custom .tab-content .login-form .form-group .control-label,
+.content .tabbable-custom .tab-content .form-group .control-label{
+	color:#bfbfbf !important;   /*一种灰色*/
+}
+
+/*输入框设置*/
+.content .tabbable-custom .tab-content .email-register-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .email-register-form .form-group input[type="password"],
+.content .tabbable-custom .tab-content .register-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .register-form .form-group input[type="password"],
+.content .tabbable-custom .tab-content .email-login-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .email-login-form .form-group input[type="password"],
+.content .tabbable-custom .tab-content .login-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .login-form .form-group input[type="password"],
+.content .tabbable-custom .tab-content .email-forget-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .question-forget-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .phone-forget-form .form-group input[type="text"],
+.content .tabbable-custom .tab-content .phone-forget-form .form-group input[type="password"]
+{
+	width:100%;
+	color:#bfbfbf;   /*一种灰色*/
+	display:block;	
+	border:none;
+	padding:10px 20px;  /*connor padding:15px 20px; to padding:10px 20px;*/
+	border-radius:25px;
+	background:rgba(255,255,255,.2);
+}
+
+
+/*电话区号的输入框设置*/
+.content .tabbable-custom .tab-content .register-form .form-group select,
+.content .tabbable-custom .tab-content .login-form .form-group select,
+.content .tabbable-custom .tab-content .question-forget-form .form-group select,
+.content .tabbable-custom .tab-content .phone-forget-form .form-group select{
+	width:30% !important;
+	color:#bfbfbf;   /*一种灰色*/
+	display:inline-block !important;	
+	border:none;
+	padding:0px 0px;
+	border-radius:25px;
+	background:rgba(255,255,255,.2);	
+}
+
+/*电话区号的下拉框设置*/
+.content .tabbable-custom .tab-content .register-form .form-group select#area-code option,
+.content .tabbable-custom .tab-content .login-form .form-group select#area-code option
+.content .tabbable-custom .tab-content .question-forget-form .form-group select#question-area-code option{
+    color:black !important;
+}
+
+/*电话输入框*/
+.content .tabbable-custom .tab-content .register-form .form-group input[name="reg-phone"]
+{
+	width:40% !important;
+	color:#bfbfbf;   /*一种灰色*/
+	display:inline-block !important;	
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.2);	
+}
+
+/*电话输入框*/
+.content .tabbable-custom .tab-content .login-form .form-group input[name="username"]{
+	width:64% !important;
+	color:#bfbfbf;   /*一种灰色*/
+	display:inline-block !important;	
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.2);	
+}
+
+/*验证码按钮*/
+.content .tabbable-custom .tab-content .register-form .form-group a#register-get-verifycode-btn,
+.content .tabbable-custom .tab-content .phone-forget-form .form-group a{
+	font-weight: 600;
+	padding: 8px 12px !important;
+	border:none;
+	border-radius:25px !important;
+	background:rgba(17, 97, 238,.9);	
+}
+
+/*登入页面登入按钮*/
+.content .tabbable-custom .tab-content .email-login-form .form-actions button,
+.content .tabbable-custom .tab-content .login-form .form-actions button{
+	font-weight: 600;
+	width:100% !important;
+	padding: 10px 15px !important;
+	border:none;
+	border-radius:25px !important;
+	background:rgba(17, 97, 238,.9);	
+}
+
+/*登入页面点击保持登入后颜色变亮*/
+/*
+.content .tabbable-custom .tab-content .login-form .form-actions .rememberme .remember:checked + .content .tabbable-custom .tab-content .login-form .form-actions .rememberme  span{
+	 
+}
+*/
+
+
+
+/*登入页面下面和忘记密码下面把键改成大的 改成100%*/
+.content .tabbable-custom .tab-content .email-login-form .create-account,
+.content .tabbable-custom .tab-content .login-form .create-account,
+.content .tabbable-custom .tab-content .phone-forget-form .form-actions button[type="submit"],
+.content .tabbable-custom .tab-content .phone-forget-form .form-actions button[type="button"],
+.content .tabbable-custom .tab-content .question-forget-form .form-actions button[type="submit"],
+.content .tabbable-custom .tab-content .question-forget-form .form-actions button[type="button"],
+.content .tabbable-custom .tab-content .email-forget-form .form-actions button[type="submit"],
+.content .tabbable-custom .tab-content .email-forget-form .form-actions button[type="button"],
+.content .tabbable-custom .tab-content .email-register-form .form-actions button[type="submit"],
+.content .tabbable-custom .tab-content .register-form .form-actions button[type="submit"]{
+	font-weight: 600;
+	width:100% !important;
+	padding: 10px 15px !important;
+	border:none;
+	border-radius:25px !important;
+	background:rgba(17, 97, 238,.9);
+    margin:0 auto;
+	margin-bottom:10%;
+}
+
+/*设置与下面按钮的距离*/
+.content .tabbable-custom .tab-content .phone-forget-form .form-actions button[type="submit"],
+.content .tabbable-custom .tab-content .question-forget-form .form-actions button[type="submit"],
+.content .tabbable-custom .tab-content .email-forget-form .form-actions button[type="submit"]{
+	margin-bottom:20px;
+}
+
+/*设置一个横线*/
+.content .tabbable-custom .tab-content .phone-forget-form .form-actions div,
+.content .tabbable-custom .tab-content .question-forget-form .form-actions div,
+.content .tabbable-custom .tab-content .email-forget-form .form-actions div{
+   position:relative;
+   border-bottom:1px solid #eee;
+   width:110%;
+   margin: 60px 0 20px 0;
+   left:-5%;
+}
+
+
+
+/*登入页面下面忘记密码*/
+.content .tabbable-custom .tab-content .email-login-form .form-actions a:link,
+.content .tabbable-custom .tab-content .login-form .form-actions a:link{
+	color:#bfbfbf;  /*一种灰色*/
+}
+
+/*登入页面下面忘记密码碰触后变白色*/
+.content .tabbable-custom .tab-content .email-login-form .form-actions a:hover,
+.content .tabbable-custom .tab-content .email-login-form .form-actions a:visited,
+.content .tabbable-custom .tab-content .login-form .form-actions a:hover,
+.content .tabbable-custom .tab-content .login-form .form-actions a:visited{
+	color:#fff;
+}
+
+
+/*忘记密码部分3个页面-------*/
+/*忘记密码部分title*/
+.content .tabbable-custom .tab-content .email-forget-form p,
+.content .tabbable-custom .tab-content .question-forget-form p,
+.content .tabbable-custom .tab-content .phone-forget-form p{
+
+	color:#bfbfbf !important;   /*一种灰色*/	
+}
+
+/*登入两个页面下面横线*/
+.content .tabbable-custom .tab-content .email-login-form .form-actions,
+.content .tabbable-custom .tab-content .login-form .form-actions{
+	border-bottom: 1px solid #eee;
+}
+
+/*一二级目录的位置*/
+.content .tabbable-custom .nav{
+	margin-left:6%;
+}
+
+
+/*二级目录*/
+.content .tabbable-custom .nav li{
+	color:#bfbfbf !important;   /*一种灰色*/
+	font-size:14px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;	
+}
+
+/*目录初始链接*/
+.content .tabbable-custom .nav li a{
+	padding: 0 0 5px 0;
+	margin: 0px 0px 0px 0px;
+}
+
+/*二级目录初始链接*/
+.content .tabbable-custom .nav li a{
+	padding: 0 0 3px 0;
+	margin: 0px 0px 0px 0px;
+}
+
+/*目录初始颜色*/
+.content .tabbable-custom .nav li a:link{
+	color:#595959;   /*一种深灰色 haokun modified 2017/03/23*/
+}
+
+
+.content .tabbable-custom .nav li a:hover,
+.content .tabbable-custom .nav li a:active,
+.content .tabbable-custom .nav li a:visited,
+.content .tabbable-custom .nav li a:focus{
+     background:rgba(255,255,255,0);	 
+	 color:#fff;
+}
+
+/*一级目录*/
+
+.content .tabbable-custom .nav #li-tab-first-1,
+.content .tabbable-custom .nav #li-tab-first-2{
+	font-size:20px !important;
+	margin-right:15px ;
+	padding-bottom:5px ;
+	margin:0 15px 10px 0 ;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+	color:#bfbfbf;
+}
+
+
+
+/*目录点击后的高亮颜色-js中使用*/
+.highlighted-white{
+	color:#fff !important;
+	border-bottom:2px solid #1161ee !important; /*一中蓝色*/
+}
+
+/*forget 三个表设计*/
+.content .tabbable-custom .tab-content .question-forget-form,
+.content .tabbable-custom .tab-content .email-forget-form,
+.content .tabbable-custom .tab-content .phone-forget-form{
+	padding-bottom:23px;
+}
+
+/*点击保存密码，颜色变亮*/
+.content .tabbable-custom .tab-content .tab-pane .form-actions .rememberme input:checked +.content .tabbable-custom .tab-content .tab-pane .form-actions .rememberme span {
+	color:#fff !important;   /*haokun modified 2017/03/23*/
+}
+
+
+/*haokun modified end 2017/03/15*/
+
+
+/*自适应start*/
+@media (min-width: 767px) {
+	.content {
+		width: 80%;
+		margin-top:150px;
+	}
+	    
+}
+@media (min-width: 1200px) {
+	.content {
+		width: 600px;
+	}
+	    
+}
+/*自适应end*/
+
+.content>.logo {
+	margin: 0 auto;
+	margin-top: 0px;
+	padding: 15px;
+	text-align: center;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+}
+
+/*haokun modified start 2017/03/15*/
+.content h3 {  
+	color:  #f2f2f2;
+	text-align: right;
+	font-size: 24px;
+	font-weight: 100 !important;
+
+	
+}
+/*haokun modified start 2017/03/15*/
+
+.content h4 {
+	color: #555;
+}
+
+.content .hint {
+	color: #999;
+	padding: 0;
+	margin: 15px 0 7px 0;
+}
+
+.content .login-form, .content .forget-form {
+	padding: 0px;
+	margin: 0px;
+}
+
+.content .form-control {
+	height: 43px;
+	border: 1px solid #dde3ec;
+	border-radius: 0;
+}
+
+.content .form-control:focus, .content .form-control:active
+	{
+	border: 1px solid #c3ccda;
+}
+
+.content .form-control::-moz-placeholder {
+	color: #8290a3;
+	opacity: 1;
+}
+
+.content .form-control:-ms-input-placeholder {
+	color: #8290a3;
+}
+
+.content .form-control::-webkit-input-placeholder {
+	color: #8290a3;
+}
+
+.content select.form-control {
+	padding-left: 9px;
+	padding-right: 9px;
+}
+
+.content .forget-form {
+	display: none;
+}
+
+.content .register-form {
+	display: none;
+}
+.content .question-forget-form {
+	display: none;
+}
+
+.content .form-title {
+	font-weight: 300;
+	margin-bottom: 25px;
+}
+
+.content .form-actions {
+	clear: both;
+	border: 0px;
+	/*border-bottom: 1px solid #eee;*/   /*haokun deleted 2017/03/15*/
+	padding: 20px 30px 25px 30px;    /*haokun modified 2017/03/15*/
+	margin-left: -30px;
+	margin-right: -30px;
+}
+
+.login-options {
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.login-options h4 {
+	float: left;
+	font-weight: 600;
+	font-size: 15px;
+	color: #7d91aa !important;
+}
+
+.login-options .login-three {
+	float: right;
+	padding-top: 3px;
+}
+
+.login-options .login-three li {
+	list-style: none;
+	float: left;
+	margin-left: 10px;
+}
+
+.login-options .login-three li a {
+	border-radius: 15px 15px 15px 15px !important;
+	-moz-border-radius: 15px 15px 15px 15px !important;
+	-webkit-border-radius: 15px 15px 15px 15px !important;
+}
+
+.login-options .login-three li a img:hover {
+	opacity: 0.6;
+}
+
+.content .form-actions .checkbox {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.content .forget-form .form-actions {
+	border: 0;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+}
+
+.content .register-form .form-actions {
+	border: 0;
+	margin-bottom: 0;
+	padding-bottom: 0px;
+}
+
+/*haokun modified start 2017/03/15*/
+.content .form-actions .btn {
+	margin-top: -22px;
+	/*background-color: #5891f3 !important;*/
+}
+
+.content .form-actions .btn {
+	font-weight: 600;
+	padding: 10px 20px !important;
+	border:none;
+	border-radius:25px;
+	background:rgba(17, 97, 238,.8);
+}
+
+.content .form-actions .btn:hover {
+	background-color:#1161ee
+}
+
+/*
+.content .form-actions .btn-default {
+	font-weight: 600;
+	padding: 10px 25px !important;
+	color: #6c7a8d;
+	background-color: rgba(255,255,255,.1);
+	border: none;
+}
+
+.content .form-actions .btn-default:hover {
+	background-color: #1161ee;
+	color: #45b6af;
+}
+*/
+/*haokun modified end 2017/03/15*/
+
+/*haokun modified 2017/03/15*/
+.content .forget-password {
+	font-size: 18px;
+	width:100%;
+	display: block;
+	margin-top: 10px;
+	text-align:center;
+}
+
+
+/*haokun modified 2017/03/15*/
+
+.content .check {
+	color: #8290a3;
+}
+
+.content .rememberme {	
+	margin-left: 8px;
+	margin-top: -10px;
+	font-size:18px;
+	display:block;
+}
+
+
+
+.content .create-account {
+	margin: 0 -40px -30px -40px;
+	padding: 15px 0 17px 0;
+	text-align: center;
+	background-color: #6c7a8d;
+	-webkit-border-radius: 0 0 7px 7px;
+	-moz-border-radius: 0 0 7px 7px;
+	-ms-border-radius: 0 0 7px 7px;
+	-o-border-radius: 0 0 7px 7px;
+	border-radius: 0 0 7px 7px;
+}
+
+.content .create-account>p {
+	margin: 0;
+}
+
+.content .create-account p a {
+	font-weight: 600;
+	font-size: 14px;
+	color: #c3cedd;
+}
+
+.content .create-account a {
+	display: inline-block;
+	margin-top: 5px;
+}
+
+
+/*.tabbable-custom > .tab-content {
+    border: 0;
+}*/
+
+/*haokun deleted 2017/03/15
+.tabbable-custom > .nav-tabs > li.active {
+    border-top: 3px solid #32c5d2;
+}
+.tabbable-custom {
+    margin-bottom: 0;
+}
+haokun deleted 2017/03/15*/
+
+
+/*haokun added 2017/03/15*/
+@media ( max-width : 767px){
+	
+	body{
+			/*background:url("/assets/pages/img/background/87-2.png") no-repeat!important;   /*haokun modified 2017/03/23 */
+			background-size: 100% 100% !important;
+	}
+	.content{
+		padding-top:25% !important;
+		margin:auto;
+		/*height:950px;*/
+	}
+	.content .tabbable-custom .nav li{
+		display:inline-block;
+		width:25%;
+		font-size:12px;
+		
+	}
+	/*haokun start added 2017/03/23*/
+	.content .tabbable-custom .nav{
+	   margin-left:15%;
+    }
+	
+	.content .tabbable-custom .nav #li-tab-first-1,
+    .content .tabbable-custom .nav #li-tab-first-2{
+	   font-size:15px !important ;
+	}
+	
+	/*haokun end added 2017/03/23*/
+	
+	.content .tabbable-custom .tab-content .register-form .form-group select,
+    .content .tabbable-custom .tab-content .login-form .form-group select,
+    .content .tabbable-custom .tab-content .question-forget-form .form-group select,
+    .content .tabbable-custom .tab-content .phone-forget-form .form-group select
+    {
+	   display:block !important;
+	   position:relative !important;
+	   width:100% !important;
+    }
+	
+	.content .tabbable-custom .tab-content .register-form .form-group input[name="reg-phone"],
+	.content .tabbable-custom .tab-content .login-form .form-group input[name="username"],
+	.content .tabbable-custom .tab-content .phone-forget-form .form-group input[name="forget-pwd-phone"],
+	.content .tabbable-custom .tab-content .question-forget-form .form-group .question-phone{
+		position:relative !important;
+		display:block !important;
+		width:100% !important;
+		margin: 10px 0 10px 0 !important;
+		padding:0 0 0 10% !important;
+	}
+	
+	.content .tabbable-custom .tab-content .register-form .form-group a#register-get-verifycode-btn,
+    .content .tabbable-custom .tab-content .phone-forget-form .form-group a{
+        width:100% !important;
+		margin: 10px 0 10px 0 !important;
+	}
+	
+	
+}
+/*haokun added 2017/03/15*/
+
+
+
+
+@media ( max-width : 440px) {
+	/***
+  Login page
+  ***/
+	.logo {
+		margin-top: 10px;
+	}
+	.content {
+		width: 280px;
+		margin-top: 10px;
+	}
+	.content h3 {
+		font-size: 22px;
+	}
+	.forget-password {
+		display: inline-block;
+		margin-top: 20px;
+	}
+	.login-options .social-icons {
+		float: left;
+		padding-top: 3px;
+	}
+	.checkbox {
+		font-size: 13px;
+	}
+}
+
+.dlg-wechat {
+	border-radius: 0px;
+	left: calc(50% - 170px);
+	margin-top: -15%;
+	position: fixed;
+}
+
+
+.reset-pwd-dlg{
+	position: fixed;
+    left: calc(50% - 250px);
+    top: 70px;
+    border-radius: 0px;
+}
+.reset-pwd-dlg button{
+	width: 100px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px;
+    border-radius: 0px;
+    color: #333333;
+}
+.reset-pwd-dlg button.ui-dialog-close {
+    width: 15px;
+}
+.reset-pwd-dlg button.ui-dialog-autofocus {
+    color: #ffffff;
+    background-color:#0088ff;
+    border-color: #0088ff;
+   	margin-right: 95px; 
+}
+
+.reset-pwd-dlg button.ui-dialog-autofocus:hover{
+    background-color:#0066ee;
+}
+
+
+.reset-pwd-dlg .reset-pwd .question{
+	 margin-top: 20px;
+}
+.reset-pwd-dlg .reset-pwd .question .left{
+	 float: left;
+	 width:100px;
+}
+.reset-pwd-dlg .reset-pwd .question .right{
+	 float: left;
+	 padding-left: 10px;
+}
+.reset-pwd-dlg .reset-pwd .question .left>span,.reset-pwd-dlg .reset-pwd .question .right>span{
+	 float: right;
+	 line-height: 32px;
+}
+
+
+.reset-pwd-dlg .radius0{
+    line-height: 32px;
+   	border-radius: 0px;
+   	color:#676767;
+}
+
+
+.reset-pwd-dlg .reset-pwd .question .right .password{
+	width: 380px;
+    line-height: 32px;
+    border-radius: 0px;
+    color: #676767;
+    float: left;
+}
+
+/*haokun add 2017/02/09增加了注册的tooltip*/
+.tooltip-login {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltiptext-login {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip-login:hover .tooltiptext-login {
+    visibility: visible;
+}
+
+

@@ -1,0 +1,73 @@
+.table thead tr th, .table tbody tr td{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.show-data-dlg{
+	border-radius: 3px;
+    padding: 5px;
+    overflow: visible;
+}
+
+
+@media screen and (max-width: 414px) {
+	.portlet.light {
+	    padding: 0px 5px 21px 5px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
+}
+
+/*
+ * Responsive table
+ */ 
+@media (max-width: 767px) {
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	    padding-left: 50%;
+	}
+	.table th,  .table td {
+	  padding-left: 50%;
+	  border-top:0;
+	}
+	 table,  thead,  tbody,  th,  td,  tr {
+	  display: block;
+	}
+	 thead tr {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+	tr { 
+	  border: 0px solid #ccc; 
+	}
+	 td {
+	  border: none;
+	  border-bottom: 1px solid #eee;
+	  position: relative;
+	  padding-left: 50%;
+	}
+	 td:before {
+	  position: absolute;
+	  top: 6px;
+	  left: 6px;
+	  width: 45%;
+	  padding-right: 10px;
+	  white-space: nowrap;
+	}
+	
+	
+	.item td:nth-of-type(1):before { content: "领域"; }
+	.item td:nth-of-type(2):before { content: "理由"; }
+	.item td:nth-of-type(3):before { content: "状态"; }
+	.item td:nth-of-type(4):before { content: "审核理由"; }
+	.item td:nth-of-type(5):before { content: "时间"; }
+	.item td:nth-of-type(6):before { content: "操作"; }
+	
+	.portlet-body .table th ,.portlet-body .table td{
+	    text-align: left;
+	}
+}

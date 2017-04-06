@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.AuthorityuserDao">
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Authority">
+		<id column="authority_id" property="authority_id" javaType="String" />
+		<result column="users_id" property="users_id" javaType="String" />
+	</resultMap>
+				
+	<insert id="insertAuthority">
+	insert into authority_user(authority_id, users_id)
+		values
+		<foreach collection="list" item="item" separator=",">
+			(${item.authority_id},${item.users_id})
+    	</foreach>
+	</insert>
+	
+	<delete id="dellAuthorityUserById" parameterType="java.lang.String">
+		delete from authority_user
+		where users_id=#{id}
+	</delete>
+</mapper>

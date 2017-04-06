@@ -1,0 +1,378 @@
+.portlet>.portlet-body>.invited{
+	padding: 30px;
+	margin-bottom:30px;
+	border:1px solid #dddddd;
+}
+.portlet>.portlet-body>.invited .recommender-link .left{
+	float:left;
+	padding-right:10px;
+	width:130px;
+	text-align:right;
+}
+.portlet>.portlet-body>.invited .recommender-link .left>span{
+	font-size:14px;
+	color:#666666;
+	line-height:14px;
+	line-height: 34px;
+}
+
+.portlet>.portlet-body>.invited .recommender-link .middle{
+	float:left;
+	width: calc(100% - 230px);
+}
+.portlet>.portlet-body>.invited .recommender-link .middle .copy-link{
+    padding: 10px;
+	border:1px solid #dddddd;
+	border-radius:3px;
+	height:34px;
+	line-height: 12px;
+	
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.portlet>.portlet-body>.invited .recommender-link .middle .copy-link>a{
+	font-size:14px;
+	color:#999999;
+}
+.portlet>.portlet-body>.invited .recommender-link .right .copy-btn{
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:34px;
+	
+	font-size:14px;
+	color:#ffffff;
+	width:92px;
+	margin-left:8px;
+	float:left;
+}
+.portlet>.portlet-body>.invited .recommender-link .right .copy-btn:hover{
+	background:#0088ff;
+}
+
+.portlet>.portlet-body>.invited .qr-code{
+    margin-top:20px;
+}
+.portlet>.portlet-body>.invited .qr-code .left{
+	float:left;
+	padding-right:10px;
+	width:130px;
+    text-align: right;
+}
+.portlet>.portlet-body>.invited .qr-code .left>span{
+	font-size:14px;
+	color:#666666;
+	line-height:14px;
+}
+.portlet>.portlet-body>.invited .recommend-me{
+    margin-top:20px;
+}
+.portlet>.portlet-body>.invited .recommend-me .left{
+	float:left;
+	padding-right:10px;
+	width:130px;
+    text-align: right;
+}
+.portlet>.portlet-body>.invited .recommend-me .left>span{
+	font-size:14px;
+	color:#666666;
+	line-height:14px;
+	line-height: 34px;
+}
+.portlet>.portlet-body>.invited .recommend-me .right >input{
+	float:left;
+	width: calc(100% - 230px);
+}
+.portlet>.portlet-body>.invited .recommend-me .right >input.phone{
+	width: calc(100% - 412px);
+}
+    
+
+.portlet>.portlet-body>.invited .recommend-me .right >button{ 
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:34px;
+	
+	font-size:14px;
+	color:#ffffff;
+	width:92px;
+	margin-left:8px;
+	float:left;
+}
+.portlet>.portlet-body>.invited .recommend-me .right >select{ 
+	float:left;
+	width: 162px;
+	border-radius: 3px;
+	padding: 0px 12px;
+	display: inline;
+	
+	font-size:14px;
+	color:#999999;
+	line-height:36px;
+	text-align:left;
+	margin-right:18px;
+}
+
+.tabbable-custom .tab-content .form-body .left{
+	float:left;
+	padding-right:10px;
+	width:130px;
+    text-align: right;
+}
+.tabbable-custom .tab-content .form-body .left>span{
+	font-size:14px;
+	color:#666666;
+	letter-spacing:0;
+	line-height: 34px;
+}
+.tabbable-custom .tab-content .form-body .right>input{ 
+	float:left;
+	width: calc(100% - 230px);
+}
+.tabbable-custom .tab-content .form-body .right>.invite-btn{ 
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:34px;
+	
+	font-size:14px;
+	color:#ffffff;
+	width:92px;
+	margin-left:8px;
+	float:left;
+}
+
+.tabbable-custom .tab-content .form-body .right >select{ 
+	float:left;
+	width: 162px;
+	border-radius: 3px;
+	padding: 0px 12px;
+	display: inline;
+	
+	font-size:14px;
+	color:#999999;
+	line-height:36px;
+	text-align:left;
+	margin-right:18px;
+}
+.tabbable-custom .tab-content .form-body .right >input.invite-phone{
+	width: calc(100% - 412px);
+}
+.tabbable-custom .tab-content .form-body .right >button{ 
+	background:#4a91fd;
+	border:1px solid #0088ff;
+	border-radius:3px;
+	height:34px;
+	
+	font-size:14px;
+	color:#ffffff;
+	width:92px;
+	margin-left:8px;
+	float:left;
+}
+.tabbable-custom {
+    overflow: hidden;
+}
+
+.tabbable-custom>.nav-tabs {
+	border: none;
+	margin: 0px;
+}
+
+.tabbable-custom>.nav-tabs>li {
+	margin-right: 2px;
+	border-top: 2px solid transparent;
+	background-color: #fff; /*add by chenkanghua*/
+}
+
+.tabbable-custom>.nav-tabs>li>a {
+	margin-right: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	border-bottom: 1px solid #dddddd;
+	color: #999999;
+}
+
+.tabbable-custom>.nav-tabs>li>a:hover {
+	background: none;
+	border-bottom: 1px solid #dddddd;
+	color: #26b6ff;
+}
+
+.tabbable-custom>.nav-tabs>li.active {
+	border-top: 3px solid #0088ff;
+	margin-top: 0;
+	position: relative;
+}
+
+.tabbable-custom>.nav-tabs>li.active>a {
+	border-top: none !important;
+	font-weight: 400;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	border-bottom: 1px solid transparent;
+	color: #0088ff;
+}
+
+.tabbable-custom>.nav-tabs>li.active>a:hover {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	border-top: none;
+	background: #fff;
+	border-color: #d4d4d4 #d4d4d4 transparent;
+}
+
+.tabbable-custom>.tab-content {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	-ms-border-radius: 0 0 4px 4px;
+	-o-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+    padding: 30px;
+}
+
+.portlet-body .tabbable-custom>.tab-content table th{
+	font-size:12px;
+	color:#666666;
+	line-height:30px;
+	text-align:center;
+	padding:0px;
+}
+.portlet-body .tabbable-custom>.tab-content table td{
+	font-size:12px;
+	color:#333333;
+	line-height:30px;
+	text-align:center;
+	padding:0px;
+}
+.portlet-body .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fafafa;
+}
+.portlet-body .search-pagination{
+	text-align:center;
+}
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.portlet>.portlet-body>.invited {
+	    padding: 30px 5px 30px 5px;
+	}
+	.portlet>.portlet-body>.invited .qr-code .left {
+	    width: 120px;
+	}
+	.portlet.light {
+    	padding: 0px 5px 21px 5px;
+	}
+	.tabbable-custom>.tab-content {
+	    padding: 30px 5px 30px 5px;
+	}
+	.tabbable-custom .tab-content .form-body .left {
+	    width: 50px;
+	}
+	.tabbable-custom .tab-content .form-body .right>input {
+	    width: calc(100% - 150px);
+	}
+	
+	.tabbable-custom .tab-content .form-body .right >select {
+	    width: 63px;
+	    padding: 0px 3px;
+	    margin-right: 8px;
+	}
+	.tabbable-custom .tab-content .form-body .right >input.invite-phone {
+	    width: calc(100% - 222px);
+	}
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+}
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+
+
+
+
+/*
+ * Responsive table
+ */ 
+@media (max-width: 767px) {
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	    padding-left: 50%;
+	}
+	.tab-content .table th, .tab-content .table td {
+	  padding-left: 50%;
+	  border-top:0;
+	}
+	.tab-content table, .tab-content thead, .tab-content tbody, .tab-content th, .tab-content td, .tab-content tr {
+	  display: block;
+	}
+	.tab-content thead tr {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+	.tab-content tr { 
+	  border: 1px solid #ccc; 
+	}
+	.tab-content td {
+	  border: none;
+	  border-bottom: 1px solid #eee;
+	  position: relative;
+	  padding-left: 50%;
+	}
+	.tab-content td:before {
+	  position: absolute;
+	  top: 6px;
+	  left: 6px;
+	  width: 45%;
+	  padding-right: 10px;
+	  white-space: nowrap;
+	}
+	.invite-item td:nth-of-type(1):before { content: "邮箱"; }
+	.invite-item td:nth-of-type(2):before { content: "手机号码"; }
+	.invite-item td:nth-of-type(3):before { content: "邀请时间"; }
+	.invite-item td:nth-of-type(4):before { content: "状态"; }
+	.invite-item td:nth-of-type(5):before { content: "操作"; }
+	
+	
+	.portlet-body .tabbable-custom>.tab-content table td {
+	    height: 28px;
+	    line-height: 18px;
+	    text-align: left;
+	    padding-top: 8px;
+    	padding-right: 8px;
+    	padding-bottom: 8px;
+    	padding-left: 50%;
+	}
+	.portlet-body .tabbable-custom>.tab-content table td>span {
+	  	line-height: 0px;
+	}
+	.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+	    border: 0px solid #ddd;
+	}
+}

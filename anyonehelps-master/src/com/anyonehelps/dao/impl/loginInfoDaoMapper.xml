@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.LoginInfoDao">
+	<resultMap type="com.anyonehelps.model.LoginInfo" id="basic_result_map">
+		<result column="id" property="id" javaType="String" />
+		<result column="login_times" property="times" javaType="String" />
+		<result column="last_date" property="lastDate" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="name" property="name" javaType="String" />
+	</resultMap>
+
+	<insert id="insertUpdate">
+		insert into login_info(id,login_times,last_date,type, now_date)
+		values(#{id},1,#{date},#{type},#{date})
+		on duplicate key update
+		login_times=login_times+1,
+		last_date=now_date,
+		now_date=#{date}
+	</insert>
+
+	<select id="getById" resultMap="basic_result_map">
+				select info.*, tu.nick_name as name
+				from login_info as info left join users as tu on tu.id=info.id
+				where info.id=#{id}
+	</select>
+</mapper>

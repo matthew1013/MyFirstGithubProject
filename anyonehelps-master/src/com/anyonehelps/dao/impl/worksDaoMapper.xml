@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anyonehelps.dao.WorksDao">
+
+	<resultMap id="basic_result_map" type="com.anyonehelps.model.Works">
+		<id column="id" property="id" javaType="String" />
+		<result column="user_id" property="userId" javaType="String" />
+		<result column="url" property="url" javaType="String" />
+		<result column="title" property="title" javaType="String" />
+		<result column="type" property="type" javaType="String" />
+		<result column="create_date" property="createDate" javaType="String" />
+	
+		<result column="enclosure_converter_state" property="enclosureConverterState" javaType="String" />
+		<result column="url_pdf" property="urlPdf" javaType="String" />
+		<result column="url_pdf_state" property="urlPdfState" javaType="String" />
+		
+	</resultMap>
+	
+	<insert id="insertWorks" parameterType="com.anyonehelps.model.Works"
+	 useGeneratedKeys="true" keyProperty="id">
+		insert into
+		works(user_id,url,title,type,create_date)
+		values
+		(#{userId},#{url},#{title},#{type},#{createDate})
+	</insert>
+
+	<select id="getByUserId" resultMap="basic_result_map">
+		select * from works where user_id = #{userId}  order by id desc limit 9
+	</select>
+	
+	<select id="getById" resultMap="basic_result_map">
+		select * from works where id=#{id} order by id desc
+	</select>
+	
+	<delete id="deleteById">
+		delete from works where user_id = #{userId} and id = #{id}
+	</delete>
+	<select id="countByUserId" resultType="java.lang.Integer">
+		select count(*) from works where user_id = #{userId}
+	</select>
+	
+	<update id="modifyTitle">
+		update `works` set `title`=#{title} where id = #{id}
+	</update> 
+	
+	<select id="getByECS" resultMap="basic_result_map">
+		select * from `works` where enclosure_converter_state = 0 order by id asc
+	</select>
+	
+	<update id="modifyECS">
+		update `works`
+		set `enclosure_converter_state`= 1,
+		`url_pdf`=#{up},
+		`url_pdf_state`=#{ups}
+		where id = #{id}
+	</update> 
+	
+</mapper>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	<context:annotation-config />
+	<context:component-scan base-package="com.anyonehelps.controller" />
+	<mvc:annotation-driven>
+	</mvc:annotation-driven>
+	<context:property-placeholder location="classpath:*.properties" />
+	<mvc:resources location="/js/*" mapping="/js/**"/>
+	<mvc:resources location="/*.html" mapping="/*.html"/>
+	<mvc:resources location="/*.jsp" mapping="/*.jsp"/>
+	<mvc:resources location="/*.mp4" mapping="/*.mp4"/>
+	<mvc:resources location="/upload/*" mapping="/upload/**"/>
+	<mvc:resources location="/assets/*" mapping="/assets/**"/>
+	<mvc:resources location="/dashboard/*" mapping="/dashboard/**"/>
+	<mvc:resources location="/include/*" mapping="/include/**"/>
+	<mvc:resources location="/task/*" mapping="/task/**"/>
+	<mvc:resources location="/forbidden/*" mapping="/forbidden/**"/>
+	<mvc:resources location="/agreement/*" mapping="/agreement/**"/>
+	<mvc:resources location="/pdf/*" mapping="/pdf/**"/>
+	<mvc:resources location="/us/*" mapping="/us/**"/>
+	
+	<mvc:interceptors>
+	
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**" />
+			<bean class="com.anyonehelps.common.interceptor.AuthorityInterceptor">
+				<property name="needLoginUrl">
+					<list>
+						<value>/admin</value>
+					</list>
+				</property>
+				<property name="notNeedLoginUrl">
+					<list>
+						<value>/admin/login.jsp</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.anyonehelps.common.interceptor.UserLoginInterceptor">
+				<property name="needLoginUrlPrefix">
+					<list>
+						<value>/user</value>
+						<value>/demand</value>
+						<value>/message</value>
+						<value>/account</value>
+						<value>/bonus_point</value>
+						<value>/message_user</value>
+						<value>/message_system</value>
+						<value>/recommend</value>
+						<value>/specialty</value>
+						<value>/logininfo</value>
+						<value>/code</value>
+						<value>/stripe</value>
+						<value>/alipay</value>
+						<value>/paypal</value>
+						<value>/anet</value>
+						<value>/weixin</value>
+						<value>/friend</value>
+						<value>/demand_follow</value>
+						<value>/education</value>
+						<value>/work_experience</value>
+						<value>/works</value>
+						<value>/demand_attach</value>
+						<value>/arbitration</value>
+						<value>/pro_user</value>
+						<value>/user_comment</value>
+						<value>/blacklist</value>
+						<value>/asq</value>
+						<value>/email</value>
+						<value>/summernote</value>
+						<value>/new_comment</value>
+					</list>
+				</property>
+				<property name="notNeedLoginUrl">
+					<list>
+						<value>/user/email_register</value>
+						<value>/user/phone_register</value>
+						<value>/user/login</value>
+						<value>/user/phone_login</value>
+						<value>/user/logout</value>
+						<value>/user/reset_email_pwd</value>
+						<value>/user/reset_pwd2</value>
+						<value>/user/email_verify2</value>
+						<value>/user/fb_login</value>
+						<value>/user/wx_login</value>
+						<value>/user/search_by_key</value>
+						<value>/user_comment/search</value>
+						<value>/user/reset_pwd</value>
+						<value>/user/by_sum_amount</value>
+						<value>/user/open_info</value>
+						<value>/user/reset_pwd3</value>
+						<value>/user/check_code</value>
+						<value>/barcode/generate</value>
+						<value>/code/generate</value>
+						<value>/code/phone</value>
+						
+						<value>/demand/search_by_writer</value>
+						<value>/demand/get_one_by_writer</value>
+						<value>/demand/get_sum_amount</value>
+						<value>/demand/all_region</value>
+						<value>/demand/relevant</value>
+						<value>/demand/acc_search</value>
+						<value>/demand/pub_search</value>
+						<value>/specialty/get_specialty_type_all</value>
+						<value>/account/alipay_return_url</value>
+						<value>/account/alipay_notify_url</value>
+						<value>/account/paypal_return_url</value>
+						<value>/account/paypal_notify_url</value>
+						
+						<!-- 模拟paypal数据测试
+						<value>/account/paypal_notify_test</value> -->
+						
+						<value>/weixin/scanRechargeSuccess</value>
+						<value>/demand_attach/get_one</value>
+						<value>/tag/get_all</value>
+						
+						<value>/admin</value>
+						<value>/news/search</value>
+						<value>/ticket/add</value>
+						
+						<value>/asq/get_asq2</value>
+						<value>/asq/validate</value>
+						<value>/pro_user/search</value>
+						<value>/activity</value>
+						<value>/common</value>
+						<value>/activity_user/add</value>
+						
+						<value>/new_comment/search</value>
+						
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<bean id="messageAdapter"
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<!-- Support JSON -->
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+	<bean id="exceptionMessageAdapter"
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver">
+		<property name="messageConverters">
+			<list>
+				<!-- Support JSON -->
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>application/json;charset=UTF-8
+							</value>
+							<value>text/plain;charset=UTF-8</value>
+							<value>text/html;charset=UTF-8</value>
+							<value>application/xml;charset=UTF-8
+							</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>

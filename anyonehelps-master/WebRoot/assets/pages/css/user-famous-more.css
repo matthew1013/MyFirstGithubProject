@@ -1,0 +1,197 @@
+/*人物列表页面 start*/
+.famous{
+	min-height:800px;
+	padding: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #ffffff;
+	border:1px solid #dddddd;
+}
+
+.famous .title{
+	font-size:20px;
+	color:#676767;
+	text-align:left;
+}
+/* 分类 start*/
+.famous .type ul li{
+	list-style: none;
+	float: left;
+	margin-top: 15px;
+}
+
+.famous .type-item{
+	padding: 4px 10px 4px 10px;
+	background: #f0f0f0;
+	color:#676767;
+	font-size: 14px;
+	margin-right: 10px;
+	float: left;
+	height:28px;
+}
+.famous .type-item:hover{
+	background: #dddddd;
+	color:#333333;
+}
+.famous .type .active{
+	background: #0088ff;
+	color:#ffffff;
+}
+/* 分类 end*/
+    
+.famous .famous-list{
+	width: calc(100% + 20px);
+    margin-left: -10px;
+}
+.famous .famous-list .item{
+	padding: 0px 10px;
+}
+.famous .divider{
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+	width: calc(100%);
+}
+.famous .famous-list .item .famous-content{
+	background:#fafcfd;
+	border:1px solid #dddddd;
+	padding: 20px;
+	margin-top: 20px;
+	height: 157px;
+}
+
+.famous .famous-list .item .famous-content .left{
+	float:left;
+	width:80px;
+}
+.famous .famous-list .item .famous-content .left>div{
+    text-align: center;
+}
+
+.famous .famous-list .item .famous-content .left .user-follow {
+    background: #0088ff;
+    width: 80px;
+    height: 24px;
+    border: none;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0px;
+    margin-top: 15px;
+    border-radius: 3px;
+}
+
+.famous .famous-list .item .famous-content .right{
+	float:left;
+	width:calc(100% - 80px);
+}
+
+
+.famous .famous-list .item .famous-content .famous-people-grade{
+	position: absolute;
+    margin-left: 35px;
+    margin-top: -60px;
+    background-color: #fb7e7e;
+    background-image: none;
+    height: 18px;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #fb7e7e;
+    text-align: center;
+    line-height: 17px;
+    color: white;
+    font-size: 10px;
+}
+
+.famous .famous-list .item .famous-content .right .user-name{
+	float: left;
+    padding-left: 10px;
+    line-height: 20px;
+    padding-top: 4px;
+}
+.famous .famous-list .item .famous-content .right .user-name a{
+	font-size:14px;
+	color:#333333;
+	letter-spacing:0px;
+	text-align:left;
+}
+.famous .famous-list .item .famous-content .right .user-name a:hover{
+	color:#0088ff;
+}
+.famous .famous-list .item .famous-content .right .user-pro{
+	float: left;
+    background: #f173ba;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 8px;
+    border-radius: 12px;
+    margin-top:5px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.famous .famous-list .item .famous-content .right .user-pro>a{
+    color: #fff;
+}
+
+.famous .famous-list .item .famous-content .right .user-major{
+	float: left;
+	margin-left:15px;
+    background: #f0f0f0;
+    line-height:20px;
+}
+.famous .famous-list .item .famous-content .right .user-major a{
+	float: left;
+	font-size:12px;
+	color:#767676;
+	letter-spacing:0px;
+	padding: 4px 8px 4px 8px;
+}
+.famous .famous-list .item .famous-content .right .user-brief{
+	float: left;
+    color: #767676;
+    margin-left: 10px;
+    line-height: 18px;
+    font-size: 12px;
+    height: 90px;
+    overflow: hidden;
+}
+.famous .more .load-more{
+	padding: 6px 50px;
+    background: #f0f0f0;
+    border: 1px solid #dddddd;
+    float: left;
+    color: #767676;
+    margin-top: 60px;
+    margin-left: calc(50% - 93px);
+    margin-bottom: 30px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+
+/*人物列表页面 end*/
+
+
+/*自适应 start*/
+@media (max-width: 414px) {
+	.famous .more .load-more {
+	    margin-top: 30px;
+	}	
+}
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+}
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+/*自适应end*/
+
